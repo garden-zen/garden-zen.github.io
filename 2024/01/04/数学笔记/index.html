@@ -1,8 +1,8 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
     <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,7 +81,7 @@
                     <li class="layui-nav-item">
                         <a href="/archives/ ">
                             <i class=" fas fa-archive " style="color: rgb(10 189 227);"></i>
-                            <span class="layui-nav-item-name">归档</span>
+                            <span class="layui-nav-item-name">文章</span>
                         </a>
                     </li>
                     
@@ -166,14 +166,22 @@
         <span title="Created 2024.01.04"><i class="far fa-calendar-alt"></i> 2024.01.04</span>
       </div>
       <div class="post-meta-item updated">
-        <span title="Updated 2024.01.04"><i class="far fa-calendar-check"></i> 2024.01.04</span>
+        <span title="Updated 2024.01.05"><i class="far fa-calendar-check"></i> 2024.01.05</span>
       </div>
      
+    
+      <div class="post-meta-item categories">
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E6%95%B0%E5%AD%A6/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">常微分方程</a>
+        
+      </div>
      
     
      <div class="post-meta-item wordcount">
         
-          <i class="fas fa-pencil-alt"></i> <span class="post-count">494 words</span>
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">484 words</span>
            
         
           <i class="far fa-clock"></i> <span class="post-count">2 min</span>
@@ -213,30 +221,76 @@
       color: #ff0000;
     }
 </style>
-
-<h1 id="常微分方程"><a href="#常微分方程" class="headerlink" title="常微分方程"></a>常微分方程</h1><h4 id="（第二版）丁同仁-李承治"><a href="#（第二版）丁同仁-李承治" class="headerlink" title="（第二版）丁同仁 李承治"></a>（第二版）丁同仁 李承治</h4><h2 id="第一章-基本概念"><a href="#第一章-基本概念" class="headerlink" title="第一章 基本概念"></a>第一章 基本概念</h2><h4 id="1-1-微分方程及其解的定义"><a href="#1-1-微分方程及其解的定义" class="headerlink" title="1.1 微分方程及其解的定义"></a>1.1 微分方程及其解的定义</h4><p><font class="definitionId">定义1.1</font> &emsp; 常微分方程一般形式：</p>
-<p>$$F(x, y, y^{\prime}, \cdots, y^{(n)}) &#x3D; 0 \tag{1.1}$$</p>
-<p>导数实际出现的最高阶数 $n$ 叫作常微分方程的 <strong>阶</strong>.</p>
+<h1 id="常微分方程">常微分方程</h1>
+<h4 id="第二版丁同仁-李承治">（第二版）丁同仁 李承治</h4>
+<h2 id="第一章-基本概念">第一章 基本概念</h2>
+<h4 id="微分方程及其解的定义">1.1 微分方程及其解的定义</h4>
+<p><font class="definitionId">定义1.1</font>   常微分方程一般形式：</p>
+<p><span class="math display">\[F(x, y, y^{\prime}, \cdots, y^{(n)}) = 0
+\tag{1.1}\]</span></p>
+<p>导数实际出现的最高阶数 <span class="math inline">\(n\)</span>
+叫作常微分方程的 <strong>阶</strong>.</p>
 <p>线性常微分方程、非线性常微分方程</p>
 <p>微分方程的解</p>
-<p><font class="definitionId">定义1.3</font> &emsp; 设 $n$ 阶微分方程 $(1.1)$ 的解</p>
-<p>$$y &#x3D; \varphi(x, C_1, C_2, \cdots, C_n) \tag{1.2}$$</p>
-<p>包含 $n$ 个 <strong>独立的</strong> 任意常数 $C_1, C_2, \cdots, C_n$，则称它为 <strong>通解</strong>.<br>此处，$C_1, C_2, \cdots, C_n$ 独立，等价于 Jacobi 行列式</p>
-<p>$$<br>\dfrac{D[\varphi, \varphi^{\prime}, \cdots, \varphi^{(n-1)}]}{D[C_1, C_2, \cdots, C_n]} &#x3D;<br>\begin{vmatrix}<br>  \dfrac{\partial\varphi}{\partial C_1} &amp; \dfrac{\partial\varphi}{\partial C_2} &amp; \cdots &amp; \dfrac{\partial\varphi}{\partial C_n} \newline<br>  \dfrac{\partial\varphi^{\prime}}{\partial C_1} &amp; \dfrac{\partial\varphi^{\prime}}{\partial C_2} &amp; \cdots &amp; \dfrac{\partial\varphi^{\prime}}{\partial C_n} \newline<br>  \vdots &amp; \vdots &amp; &amp; \vdots \newline<br>  \dfrac{\partial\varphi^{(n-1)}}{\partial C_1} &amp; \dfrac{\partial\varphi^{(n-1)}}{\partial C_2} &amp; \cdots &amp; \dfrac{\partial\varphi^{(n-1)}}{\partial C_n} \newline<br>\end{vmatrix}<br>$$</p>
-<p>不等于 $0$.</p>
-<p>如果微分方程 $(1.1)$ 的解 $y &#x3D; \varphi(x)$ 不包含任意常数，则称它为 <strong>特解</strong>.</p>
+<p><font class="definitionId">定义1.3</font>   设 <span
+class="math inline">\(n\)</span> 阶微分方程 <span
+class="math inline">\((1.1)\)</span> 的解</p>
+<p><span class="math display">\[y = \varphi(x, C_1, C_2, \cdots, C_n)
+\tag{1.2}\]</span></p>
+<p>包含 <span class="math inline">\(n\)</span> 个
+<strong>独立的</strong> 任意常数 <span class="math inline">\(C_1, C_2,
+\cdots, C_n\)</span>，则称它为 <strong>通解</strong>. 此处，<span
+class="math inline">\(C_1, C_2, \cdots, C_n\)</span> 独立，等价于 Jacobi
+行列式</p>
+<p><span class="math display">\[
+\dfrac{D[\varphi, \varphi^{\prime}, \cdots, \varphi^{(n-1)}]}{D[C_1,
+C_2, \cdots, C_n]} =
+\begin{vmatrix}
+  \dfrac{\partial\varphi}{\partial C_1} &amp;
+\dfrac{\partial\varphi}{\partial C_2} &amp; \cdots &amp;
+\dfrac{\partial\varphi}{\partial C_n} \newline
+  \dfrac{\partial\varphi^{\prime}}{\partial C_1} &amp;
+\dfrac{\partial\varphi^{\prime}}{\partial C_2} &amp; \cdots &amp;
+\dfrac{\partial\varphi^{\prime}}{\partial C_n} \newline
+  \vdots &amp; \vdots &amp; &amp; \vdots \newline
+  \dfrac{\partial\varphi^{(n-1)}}{\partial C_1} &amp;
+\dfrac{\partial\varphi^{(n-1)}}{\partial C_2} &amp; \cdots &amp;
+\dfrac{\partial\varphi^{(n-1)}}{\partial C_n} \newline
+\end{vmatrix}
+\]</span></p>
+<p>不等于 <span class="math inline">\(0\)</span>.</p>
+<p>如果微分方程 <span class="math inline">\((1.1)\)</span> 的解 <span
+class="math inline">\(y = \varphi(x)\)</span> 不包含任意常数，则称它为
+<strong>特解</strong>.</p>
 <p>初值条件、初值问题（柯西问题）</p>
-<h4 id="1-2-微分方程及其解的几何解释"><a href="#1-2-微分方程及其解的几何解释" class="headerlink" title="1.2 微分方程及其解的几何解释"></a>1.2 微分方程及其解的几何解释</h4><p>积分曲线</p>
+<h4 id="微分方程及其解的几何解释">1.2 微分方程及其解的几何解释</h4>
+<p>积分曲线</p>
 <p>线素、线素场（方向场）</p>
 <p>等斜线</p>
 <p>奇异点</p>
-<h2 id="第二章-初等积分法"><a href="#第二章-初等积分法" class="headerlink" title="第二章 初等积分法"></a>第二章 初等积分法</h2><h4 id="2-1-恰当方程"><a href="#2-1-恰当方程" class="headerlink" title="2.1 恰当方程"></a>2.1 恰当方程</h4><p>恰当方程（全微分方程）一般形式：</p>
-<p>$$P(x,y) \mathrm{d}x + Q(x,y) \mathrm{d}x &#x3D; 0 \tag{2.1}$$</p>
-<p>对于其中的 $P(x,y)$ 和 $Q(x,y)$，存在可微函数 $\Phi(x,y)$，使得：</p>
-<p>$$\mathrm{d}\Phi(x,y) &#x3D; P(x,y) \mathrm{d}x + Q(x,y) \mathrm{d}x$$</p>
+<h2 id="第二章-初等积分法">第二章 初等积分法</h2>
+<h4 id="恰当方程">2.1 恰当方程</h4>
+<p>恰当方程（全微分方程）一般形式：</p>
+<p><span class="math display">\[P(x,y) \mathrm{d}x + Q(x,y) \mathrm{d}x
+= 0 \tag{2.1}\]</span></p>
+<p>对于其中的 <span class="math inline">\(P(x,y)\)</span> 和 <span
+class="math inline">\(Q(x,y)\)</span>，存在可微函数 <span
+class="math inline">\(\Phi(x,y)\)</span>，使得：</p>
+<p><span class="math display">\[\mathrm{d}\Phi(x,y) = P(x,y) \mathrm{d}x
++ Q(x,y) \mathrm{d}x\]</span></p>
 <p>从而有</p>
-<p>$$\dfrac{\partial \Phi}{\partial x} &#x3D; P(x,y),  \quad  \dfrac{\partial \Phi}{\partial x} &#x3D; Q(x, y) \tag{2.2}$$</p>
-<p>$$<br>\left(<br>\begin{matrix}<br>    1  &amp;  0   &amp; 0 \newline<br>    -5  &amp;  2   &amp; 3 \newline<br>    3  &amp;  3   &amp; 5 \newline<br>\end{matrix}<br>\right)<br>$$</p>
+<p><span class="math display">\[\dfrac{\partial \Phi}{\partial x} =
+P(x,y),  \quad  \dfrac{\partial \Phi}{\partial x} = Q(x, y)
+\tag{2.2}\]</span></p>
+<p><span class="math display">\[
+\left(
+\begin{matrix}
+    1  &amp;  0   &amp; 0 \newline
+    -5  &amp;  2   &amp; 3 \newline
+    3  &amp;  3   &amp; 5 \newline
+\end{matrix}
+\right)
+\]</span></p>
 </div>
         
           <div class="post-copyright">
@@ -253,24 +307,18 @@
         
   </div>
 
-  <div class="share-reward">
-    <div class="share">
-        
-<div class="social-share" data-sites="facebook,twitter,wechat,weibo,qq"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css">
-<script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script>
-
-
-      </div>
-        <div class="reward">
-          
-        </div>
-    </div>
-    
     <div class="post_tags">
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E6%95%B0%E5%AD%A6/" class="tag">数学</a>
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="tag">常微分方程</a>
       
     </div>
     <div class="post-nav">
+      
+        <div class="post-nav-prev post-nav-item">
+            <a href="/2024/01/05/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/" >测试文件<i class="fa fa-chevron-left"></i></a>
+        </div>
       
       
         <div class="post-nav-next post-nav-item">
