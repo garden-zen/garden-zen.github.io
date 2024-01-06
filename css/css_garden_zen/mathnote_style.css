@@ -1,0 +1,26 @@
+* {
+        
+}
+
+.definitionId {
+    color: #0099ff;
+    font-weight: bold;
+}
+
+.theoremId {
+  color: #ff00ff;
+  font-weight: bold;
+}
+
+.caseId {
+  color: #00dd33;
+}
+
+.specialNote {
+  color: #ff6600;
+  font-size: 0.8em; 
+}
+
+.emphasis {
+  color: #ff0000;
+}
