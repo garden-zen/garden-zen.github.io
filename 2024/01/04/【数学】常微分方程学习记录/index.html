@@ -168,7 +168,7 @@
         <span title="发表于 2024.01.04"><i class="far fa-calendar-alt"></i> 2024.01.04</span>
       </div>
       <div class="post-meta-item updated">
-        <span title="更新于 2024.01.07"><i class="far fa-calendar-check"></i> 2024.01.07</span>
+        <span title="更新于 2024.01.08"><i class="far fa-calendar-check"></i> 2024.01.08</span>
       </div>
      
     
@@ -183,10 +183,10 @@
     
      <div class="post-meta-item wordcount">
         
-          <i class="fas fa-pencil-alt"></i> <span class="post-count">707 字</span>
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.2k 字</span>
            
         
-          <i class="far fa-clock"></i> <span class="post-count">3 分钟</span>
+          <i class="far fa-clock"></i> <span class="post-count">6 分钟</span>
                                
       </div>
      
@@ -204,9 +204,12 @@
 <p>导数实际出现的最高阶数 <span class="math inline">\(n\)</span>
 叫作常微分方程的 <strong>阶</strong>.</p>
 <div class="note note-info">
-            <div class="noteTitle">备注</div><p><span class="math inline">\(F\)</span> 是关于变元 <spanclass="math inline">\(x, y, y^{\prime}, \cdots, y^{(n)}\)</span>的已知函数. 因此，<span class="math inline">\(y^{\prime} =y(y(x))\)</span> 和 <span class="math inline">\(y^{\prime} = y(x -1)\)</span> 不是常微分方程.</p>
+            <div class="noteTitle">备注：</div><p><span class="math inline">\(F\)</span> 是关于变元 <spanclass="math inline">\(x, y, y^{\prime}, \cdots, y^{(n)}\)</span>的已知函数. 因此，<span class="math inline">\(y^{\prime} =y(y(x))\)</span> 和 <span class="math inline">\(y^{\prime} = y(x -1)\)</span> 不是常微分方程.</p>
           </div>
 <p>线性常微分方程、非线性常微分方程</p>
+<div class="note note-info">
+            <p><span class="noteTitle">一个非线性常微分方程的例子：</span>   <spanclass="math inline">\(y^{\prime\prime} + yy^{\prime} = x\)</span>.</p>
+          </div>
 <p>微分方程的解</p>
 <p><font class="definitionId">定义1.3</font>   设 <span
 class="math inline">\(n\)</span> 阶微分方程 <span
@@ -252,12 +255,58 @@ class="math inline">\(y = \varphi(x)\)</span> 不包含任意常数，则称它�
 <p>对于其中的 <span class="math inline">\(P(x,y)\)</span> 和 <span
 class="math inline">\(Q(x,y)\)</span>，存在可微函数 <span
 class="math inline">\(\Phi(x,y)\)</span>，使得：</p>
-<p><span class="math display">\[\mathrm{d}\Phi(x,y) = P(x,y) \mathrm{d}x
-+ Q(x,y) \mathrm{d}x\]</span></p>
-<p>从而有</p>
-<p><span class="math display">\[\dfrac{\partial \Phi}{\partial x} =
-P(x,y),  \quad  \dfrac{\partial \Phi}{\partial x} = Q(x, y)
-\tag{2.2}\]</span></p>
+<p><span class="math display">\[
+\mathrm{d}\Phi(x,y) =
+P(x,y) \mathrm{d}x + Q(x,y) \mathrm{d}x
+\]</span></p>
+<p>于是 <span class="math inline">\(\Phi(x, y)\)</span> 的偏导数为</p>
+<p><span class="math display">\[
+\dfrac{\partial \Phi}{\partial x} = P(x,y),  \quad  
+\dfrac{\partial \Phi}{\partial x} = Q(x, y)
+\tag{2.2}
+\]</span></p>
+<p>我们把</p>
+<p><span class="math display">\[\Phi(x, y) = C \tag{2.3}\]</span></p>
+<p>称为方程 <span class="math inline">\((2.1)\)</span> 的一个
+<strong>通积分</strong>.</p>
+<p><font class="theoremId">定理2.1</font>   设函数 <span
+class="math inline">\(P(x, y)\)</span> 和 <span
+class="math inline">\(Q(x, y)\)</span> 在区域</p>
+<p><span class="math display">\[R: \quad \alpha\lt x \lt\beta, \quad
+\gamma\lt y \lt\delta\]</span></p>
+<p>上连续，且有连续的一阶偏导数 <span
+class="math inline">\(\frac{\partial P}{\partial y}\)</span> 与 <span
+class="math inline">\(\frac{\partial Q}{\partial x}\)</span>，则微分方程
+<span class="math inline">\((2.1)\)</span> 是恰当方程的 <span
+class="emphasis">充要条件</span> 是恒等式</p>
+<p><span class="math display">\[
+\frac{\partial P}{\partial y}(x, y) =
+\frac{\partial Q}{\partial x}(x, y)
+\tag{2.4}
+\]</span></p>
+<p>在 <span class="math inline">\(R\)</span> 内成立.</p>
+<p>在 <span class="math inline">\(R\)</span> 中任意取定一点 <span
+class="math inline">\((x_0, y_0)\)</span>，当 <span
+class="math inline">\((2.4)\)</span> 成立时，方程 <span
+class="math inline">\((2.1)\)</span> 的通积分为</p>
+<p><span class="math display">\[
+\int_{x_0}^{x} P(x, y) \mathrm{d}x + \int_{y_0}^{y} Q(x_0, y)
+\mathrm{d}x = C
+\tag{2.5}
+\]</span></p>
+<p>或者</p>
+<p><span class="math display">\[
+\int_{x_0}^{x} P(x, y_0) \mathrm{d}x + \int_{y_0}^{y} Q(x, y)
+\mathrm{d}x = C
+\tag{2.6}
+\]</span></p>
+<div class="note note-info">
+            <div class="noteTitle">证明思路：</div><p><span class="caseTypeId1">必要性：</span> 相对容易. 利用 <spanclass="math inline">\(\Phi(x,y)\)</span>的二阶混合偏导数相等，即可得证.</p><p><span class="math display">\[  \frac{\partial P}{\partial y} =  \frac{\partial^2 \Phi}{\partial x \partial y} =  \frac{\partial^2 \Phi}{\partial y \partial x} =  \frac{\partial Q}{\partial x}\]</span></p><p><span class="caseTypeId1">充分性：</span> 一句话，构造满足条件的<span class="math inline">\(\Phi(x,y)\)</span>.具体来说，构造的过程需要充分利用三个条件：</p><p><span class="math display">\[  \frac{\partial \Phi}{\partial x} = P(x, y), \quad  \frac{\partial \Phi}{\partial y} = Q(x, y), \quad  \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}.\]</span></p><p>最终即可构造出式 <span class="math inline">\((2.4)\)</span> 或式<span class="math inline">\((2.5)\)</span>. 两个式子本质上是等价的.</p>
+          </div>
+<div class="note note-warning">
+            <div class="noteTitle">知识体系的完善：</div><ol type="1"><li>如果 <span class="math inline">\(f(x, y)\)</span>的二阶混合偏导数<strong>连续</strong>，如何证明 <spanclass="math inline">\(\frac{\partial^2 f}{\partial x \partial y} =\frac{\partial^2 f}{\partial y \partial x}\)</span> ？</li><li>关于<strong>含参变量积分</strong>的求导问题.</li></ol><p>这些都是长期以来被我忽略的地方，有机会应当进一步学习巩固.如果后面在这两个问题上有了新的进展，希望可以回来更新一下进度.</p>
+          </div>
+<h3 id="变量分离的方程">2.2 变量分离的方程</h3>
 <p><strong>参考教材</strong>：<br />
 1. 常微分方程教程（第二版）. 丁同仁，李承治.</p>
 <style>
@@ -281,7 +330,14 @@ P(x,y),  \quad  \dfrac{\partial \Phi}{\partial x} = Q(x, y)
       font-weight: bold;
     }
 
-    .caseId {
+    .caseTypeId1 {
+      font-family: Tahoma, Verdana, Times, KaiTi, sans-serif;
+      font-weight: bold;
+    }
+
+    .caseTypeId2 {
+      font-family: Tahoma, Verdana, Times, KaiTi, sans-serif;
+      font-weight: bold;
       color: #00dd33;
     }
 
@@ -293,7 +349,7 @@ P(x,y),  \quad  \dfrac{\partial \Phi}{\partial x} = Q(x, y)
 
     .noteTitle {
       color: #444;
-      font-family: KaiTi, sans-serif;
+      font-family: Tahoma, Verdana, Times, KaiTi, sans-serif;
       font-size: 1.0em;
       font-weight: bold;
       // font-style: italic;
@@ -302,7 +358,7 @@ P(x,y),  \quad  \dfrac{\partial \Phi}{\partial x} = Q(x, y)
     .emphasis {
       color: #ff0000;
     }
-    */
+    
 
     /*
     .note {

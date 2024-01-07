@@ -14,18 +14,33 @@
   font-weight: bold;
 }
 
+/*
 .caseId {
+  font-family: sans-serif;
+  // font-weight: bold;
   color: #00dd33;
+}
+*/
+.caseTypeId1 {
+    font-family: Tahoma, Verdana, Times, KaiTi, sans-serif;
+    font-weight: bold;
+}
+
+.caseTypeId2 {
+    font-family: Tahoma, Verdana, Times, KaiTi, sans-serif;
+    font-weight: bold;
+    color: #00dd33;
 }
 
 .specialNote {
   color: #ff6600;
+  font-family: sans-serif;
   font-size: 0.8em; 
 }
 
 .noteTitle {
     color: #444;
-    font-family: KaiTi, sans-serif;
+    font-family: Tahoma, Verdana, Times, KaiTi, sans-serif;
     font-size: 1.0em;
     font-weight: bold;
     // font-style: italic;
