@@ -76,8 +76,8 @@ p.note::before {
   color: #f0ad4e;
 }
 .note-info {
-  background-color: #e4f2f5;
-  border-color: #428bca;
+  background-color: #f3f3ff;
+  border-color: #09f;
 }
 .note.note-info::before {
   content: "\f05a";
