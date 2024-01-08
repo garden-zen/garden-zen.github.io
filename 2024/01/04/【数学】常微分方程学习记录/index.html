@@ -168,7 +168,7 @@
         <span title="发表于 2024.01.04"><i class="far fa-calendar-alt"></i> 2024.01.04</span>
       </div>
       <div class="post-meta-item updated">
-        <span title="更新于 2024.01.08"><i class="far fa-calendar-check"></i> 2024.01.08</span>
+        <span title="更新于 2024.01.09"><i class="far fa-calendar-check"></i> 2024.01.09</span>
       </div>
      
     
@@ -183,10 +183,10 @@
     
      <div class="post-meta-item wordcount">
         
-          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.2k 字</span>
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.7k 字</span>
            
         
-          <i class="far fa-clock"></i> <span class="post-count">6 分钟</span>
+          <i class="far fa-clock"></i> <span class="post-count">8 分钟</span>
                                
       </div>
      
@@ -301,12 +301,62 @@ class="math inline">\((2.1)\)</span> 的通积分为</p>
 \tag{2.6}
 \]</span></p>
 <div class="note note-info">
-            <div class="noteTitle">证明思路：</div><p><span class="caseTypeId1">必要性：</span> 相对容易. 利用 <spanclass="math inline">\(\Phi(x,y)\)</span>的二阶混合偏导数相等，即可得证.</p><p><span class="math display">\[  \frac{\partial P}{\partial y} =  \frac{\partial^2 \Phi}{\partial x \partial y} =  \frac{\partial^2 \Phi}{\partial y \partial x} =  \frac{\partial Q}{\partial x}\]</span></p><p><span class="caseTypeId1">充分性：</span> 一句话，构造满足条件的<span class="math inline">\(\Phi(x,y)\)</span>.具体来说，构造的过程需要充分利用三个条件：</p><p><span class="math display">\[  \frac{\partial \Phi}{\partial x} = P(x, y), \quad  \frac{\partial \Phi}{\partial y} = Q(x, y), \quad  \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}.\]</span></p><p>最终即可构造出式 <span class="math inline">\((2.4)\)</span> 或式<span class="math inline">\((2.5)\)</span>. 两个式子本质上是等价的.</p>
+            <div class="noteTitle">证明思路：</div><p><span class="caseTypeId1">必要性：</span> 相对容易. 利用 <spanclass="math inline">\(\Phi(x,y)\)</span>的二阶混合偏导数相等，即可得证.</p><p><span class="math display">\[  \frac{\partial P}{\partial y} =  \frac{\partial^2 \Phi}{\partial x \partial y} =  \frac{\partial^2 \Phi}{\partial y \partial x} =  \frac{\partial Q}{\partial x}\]</span></p><p><span class="caseTypeId1">充分性：</span> 需要构造满足条件的 <spanclass="math inline">\(\Phi(x,y)\)</span>.具体来说，构造的过程需要充分利用 <spanclass="math inline">\((2.2)\)</span> 和 <spanclass="math inline">\((2.4)\)</span> 蕴含的三个条件：</p><p><span class="math display">\[  \frac{\partial \Phi}{\partial x} = P(x, y), \quad  \frac{\partial \Phi}{\partial y} = Q(x, y), \quad  \frac{\partial P}{\partial y} = \frac{\partial Q}{\partialx}.\]</span></p><p>最终即可构造出式 <span class="math inline">\((2.5)\)</span> 或式<span class="math inline">\((2.6)\)</span>. 两个式子本质上是等价的.</p>
           </div>
 <div class="note note-warning">
-            <div class="noteTitle">知识体系的完善：</div><ol type="1"><li>如果 <span class="math inline">\(f(x, y)\)</span>的二阶混合偏导数<strong>连续</strong>，如何证明 <spanclass="math inline">\(\frac{\partial^2 f}{\partial x \partial y} =\frac{\partial^2 f}{\partial y \partial x}\)</span> ？</li><li>关于<strong>含参变量积分</strong>的求导问题.</li></ol><p>这些都是长期以来被我忽略的地方，有机会应当进一步学习巩固.如果后面在这两个问题上有了新的进展，希望可以回来更新一下进度.</p>
+            <div class="noteTitle">知识体系的完善：</div><ol type="1"><li>如果 <span class="math inline">\(f(x, y)\)</span> 的二阶混合偏导数<strong>连续</strong>，如何证明 <spanclass="math inline">\(\frac{\partial^2 f}{\partial x \partial y} =\frac{\partial^2 f}{\partial y \partial x}\)</span> ？</li><li>关于 <strong>含参变量积分</strong> 的求导问题.</li></ol><p>这些都是长期以来被我忽略的地方，有机会应当进一步学习巩固.如果后面在这两个问题上有了新的进展，希望可以回来更新一下进度.</p>
           </div>
 <h3 id="变量分离的方程">2.2 变量分离的方程</h3>
+<p>在 <span class="math inline">\((2.1)\)</span> 中，令</p>
+<p><span class="math display">\[
+  P(x, y) = X(x)Y_1(y), \quad Q(x, y) = X_1(x)Y(y)
+\]</span></p>
+<p>就得到了 <strong>变量分离的方程</strong> 的一般形式：</p>
+<p><span class="math display">\[
+  X(x)Y_1(y) \, \mathrm{d}x + X_1(x)Y(y) \, \mathrm{d}y = 0 .
+  \tag{2.7}
+\]</span></p>
+<p>它的通积分是</p>
+<p><span class="math display">\[
+  \int \frac{X(x)}{X_1(x)} \, \mathrm{d}x +  
+  \int \frac{Y(y)}{Y_1(y)} \, \mathrm{d}y = C .
+  \tag{2.8}
+\]</span></p>
+<p>如果有特解不在 <span class="math inline">\((2.8)\)</span>
+式表示范围内，还要补上如下形式的特解：</p>
+<p><span class="math display">\[
+\begin{aligned}
+  x = a_i, \quad (i = 1, 2, \cdots),\\
+  y = b_i, \quad (i = 1, 2, \cdots).
+\end{aligned}
+\]</span></p>
+<p>其中， <span class="math inline">\(a_i\)</span> 和 <span
+class="math inline">\(b_i\)</span> 分别是 <span
+class="math inline">\(X_1(x) = 0\)</span> 和 <span
+class="math inline">\(Y_1(y) = 0\)</span> 的根.</p>
+<div class="note note-info">
+            <div class="noteTitle">示例：</div><p>微分方程 <span class="math inline">\((x^2 + 1)(y^2 - 1) \,\mathrm{d}x + xy \, \mathrm{d}y = 0\)</span> 的通积分为：</p><p><span class="math display">\[y^2 = 1 + C\frac{e^{-x^2}}{x^2}, \quad(C\text{为任意常数});\]</span></p><p>还有一个特解 <span class="math inline">\(x = 0\)</span>.</p>
+          </div>
+<h3 id="一阶线性方程">2.3 一阶线性方程</h3>
+<p>一阶线性方程</p>
+<p><strong>齐次</strong> 线性方程</p>
+<p><span class="math display">\[\frac{\mathrm{d}y}{\mathrm{d}x} + p(x)y
+= 0 \tag{2.9}\]</span></p>
+<p>的解是</p>
+<p><span class="math display">\[y = C\mathrm{e}^{-\int p(x)
+\mathrm{d}x}. \tag{2.10}\]</span></p>
+<p><strong>非齐次</strong> 线性方程</p>
+<p><span class="math display">\[\frac{\mathrm{d}y}{\mathrm{d}x} + p(x)y
+= q(x) \tag{2.11}\]</span></p>
+<p>的通解是</p>
+<p><span class="math display">\[
+  y = \mathrm{e}^{-\int p(x) \mathrm{d}x} \left( C +
+      \int q(x) \mathrm{e}^{\int p(x) \mathrm{d}x} \mathrm{d}x \right).
+  \tag{2.12}
+\]</span></p>
+<div class="note note-info">
+            <div class="noteTitle">关于 <span class="math inline">\(\small{(2.12)}\)</span> 式的推导</div><p>不同于有的教材所采用的比较 abrupt的常数变易法，这里对它的处理是，通过引入积分因子 <spanclass="math inline">\(\mu(x) = \mathrm{e}^{\int p(x)\mathrm{d}x}\)</span>，凑成全微分的方式，比较自然地得出方程 <spanclass="math inline">\((2.11)\)</span> 的通解.这里列出其中的关键步骤：</p><p><span class="math display">\[  \def \d {\mathrm{d}}  \def \e {\mathrm{e}}  \begin{aligned}    &amp; \quad \d y + p(x)y \, \d x = q(x) \d x \\    \\    \Rightarrow &amp; \; \e^{\int p(x) \mathrm{d}x} \mathrm{d}y+  \e^{\int p(x) \d x} p(x)y \, \d x = \e^{\int p(x) \d x} q(x) \d x \\    \\    \Rightarrow &amp; \; \d(\mathrm{e}^{\int p(x) \mathrm{d}x}y) = \d\int q(x) \e^{\int p(x) \mathrm{d}x} \mathrm{d}x  \end{aligned} \]</span></p>
+          </div>
 <p><strong>参考教材</strong>：<br />
 1. 常微分方程教程（第二版）. 丁同仁，李承治.</p>
 <style>
