@@ -2,31 +2,62 @@
         
 }
 
+/* 定义 */
 .definitionId {
     color: #0099ff;
     font-family: sans-serif;
     font-weight: bold;
 }
 
+/* 定理 */
 .theoremId {
-  color: #ff00ff;
-  font-family: sans-serif;
-  font-weight: bold;
+    color: #ff00ff;
+    font-family: sans-serif;
+    font-weight: bold;
 }
 
-/*
-.caseId {
-  font-family: sans-serif;
-  // font-weight: bold;
-  color: #00dd33;
+/* 性质 */
+.propertyId {
+    color: #40f;
+    font-family: sans-serif;
+    font-weight: bold;
 }
-*/
-.caseTypeId1 {
+
+/* 推论 */
+.corollaryId {
+    color: orange;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+/* 引理 */
+.lemmaId {
+    color: #009000; // green
+    font-family: san-serif;
+    font-weight: bold;
+}
+
+/* 公理 */
+.axiomId {
+    color: red;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+/* 命题 */
+.propositionId {
+    color: #000;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+
+.commonCaseId {
     font-family: Tahoma, Verdana, Times, KaiTi, sans-serif;
     font-weight: bold;
 }
 
-.caseTypeId2 {
+.greenCaseId {
     font-family: Tahoma, Verdana, Times, KaiTi, sans-serif;
     font-weight: bold;
     color: #00dd33;

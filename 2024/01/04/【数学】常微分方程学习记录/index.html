@@ -168,7 +168,7 @@
         <span title="发表于 2024.01.04"><i class="far fa-calendar-alt"></i> 2024.01.04</span>
       </div>
       <div class="post-meta-item updated">
-        <span title="更新于 2024.01.09"><i class="far fa-calendar-check"></i> 2024.01.09</span>
+        <span title="更新于 2024.01.10"><i class="far fa-calendar-check"></i> 2024.01.10</span>
       </div>
      
     
@@ -183,10 +183,10 @@
     
      <div class="post-meta-item wordcount">
         
-          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.7k 字</span>
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">2.3k 字</span>
            
         
-          <i class="far fa-clock"></i> <span class="post-count">8 分钟</span>
+          <i class="far fa-clock"></i> <span class="post-count">10 分钟</span>
                                
       </div>
      
@@ -278,7 +278,7 @@ class="math inline">\(Q(x, y)\)</span> 在区域</p>
 class="math inline">\(\frac{\partial P}{\partial y}\)</span> 与 <span
 class="math inline">\(\frac{\partial Q}{\partial x}\)</span>，则微分方程
 <span class="math inline">\((2.1)\)</span> 是恰当方程的 <span
-class="emphasis">充要条件</span> 是恒等式</p>
+class="lightEmphasis">充要条件</span> 是恒等式</p>
 <p><span class="math display">\[
 \frac{\partial P}{\partial y}(x, y) =
 \frac{\partial Q}{\partial x}(x, y)
@@ -301,7 +301,7 @@ class="math inline">\((2.1)\)</span> 的通积分为</p>
 \tag{2.6}
 \]</span></p>
 <div class="note note-info">
-            <div class="noteTitle">证明思路：</div><p><span class="caseTypeId1">必要性：</span> 相对容易. 利用 <spanclass="math inline">\(\Phi(x,y)\)</span>的二阶混合偏导数相等，即可得证.</p><p><span class="math display">\[  \frac{\partial P}{\partial y} =  \frac{\partial^2 \Phi}{\partial x \partial y} =  \frac{\partial^2 \Phi}{\partial y \partial x} =  \frac{\partial Q}{\partial x}\]</span></p><p><span class="caseTypeId1">充分性：</span> 需要构造满足条件的 <spanclass="math inline">\(\Phi(x,y)\)</span>.具体来说，构造的过程需要充分利用 <spanclass="math inline">\((2.2)\)</span> 和 <spanclass="math inline">\((2.4)\)</span> 蕴含的三个条件：</p><p><span class="math display">\[  \frac{\partial \Phi}{\partial x} = P(x, y), \quad  \frac{\partial \Phi}{\partial y} = Q(x, y), \quad  \frac{\partial P}{\partial y} = \frac{\partial Q}{\partialx}.\]</span></p><p>最终即可构造出式 <span class="math inline">\((2.5)\)</span> 或式<span class="math inline">\((2.6)\)</span>. 两个式子本质上是等价的.</p>
+            <div class="noteTitle">证明思路：</div><p><span class="commonCaseId">必要性：</span> 相对容易. 利用 <spanclass="math inline">\(\Phi(x,y)\)</span>的二阶混合偏导数相等，即可得证.</p><p><span class="math display">\[  \frac{\partial P}{\partial y} =  \frac{\partial^2 \Phi}{\partial x \partial y} =  \frac{\partial^2 \Phi}{\partial y \partial x} =  \frac{\partial Q}{\partial x}\]</span></p><p><span class="commonCaseId">充分性：</span> 需要构造满足条件的 <spanclass="math inline">\(\Phi(x,y)\)</span>.具体来说，构造的过程需要充分利用 <spanclass="math inline">\((2.2)\)</span> 和 <spanclass="math inline">\((2.4)\)</span> 蕴含的三个条件：</p><p><span class="math display">\[  \frac{\partial \Phi}{\partial x} = P(x, y), \quad  \frac{\partial \Phi}{\partial y} = Q(x, y), \quad  \frac{\partial P}{\partial y} = \frac{\partial Q}{\partialx}.\]</span></p><p>最终即可构造出式 <span class="math inline">\((2.5)\)</span> 或式<span class="math inline">\((2.6)\)</span>. 两个式子本质上是等价的.</p>
           </div>
 <div class="note note-warning">
             <div class="noteTitle">知识体系的完善：</div><ol type="1"><li>如果 <span class="math inline">\(f(x, y)\)</span> 的二阶混合偏导数<strong>连续</strong>，如何证明 <spanclass="math inline">\(\frac{\partial^2 f}{\partial x \partial y} =\frac{\partial^2 f}{\partial y \partial x}\)</span> ？</li><li>关于 <strong>含参变量积分</strong> 的求导问题.</li></ol><p>这些都是长期以来被我忽略的地方，有机会应当进一步学习巩固.如果后面在这两个问题上有了新的进展，希望可以回来更新一下进度.</p>
@@ -355,8 +355,41 @@ class="math inline">\(Y_1(y) = 0\)</span> 的根.</p>
   \tag{2.12}
 \]</span></p>
 <div class="note note-info">
-            <div class="noteTitle">关于 <span class="math inline">\(\small{(2.12)}\)</span> 式的推导</div><p>不同于有的教材所采用的比较 abrupt的常数变易法，这里对它的处理是，通过引入积分因子 <spanclass="math inline">\(\mu(x) = \mathrm{e}^{\int p(x)\mathrm{d}x}\)</span>，凑成全微分的方式，比较自然地得出方程 <spanclass="math inline">\((2.11)\)</span> 的通解.这里列出其中的关键步骤：</p><p><span class="math display">\[  \def \d {\mathrm{d}}  \def \e {\mathrm{e}}  \begin{aligned}    &amp; \quad \d y + p(x)y \, \d x = q(x) \d x \\    \\    \Rightarrow &amp; \; \e^{\int p(x) \mathrm{d}x} \mathrm{d}y+  \e^{\int p(x) \d x} p(x)y \, \d x = \e^{\int p(x) \d x} q(x) \d x \\    \\    \Rightarrow &amp; \; \d(\mathrm{e}^{\int p(x) \mathrm{d}x}y) = \d\int q(x) \e^{\int p(x) \mathrm{d}x} \mathrm{d}x  \end{aligned} \]</span></p><p>这种方法叫作 <strong>积分因子法</strong>.</p>
+            <div class="noteTitle">关于 <span class="math inline">\(\small{(2.12)}\)</span> 式的推导</div><p>不同于有的教材所采用的比较 abrupt的常数变易法，这里对它的处理是，通过引入积分因子 <spanclass="math inline">\(\mu(x) = \mathrm{e}^{\int p(x)\mathrm{d}x}\)</span>，凑成全微分的方式，比较自然地得出方程 <spanclass="math inline">\((2.11)\)</span> 的通解.这里列出其中的关键步骤：</p><p><span class="math display">\[  \def \d {\mathrm{d}}  \def \e {\mathrm{e}}  \begin{aligned}    &amp; \quad \d y + p(x)y \, \d x = q(x) \d x \\    \\    \Rightarrow &amp; \; \e^{\int p(x) \d x} \d y +  \e^{\int p(x) \d x}p(x)y \, \d x = \e^{\int p(x) \d x} q(x) \d x \\    \\    \Rightarrow &amp; \; \d(\e^{\int p(x) \d x}y) = \d \int q(x)\e^{\int p(x) \d x} \d x  \end{aligned} \]</span></p><p>这种方法叫作 <strong>积分因子法</strong>.</p>
           </div>
+<p>接下来介绍一阶线性微分方程的五个性质.</p>
+<div class="note note-default">
+            <div class="noteTitle">说明</div><p>简便起见，如无特别说明，在下述的五个性质中，<strong>齐次线性方程</strong>均指 <strong>方程 <span class="math inline">\((2.9)\)</span></strong>对应的方程，<strong>非齐次线性方程</strong> 均指 <strong>方程 <spanclass="math inline">\((2.11)\)</span></strong> 对应的方程，线性方程是<strong>方程 <span class="math inline">\((2.9)\)</span></strong> 和<strong>方程 <span class="math inline">\((2.11)\)</span></strong>的统称.</p>
+          </div>
+<p><span class="propertyId">性质1</span>  
+齐次线性方程的解或者恒等于零，或者恒不等于零.</p>
+<p><span class="propertyId">性质2</span>  
+线性方程的解是整体存在的，即方程 <span
+class="math inline">\((2.9)\)</span> 和方程 <span
+class="math inline">\((2.11)\)</span> 的任一解都在 <span
+class="math inline">\(p(x)\)</span> 和 <span
+class="math inline">\(q(x)\)</span> 有定义且连续的整个区间 <span
+class="math inline">\(I\)</span> 上存在.</p>
+<p><span class="propertyId">性质3</span>  
+齐次线性方程的任何解的线性组合仍是它的解；齐次线性方程的任一解与非齐次线性方程的任一解之和是非齐次线性方程的解；非齐次线性方程的任意两解之差必是相应的齐次线性方程的解.</p>
+<p><span class="propertyId">性质4</span>  
+非齐次线性方程的任一解与相应的齐次线性方程的通解之和构成非齐次线性方程的解.</p>
+<p><span class="propertyId">性质5</span>  
+线性方程的初值问题的解存在且唯一.</p>
+<div class="note note-info">
+            <div class="noteTitle">我的理解</div><p><span class="commonCaseId">性质 <span class="math inline">\(\small1\)</span> ：</span> 观察式 <spanclass="math inline">\((2.10)\)</span>.<br />  1. <span class="math inline">\(C = 0\)</span>，<spanclass="math inline">\(y \equiv 0\)</span>；<br />  2. <span class="math inline">\(C \neq 0\)</span>，<spanclass="math inline">\(y\)</span> 恒不为 <spanclass="math inline">\(0\)</span>.<br /><del>不知为何，书中的证明用到了一个比较复杂的习题中的结论，感觉不是很有必要.</del></p><p><span class="commonCaseId">性质 <span class="math inline">\(\small2\)</span> ：</span> 既然 <span class="math inline">\(p(x)\)</span> 和<span class="math inline">\(q(x)\)</span> 在区间 <spanclass="math inline">\(I\)</span> 上存在且连续，那么通解 <spanclass="math inline">\((2.12)\)</span> 在 <spanclass="math inline">\(I\)</span> 上自然也是存在的.</p><p><span class="commonCaseId">性质 <span class="math inline">\(\small3-4\)</span> ：</span> 较简单，直接 Skip.</p><p><span class="commonCaseId">性质 <span class="math inline">\(\small5\)</span> ：</span><br />存在性显然，关键是唯一性的理解.<br /><u>书里的思路</u>：证明方程的两个解相等，得到唯一性.<br /><u>我的想法</u>：把初值 <span class="math inline">\((x_0, y_0)\)</span>代入通解 <span class="math inline">\((2.12)\)</span>，得到一个关于 <spanclass="math inline">\(C\)</span> 一次方程. <spanclass="math inline">\(C\)</span> 的系数 <spanclass="math inline">\(\mathrm{e}^{-\int p(x) \mathrm{d}x}\)</span> 不为<span class="math inline">\(0\)</span>. 于是，可以确定唯一的 <spanclass="math inline">\(C\)</span>，微分方程的解唯一.</p>
+          </div>
+<!--
+
+<div class="definitionId">定义</div>
+<div class="theoremId">定理</div>
+<div class="propertyId">性质</div>
+<div class="corollaryId">推论</div>
+<div class="lemmaId">引理</div>
+<div class="axiomId">公理</div>
+<div class="propositionId">命题</div>
+
+-->
 <p><strong>参考教材</strong>：<br />
 1. 常微分方程教程（第二版）. 丁同仁，李承治.</p>
 <style>
@@ -365,27 +398,61 @@ class="math inline">\(Y_1(y) = 0\)</span> 的根.</p>
       font-family: sans-serif;
     }
   
-    * {
-        
-    }
-
+    /* 定义 */
     .definitionId {
-        color: #0099ff;
-        font-weight: bold;
+      color: #0099ff;
+      font-family: sans-serif;
+      font-weight: bold;
     }
 
+    /* 定理 */
     .theoremId {
       color: #ff00ff;
       font-family: sans-serif;
       font-weight: bold;
     }
 
-    .caseTypeId1 {
+    /* 性质 */
+    .propertyId {
+      color: #40f;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    /* 推论 */
+    .corollaryId {
+      color: orange;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    /* 引理 */
+    .lemmaId {
+      color: #009000; // green
+      font-family: san-serif;
+      font-weight: bold;
+    }
+
+    /* 公理 */
+    .axiomId {
+      color: red;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    /* 命题 */
+    .propositionId {
+      color: #000;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    .commonCaseId {
       font-family: Tahoma, Verdana, Times, KaiTi, sans-serif;
       font-weight: bold;
     }
 
-    .caseTypeId2 {
+    .greenCaseId {
       font-family: Tahoma, Verdana, Times, KaiTi, sans-serif;
       font-weight: bold;
       color: #00dd33;
@@ -405,8 +472,13 @@ class="math inline">\(Y_1(y) = 0\)</span> 的根.</p>
       // font-style: italic;
     }
 
+    .lightEmphasis {
+      color: #ff0000;
+    }
+
     .emphasis {
       color: #ff0000;
+      font-weight: bold;
     }
     
 
