@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <meta name="author" content="Garden-Zen">
+  
+  
+  
+  
+  
+    <link rel="alternate" href="/atom.xml " title="Zen 花园" type="application/atom+xml">
+  
+
+  
+
+  <title>【算法题解】洛谷 P2106 Sam数 | Zen 花园</title>
+
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="/css/style.css" >
+  <link rel="stylesheet" href="/css/partial/dark.css" >
+
+  
+  
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/partial/highlight/atom-one-light.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/iconfont.css">
+    
+      <link rel="stylesheet" href="/css/css_garden_zen/mathnote_style.css">
+    
+  
+
+  
+    <script src="/js/todark.js"></script>
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+</html>
+    
+<div class="nav index" style="height: 60px;">
+    <div class="title animated fadeInDown">
+        <div class="layui-container">
+                <div class="nav-title"><a href="/" title="Zen 花园">Zen 花园</a></div>
+            <div class="nav-list">
+                <button> <span class=""></span><span style="display: block;"></span><span class=""></span> </button>
+                <ul class="layui-nav" lay-filter="">
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/ ">
+                            <i class=" fab fa-fort-awesome " style="color: rgb(255 107 107);"></i>
+                            <span class="layui-nav-item-name">首页</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/archives/ ">
+                            <i class=" fas fa-archive " style="color: rgb(10 189 227);"></i>
+                            <span class="layui-nav-item-name">文章</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/tags/ ">
+                            <i class=" fas fa-hashtag " style="color: rgb(254 202 87);"></i>
+                            <span class="layui-nav-item-name">标签</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/categories ">
+                            <i class=" far fa-folder-open " style="color: rgb(29 209 161);"></i>
+                            <span class="layui-nav-item-name">分类</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/shuoshuo/ ">
+                            <i class=" fas fa-coffee " style="color:#31c7c1;"></i>
+                            <span class="layui-nav-item-name">说说</span>
+                        </a>
+                    </li>
+                    
+                    
+                        <li class="layui-nav-item" id="btn-toggle-dark">🌙</li>
+                    
+                    <span class="layui-nav-bar" style="left: 342px; top: 78px; width: 0px; opacity: 0;"></span>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<header class="header">
+        
+            <div class="logo">
+                    <a href="/"><img src="/img/avatar0.jpg" onerror=this.onerror=null,this.src="/img/loading.gif"></a>
+            </div>
+         
+    </div>
+     
+    
+            <div class="social">
+                
+                        <a class="social-icon" href="https://github.com/garden-zen" target="_blank" title="Github">
+                            <i class="iconfont icon-GitHub" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="mailto:2799597049@qq.com" target="_blank" title="Email">
+                            <i class="iconfont icon-email" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="https://space.bilibili.com/471787443" target="_blank" title="Bilibili">
+                            <i class="iconfont icon-bilibili" aria-hidden="true"></i>
+                          </a>
+                 
+            </div>
+     
+</header>
+
+    
+<article id="post">
+  <div class="post-title">【算法题解】洛谷 P2106 Sam数</div>
+  
+<div class="post-meta">
+    
+    
+      <div class="post-meta-item date">
+        <span title="发表于 2024.01.11"><i class="far fa-calendar-alt"></i> 2024.01.11</span>
+      </div>
+      <div class="post-meta-item updated">
+        <span title="更新于 2024.01.11"><i class="far fa-calendar-check"></i> 2024.01.11</span>
+      </div>
+     
+    
+      <div class="post-meta-item categories">
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E4%BC%98%E5%8C%96/">矩阵快速幂优化</a>
+        
+      </div>
+     
+    
+     <div class="post-meta-item wordcount">
+        
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">891 字</span>
+           
+        
+          <i class="far fa-clock"></i> <span class="post-count">4 分钟</span>
+                               
+      </div>
+     
+</div>
+
+
+  
+  <div class="content">
+        <div><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2106"
+title="点击跳转题目页面">P2106 Sam数</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>Sam 数相邻两位的数字之差不超过 <span
+class="math inline">\(2\)</span>. 我们把 <span
+class="math inline">\(k\)</span> 位 Sam 数称为 <span
+class="math inline">\(k\)</span> 阶 Sam 数. 第 <span
+class="math inline">\(k\)</span> 阶 Sam 数一共有多少个？</p>
+<h2 id="输入格式">输入格式</h2>
+<p>一行，包括一个整数 <span class="math inline">\(k \; (1 \leq k \leq
+10^{18})\)</span>.</p>
+<h2 id="输出格式">输出格式</h2>
+<p>一个整数 <span class="math inline">\(\text{ans}\)</span>，表示 <span
+class="math inline">\(k\)</span> 阶 Sam 数的个数. <span
+class="math inline">\(\text{ans}\)</span> 需对 <span
+class="math inline">\(1000000007\)</span> 取模.</p>
+<h2 id="题解">题解</h2>
+<p>我们用 <span class="math inline">\(f_{i, k}\)</span> 表示以数字 <span
+class="math inline">\(i \; (i = 0, 1, 2, \cdots, 9)\)</span> 结尾的
+<span class="math inline">\(k\)</span> 阶 Sam 数的个数. 第 <span
+class="math inline">\(k\)</span> 阶 Sam 数的总数为：</p>
+<p><span class="math display">\[
+\text{ans} =
+\left( \sum_{i = 0}^{9} f_{i,k} \right) \bmod 1000000007.
+\]</span></p>
+<p><span class="math inline">\(k \geq 2\)</span> 时，可以得到关于 <span
+class="math inline">\(f_{i, k}\)</span> 的一般递推关系式如下：</p>
+<p><span class="math display">\[
+f_{i, k} = f_{i-2, k-1} + f_{i-1, k-1} + f_{i, k-1} + f_{i+1, k-1} +
+f_{i+2, k-1}.
+\]</span></p>
+<p>由于 <span class="math inline">\(i\)</span> 取 <span
+class="math inline">\(0-9\)</span>，因此可以得到 <span
+class="math inline">\(9\)</span> 个递推式.
+把它们写成矩阵的递推式的形式如下:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+    f_{0, k} \\ f_{1, k} \\ f_{2, k} \\ \vdots \\ f_{9, k}
+\end{pmatrix} =
+\begin{pmatrix}
+    1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
+    1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \\
+    1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 0 \\
+    \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp;
+\ddots &amp; \vdots \\
+    0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 \\
+\end{pmatrix}
+\begin{pmatrix}
+    f_{0, k - 1} \\ f_{1, k - 1} \\ f_{2, k - 1} \\ \vdots \\ f_{9, k -
+1}
+\end{pmatrix}
+\]</span></p>
+<p>我们把上式记作 <span class="math inline">\(\mathbf{f_k} = \mathbf{A
+f_{k-1}}\)</span>. 其中，<span class="math inline">\(\bf{A}\)</span> 是
+<span class="math inline">\(10 \times 10\)</span> 的矩阵. 于是，有</p>
+<p><span class="math display">\[\mathbf{f_k = A^{k-1}
+f_{1}}.\]</span></p>
+<p><span class="math inline">\(k \geq 2\)</span> 时，<span
+class="math inline">\(k\)</span> 阶 Sam 数不能以 <span
+class="math inline">\(0\)</span> 打头，于是在 <span
+class="math inline">\(\bf{f_1}\)</span> 中，</p>
+<p><span class="math display">\[
+\begin{aligned}
+    f_{0,1} = 0, \quad f_{i,1} = 1 \;\; (i = 1, 2, \cdots, 9).
+\end{aligned}
+\]</span></p>
+<p>至此，递推式中的初值确定下来了. <span
+class="math inline">\(k\)</span> 最大可达 <span
+class="math inline">\(10^{18}\)</span>，为了降低时间复杂度，可以使用
+<strong>矩阵快速幂</strong> 加速递推.</p>
+<p><span class="math inline">\(k = 1\)</span> 时，Sam 数可以以 <span
+class="math inline">\(0\)</span>
+打头，上述递推式失效，直接进行特判即可.</p>
+<p>综上，总的时间复杂度为 <span class="math inline">\(O(n^3\log
+k)\)</span>. 其中，<span class="math inline">\(n\)</span> 表示矩阵 <span
+class="math inline">\(\mathbf{A}\)</span> 的阶数.</p>
+<p>附上 AC 的代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> LL = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Matrix</span> &#123;</span><br><span class="line">    <span class="type">int</span> a[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">Matrix</span>() &#123;</span><br><span class="line">        <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="keyword">sizeof</span> a);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Matrix <span class="keyword">operator</span> * (<span class="type">const</span> Matrix&amp; t) &#123;</span><br><span class="line">        Matrix res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i)</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; ++j) &#123;</span><br><span class="line">                LL sum = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; <span class="number">10</span>; ++k)</span><br><span class="line">                    sum += (LL)a[i][k] * t.a[k][j] % mod;</span><br><span class="line">                res.a[i][j] = sum % mod;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">Matrix <span class="title">quickPow</span><span class="params">(Matrix mat, LL k)</span> </span>&#123;</span><br><span class="line">    Matrix res, tmp;</span><br><span class="line">    tmp = mat;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i)</span><br><span class="line">        res.a[i][i] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (k &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k &amp; <span class="number">1</span>)  res = res * tmp;</span><br><span class="line">        tmp = tmp * tmp;</span><br><span class="line">        k &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    LL k, num[<span class="number">10</span>]&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    Matrix mat;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;k);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (k == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;10&quot;</span>); <span class="comment">// 特判</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; ++i)</span><br><span class="line">        num[i] = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; ++j)</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">abs</span>(i - j) &lt;= <span class="number">2</span>) mat.a[i][j] = <span class="number">1</span>;</span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    Matrix t = <span class="built_in">quickPow</span>(mat, k - <span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    LL ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; ++j)</span><br><span class="line">            ans += num[i] * t.a[i][j];</span><br><span class="line">    &#125;</span><br><span class="line">    ans %= mod;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结">总结</h2>
+<p>整体来看，本题有两大易错点：</p>
+<ol type="1">
+<li><span class="math inline">\(k\)</span> 最大取 <span
+class="math inline">\(10^{18}\)</span>，应当使用长整型
+<code>long long</code> 存储.<br />
+</li>
+<li>注意对 <span class="math inline">\(k = 1\)</span>
+的边界情况进行特判. 这是比较容易忽略的.</li>
+</ol>
+<p>严格来说，这题并不能算作动态规划，而仅仅是一种递推.
+但是不少人习惯上喜欢把递推说成动态规划.
+因此这里比较勉强地给它打上了“动态规划”的标签.</p>
+<style>
+    strong {
+        font-family: san-serif;
+    }
+</style>
+</div>
+        
+          <div class="post-copyright">
+                  <div class="copyright-item">
+                      <span> 作者: Garden-Zen</span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> 链接: <a href="https://garden-zen.github.io/2024/01/11/%E3%80%90%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3%E3%80%91%E6%B4%9B%E8%B0%B7-P2106-Sam%E6%95%B0/">https://garden-zen.github.io/2024/01/11/%E3%80%90%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3%E3%80%91%E6%B4%9B%E8%B0%B7-P2106-Sam%E6%95%B0/</a></span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> 声明: 本博客所有文章除特别声明外，均采用许可协议 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 转载请注明出处！</span>
+                  </div>
+          </div>
+        
+  </div>
+
+    <div class="post_tags">
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E7%AE%97%E6%B3%95/" class="tag">算法</a>
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="tag">动态规划</a>
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/" class="tag">矩阵快速幂</a>
+      
+    </div>
+    <div class="post-nav">
+      
+      
+        <div class="post-nav-next post-nav-item">
+            <a href="/2024/01/10/%E3%80%90%E8%B5%84%E6%BA%90%E3%80%91%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E3%80%81%E6%9C%89%E8%B6%A3%E3%80%81%E5%80%BC%E5%BE%97%E6%94%B6%E8%97%8F%E7%9A%84%E7%BD%91%E5%9D%80/" >【资源】一些有用、有趣、值得收藏的网址<i class="fa fa-chevron-right"></i></a>
+        </div>
+      
+    </div>
+      
+
+
+
+  <div id="valine"></div>
+  <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  <script>
+        new Valine({
+          el: '#valine',
+          appId: "",
+          appKey: "",
+          avatar: "mm",
+          lang: "",
+          meta: 'nick,mail,link'.split(','),
+          requiredFields: 'nick,mail'.split(','),
+          placeholder: "评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒",
+          pageSize:'10',
+          recordIP: 'false',
+          serverURLs: "",
+          emojiCDN: "",
+          enableQQ: "true",
+        });
+  </script>
+  
+
+</article>
+
+    
+<a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    
+
+
+
+
+
+
+    
+<div id="bottom-outer">
+    <div id="bottom-inner">
+        © 2024 <i class="fa fa-heart" id="heart"></i> Garden-Zen 
+        <br>
+        Powered by 
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo</a> | Theme is <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank/">blank</a>
+        
+          <div class="icp-info">
+            
+          <a href="" target="_blank"> </a>
+        </div>
+        
+    </div>  
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/layui-src@2.5.5/dist/layui.min.js"></script>
+
+
+
+  
+    <script src="/js/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  
+
+ 
+
+
+
+  <script>
+    window.lazyLoadOptions = {
+      elements_selector: 'img',
+      threshold: 0
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>   
+  
+
+
+  <script>
+    var images = $('img').not('.nav-logo img').not('.card img').not($('a>img')).not('.reward-content img')
+    images.each(function (i, o) {
+      var lazyloadSrc = $(o).attr('data-src') ? $(o).attr('data-src') : $(o).attr('src')
+      $(o).wrap(`<a href="${lazyloadSrc}" data-fancybox="group" data-caption="${$(o).attr('alt')}" class="fancybox"></a>`)
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+  <script>
+        $().fancybox({
+      selector: '[data-fancybox]',
+      loop: true,
+      transitionEffect: 'slide',
+      protect: true,
+      buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
+    })
+  </script>   
+  
+
+
+  <script>
+  if (!window.MathJax) {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]],
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+              const display = !!node.type.match(/; *mode=display/)
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+              const text = document.createTextNode('')
+              node.parentNode.replaceChild(text, node)
+              math.start = {node: text, delim: '', n: 0}
+              math.end = {node: text, delim: '', n: 0}
+              doc.math.push(math)
+            }
+          }, '']
+        }
+      }
+    }
+    
+    var script = document.createElement('script')
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"
+    script.id = 'MathJax-script'
+    script.async = true
+    document.head.appendChild(script)
+  } else {
+    MathJax.startup.document.state(0)
+    MathJax.texReset()
+    MathJax.typeset()
+  }
+  </script>
+  
+
+
+  
+<script>
+if (document.getElementsByClassName('mermaid').length) {
+    if (window.mermaidJsLoad) mermaid.init()
+    else {
+      $.getScript("https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js", function () {
+        window.mermaidJsLoad = true
+        mermaid.initialize({
+          theme: "default",
+        })
+      })
+    }
+  }
+  </script>
+  
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script>
+  
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js"></script>
+<script>
+!function (e, t, a) {
+  var initCopyCode = function(){
+    var copyHtml = '';
+    copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+    copyHtml += '  <i class="fa fa-clipboard"></i><span>复制</span>';
+    copyHtml += '</button>';
+    $(".highlight .code pre").before(copyHtml);
+    new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+  }
+  initCopyCode();
+}(window, document);
+</script>  
+  
+
+<script>
+  var btntop = $('#gotop');
+  btntop.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
+  });
+
+  var $table = $('.content table').not($('figure.highlight > table'))
+$table.each(function () {
+  $(this).wrap('<div class="table-wrap"></div>')
+})
+</script>
+
+
+
+</html>
