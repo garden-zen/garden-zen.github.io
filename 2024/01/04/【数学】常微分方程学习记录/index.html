@@ -168,7 +168,7 @@
         <span title="发表于 2024.01.04"><i class="far fa-calendar-alt"></i> 2024.01.04</span>
       </div>
       <div class="post-meta-item updated">
-        <span title="更新于 2024.01.11"><i class="far fa-calendar-check"></i> 2024.01.11</span>
+        <span title="更新于 2024.01.13"><i class="far fa-calendar-check"></i> 2024.01.13</span>
       </div>
      
     
@@ -183,10 +183,10 @@
     
      <div class="post-meta-item wordcount">
         
-          <i class="fas fa-pencil-alt"></i> <span class="post-count">2.7k 字</span>
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">2.8k 字</span>
            
         
-          <i class="far fa-clock"></i> <span class="post-count">12 分钟</span>
+          <i class="far fa-clock"></i> <span class="post-count">13 分钟</span>
                                
       </div>
      
@@ -411,6 +411,22 @@ class="lightEmphasis">变量代换</span>：</p>
             <div class="noteTitle">一个重要的例子</div><p>设 <span class="math inline">\(a, b, c, m, n\)</span> 和 <spanclass="math inline">\(l\)</span> 为常数，讨论形如</p><p><span class="math display">\[  \frac{\mathrm{d}y}{\mathrm{d}x} =  f \left( \frac{ax + by + c}{mx + ny + l} \right)  \tag{2.17} \]</span></p><p>的方程的求解法.</p><p><br /> <strong>讨论：</strong></p><p>当 <span class="math inline">\(c = l = 0\)</span> 时，方程 <spanclass="math inline">\((2.17)\)</span> 是齐次方程.<br />当 <span class="math inline">\(c, l\)</span>不全为零时，分两种情形讨论：</p><p><span class="math inline">\((1) \quad \Delta = an - bm \neq0.\)</span><br />选取常数 <span class="math inline">\(\alpha\)</span> 和 <spanclass="math inline">\(\beta\)</span>，使得</p><p><span class="math display">\[  \begin{cases}    a\alpha + b\beta + c = 0, \\    m\alpha + n\beta + l = 0.  \end{cases} \]</span></p><p>然后作平移变换：</p><p><span class="math display">\[x = \xi + \alpha, \quad y = \eta +\beta,\]</span></p><p>则原方程可化为如下的齐次方程</p><p><span class="math display">\[  \frac{\mathrm{d} \eta}{\mathrm{d} \xi} =  f \left( \frac{a\xi + b\eta}{m\xi + n\eta} \right).\]</span></p><p><span class="math inline">\((2) \quad \Delta = an - bm =0.\)</span><br />此时记 <span class="math inline">\(m/a = n/b =\lambda\)</span>，则原方程化为</p><p><span class="math display">\[  \frac{\mathrm{d}y}{\mathrm{d}x} =  f \left( \frac{ax + by + c}{\lambda (ax + by) + l} \right)\]</span></p><p>令 <span class="math inline">\(v = ax +by\)</span>，于是方程可转化成一个变量分离的方程</p><p><span class="math display">\[  \frac{\mathrm{d}v}{\mathrm{d}x} = a +  b f \left( \frac{v + c}{\lambda v + l} \right). \]</span></p>
           </div>
 <h4 id="伯努利方程">2.4.2 伯努利方程</h4>
+<p>形如</p>
+<p><span class="math display">\[
+  \frac{\mathrm{d}y}{\mathrm{d}x} + p(x)y = q(x)y^n
+  \tag{2.18}
+\]</span></p>
+<p>的方程称为 <strong>伯努利方程</strong>，其中 <span
+class="math inline">\(n\)</span> 为常数，且不为 <span
+class="math inline">\(0\)</span> 或 <span
+class="math inline">\(1\)</span>.</p>
+<p>在方程 <span class="math inline">\((2.18)\)</span> 两边同乘 <span
+class="math inline">\((1 - n) y^{-n}\)</span>，然后令 <span
+class="math inline">\(z = y^{1 -
+n}\)</span>，可以把原方程转化为如下形式的一阶线性方程：</p>
+<p><span class="math display">\[
+  \frac{\mathrm{d}z}{\mathrm{d}x} + (1 - n)p(x)z = (1 - n)q(x).
+\]</span></p>
 <h4 id="里卡蒂方程">2.4.3 里卡蒂方程</h4>
 <!--
 

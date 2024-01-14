@@ -22,7 +22,7 @@
 
   
 
-  <title>【资源】一些有用、有趣、值得收藏的网址 | Zen 花园</title>
+  <title>【技术】SMathML 学习记录——SMathML is all you need | Zen 花园</title>
 
   
 
@@ -159,37 +159,36 @@
 
     
 <article id="post">
-  <div class="post-title">【资源】一些有用、有趣、值得收藏的网址</div>
+  <div class="post-title">【技术】SMathML 学习记录——SMathML is all you need</div>
   
 <div class="post-meta">
     
-      <div class="post-meta-item top">
-        <i class="far fa-bookmark"></i>
-        <span class="sticky">置顶</span>
-      </div>
-    
     
       <div class="post-meta-item date">
-        <span title="发表于 2024.01.10"><i class="far fa-calendar-alt"></i> 2024.01.10</span>
+        <span title="发表于 2024.01.13"><i class="far fa-calendar-alt"></i> 2024.01.13</span>
       </div>
       <div class="post-meta-item updated">
-        <span title="更新于 2024.01.11"><i class="far fa-calendar-check"></i> 2024.01.11</span>
+        <span title="更新于 2024.01.14"><i class="far fa-calendar-check"></i> 2024.01.14</span>
       </div>
      
     
       <div class="post-meta-item categories">
         
-          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E8%B5%84%E6%BA%90%E5%A4%87%E4%BB%BD/">资源备份</a>
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E6%8A%80%E6%9C%AF/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E6%8A%80%E6%9C%AF/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Racket/">Racket</a>
         
       </div>
      
     
      <div class="post-meta-item wordcount">
         
-          <i class="fas fa-pencil-alt"></i> <span class="post-count">148 字</span>
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.7k 字</span>
            
         
-          <i class="far fa-clock"></i> <span class="post-count">1 分钟</span>
+          <i class="far fa-clock"></i> <span class="post-count">5 分钟</span>
                                
       </div>
      
@@ -197,96 +196,92 @@
 
 
   
+    <div id="toc" class="toc">
+          <h1>目录</h1>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-smathml"><span class="toc-number">1.</span> <span class="toc-text">关于 SMathML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#smathml-%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">SMathML 的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-racket"><span class="toc-number">2.1.</span> <span class="toc-text">安装 Racket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD-smathml-%E5%8C%85"><span class="toc-number">2.2.</span> <span class="toc-text">下载 SMathML 包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#smathml-%E7%9A%84%E6%9B%B4%E6%96%B0"><span class="toc-number">2.3.</span> <span class="toc-text">SMathML 的更新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-number">3.</span> <span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a-racket"><span class="toc-number">3.1.</span> <span class="toc-text">A   Racket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#b-mathml"><span class="toc-number">3.2.</span> <span class="toc-text">B   MathML</span></a></li></ol></li></ol>
+      </div>
+    
   <div class="content">
-        <div><h2 id="实用的工具">实用的工具</h2>
+        <div><h2 id="关于-smathml">关于 SMathML</h2>
+<p>  
+在网页上显示和排版数学内容并不是一件容易的事情，由于数学内容的二维性，数学符号的多样性，普通的字符往往难以满足其苛刻的需求。为此，出现了
+MathJax、KaTeX 和 MathML
+等技术用于支持浏览器网页显示数学内容，这些技术已经足以应付绝大多数应用场景。其中，MathML
+已经成为了 HTML5
+的一部分（虽然浏览器对它的支持目前并不完善），也就是说我们可以通过向
+HTML 中嵌入 MathML，实现对网页数学内容的排版。然而，MathML
+在实际编写中需要重复使用大量的标签，致使人们往往不能专注于数学内容本身。然而，MathML
+由于较为简单的语法，适合借助特定程序进行生成。本文的主角，<strong>SMathML</strong>
+正是 <strong>MathML</strong> 和函数式编程语言 <strong>Scheme</strong>
+的巧妙结合。</p>
+<p>   SMathML 是由 <a
+target="_blank" rel="noopener" href="https://github.com/alpha-beta-eta">alpha-beta-eta 大佬</a>
+设计的，可以嵌入 Scheme 的 <strong>DSL</strong>（Domain Specific
+Language，领域特定语言）。截至目前为止，嵌入 SMathML 的 Scheme
+程序支持将生成的 MathML 嵌于 HTML
+文件中，实现对数学内容的网页显示与排版。</p>
+<p>   关于本文所参考的主要的关于 SMathML 的直接相关资料如下：</p>
 <ol type="1">
-<li><a target="_blank" rel="noopener" href="https://imgse.com/" title="图床">路过图床</a><br />
+<li><a target="_blank" rel="noopener" href="https://alpha-beta-eta.github.io/notes/SMathML.pdf">SMathML
+论文(draft)</a><br />
 </li>
-<li><a target="_blank" rel="noopener" href="https://sm.ms/" title="图床">SM.MS 图床</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://6li6.com/"
-title="视频、音乐下载">可以从多个平台下载视频的网站</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://app.diagrams.net/" title="绘图">Draw.io
-绘图</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://www.kammerl.de/ascii/AsciiSignature.php"
-title="艺术字生成">ASCII 艺术字生成</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://csacademy.com/app/graph_editor/"
-title="图论绘图">Graph Editor</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://www.jiuwa.net/"
-title="生成很多奇奇怪怪的东西">九蛙工具箱</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="http://www.atoolbox.net/Category.php?Id=32"
-title="另一个工具箱">在线图片处理工具</a></li>
-<li><a target="_blank" rel="noopener" href="https://petalica.com/index_zh.html"
-title="AI与绘画">线稿自动上色</a><br />
-</li>
-<li><a
-target="_blank" rel="noopener" href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS42LjIxIiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiIsIm5vbmVNYXJrZXJzIjp0cnVlLCJ0aGVtZSI6ImlkZWEiLCJjb2RlIjoiLyoqXG4gKiBZb3UgY2FuIGVkaXQsIHJ1biwgYW5kIHNoYXJlIHRoaXMgY29kZS5cbiAqIHBsYXkua290bGlubGFuZy5vcmdcbiAqL1xuZnVuIG1haW4oKSB7XG4gICAgcHJpbnRsbihcIkhlbGxvLCB3b3JsZCEhIVwiKVxufSJ9"
-title="Kotlin">Kotlin 在线运行</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://www.latexlive.com/" title="LaTeX">在线 LaTeX
-公式编辑器</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://www.latexlive.com/"
-title="高级语言转汇编语言">Compile Explorer</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://paste.nugine.xyz/"
-title="在线剪贴板">在线剪贴板</a><br />
-</li>
-<li></li>
+<li><a target="_blank" rel="noopener" href="https://alpha-beta-eta.github.io/smathml.html">SMathML
+参考</a></li>
 </ol>
-<h2 id="个人博客">个人博客</h2>
-<ol type="1">
-<li><a target="_blank" rel="noopener" href="https://www.mina.moe/archives/author/boshi"
-title="OI 算法">boshi 的 OI 博客</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://yhx-12243.github.io/OI-transit/"
-title="OI 算法">yhx-12243 的 OI 中转站</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/alex-wei/p/contents.html"
-title="OI 算法">Alex-Wei 的 OI 博客</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/command-block/"
-title="OI 算法">command_block 的 OI 博客</a></li>
-<li><a target="_blank" rel="noopener" href="http://zhylj.cc/" title="OI 算法">zhylj 的 OI
-博客</a><br />
-</li>
-<li></li>
-</ol>
-<h2 id="学习">学习</h2>
-<ol type="1">
-<li><a target="_blank" rel="noopener" href="https://wiki.swarma.org/index.php/%E9%A6%96%E9%A1%B5"
-title="内含许多 AI 相关的术语解释">集智百科（AI）</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://vjudge.net/" title="OJ平台">Virtual Judge</a></li>
-<li><a target="_blank" rel="noopener" href="https://oi-wiki.org/" title="OI 算法合集">OI-Wiki</a><br />
-</li>
-<li><a
-target="_blank" rel="noopener" href="https://graphics.stanford.edu/~seander/bithacks.html#RoundUpPowerOf2"
-title="位运算">位运算技巧</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://course.rs/about-book.html" title="Rust">Rust
-语言圣经</a><br />
-</li>
-<li></li>
-</ol>
-<h2 id="其他">其他</h2>
-<ol type="1">
-<li><a target="_blank" rel="noopener" href="https://survivesjtu.gitbook.io/survivesjtumanual/"
-title="迷茫的人将从中受益">SJTU 生存手册</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://www.miniplay.com/daily-games"
-title="可以玩小游戏的网站">Miniplay</a><br />
-</li>
-<li><a target="_blank" rel="noopener" href="https://kupogames.com/" title="个人向">Matt Roszak
-的游戏制作进度</a><br />
-</li>
-<li></li>
-</ol>
+<p>值得注意的是，这里我们使用的是一种 Scheme 方言 Racket，与其他 Scheme
+方言是存在差异的，根据大佬在《SMathML
+论文(draft)》中的描述，它“并不完全兼容其他 Scheme 实现，
+不过，读者在理解的基础上，很容易将其移植到其他 Scheme 方言。”</p>
+<details cyan><summary> <p><strong>一段题外话(可跳过)</strong></p> </summary>
+              <div class='content'>
+              <divstyle="font-family: san-serif; font-size: 1.2em; letter-spacing: 0.1em;"><p>   为什么想到要学 SMathML 呢？可能得从第一次见到Scheme的时候说起。几年前，学完 C 语言和 C++课程，当时正处于盲目自信的顶点，加上这两门课内期末成绩还说得过去，不禁沾沾自喜，“闻道百，以为莫己若者”。直到有一天，一位外校的刚进大一的朋友给我发来了一张图，向我询问其中代码的含义，我两眼发懵，甚至无法辨识它究竟是什么编程语言，代码的语法尤其古怪，虽然也有类似的如<code>define</code> 这样的关键字，但是它的风格却与我熟悉的 C/C++格格不入。之后方才得知，那个编程语言叫作 Scheme。后来，听说了 SICP这本书，看过介绍，我终于知道 Scheme是一个神奇的编程语言，这样的感觉当时并不真切，不过是人云亦云罢了，看过几页SICP，便停下了。幸运的是，毕业临近时，在学校的路边的跳蚤市场偶遇alpha-beta-eta大佬，当时周围人潮涌动，他在一旁注视着屏幕，熟练地敲击着键盘编写 Racket程序，周围的同学直呼看不懂。唉，对于我们这些一般的人、只会对照编程语言排行榜评估一门语言好坏的人，对于我们这些拘泥于校内课程的人、以GPA等学校设置的标准来评价自己能力的人，一提到可以学习的编程语言，头脑中往往想到的是Python、Java、C、C++、PHP、JavaScript，乃至汇编之类的云云。Racket是什么？可以确定的是，它对升学、找工作并没有直接的帮助。即便有人在耳提面命，在书本上，在网络里，甚至在身边用实际行动多次告诉我们Racket的优雅与魅力，告诉我们它是多么神奇，多么值得去学习，我们总是倾向于忽视它们。说到这里，其实并无意去批判什么，只是我们应当清醒，看到这些局限。这其中的原因断然不全是因为我们懒惰，平日里我们的精力已经被各种任务、娱乐、休息的时间占满，剩余的边角料间隙又不能集中注意力投入其中，于是我们找出各种理由来敷衍、搪塞，试图证明自己行为的合理性。五十步笑百步，大概就是说的我吧（捂脸）。在大佬的耐心指引下，我终于对Racket这门神秘的编程语言又多了解了几分，然而并没有开窍。但是自此，我也开始关注Racket，关注Scheme，看过一些文档，但是后面又忘记了。不久之前，大佬建议我可以试着用一下SMathML，我想正好可以把 Racket 捡起来，增长 Racket实践经验，还可以在这个地方做些记录，给以后的自己留些东西，<del>顺便抢占先机，成为SMathML的骨灰级用户</del>。<del>对了，不知道你有没有这种感觉，这个标题中的“SMathMLis all youneed”现在这么讲是不是有点浮夸······不管了，先把学习氛围拉满！</del></p></div>
+              </div>
+            </details>
+<p>   本人对 Racket、MathML
+等技术了解有限，所以对它们增补一些基础的、重要的语法介绍，做一些记录是必不可少的。由于这一部分对于熟悉
+Racket 和 MathML
+的读者来说是冗余的，为了不影响观感，本文把这一部分的内容放在文末的
+<strong>附录</strong> 中。</p>
+<h2 id="smathml-的安装">SMathML 的安装</h2>
+<h3 id="安装-racket">安装 Racket</h3>
+<p>   SMathML 的使用需要 Racket 编程环境，我们首先要做的就是去 <a
+target="_blank" rel="noopener" href="https://download.racket-lang.org/">官网</a> 下载并安装
+Racket。这一步并不难实现，即便遇到问题，也容易通过搜索引擎找到解决方案。这里不再展开。</p>
+<h3 id="下载-smathml-包">下载 SMathML 包</h3>
+<p>   在 DrRacket IDE 中找到包管理器 Package
+Manager，点击即可进入包管理器窗口；</p>
+<p><img src= "/img/loading.gif" data-src="https://s2.loli.net/2024/01/14/C4eZ9vhfrQdJFKb.png" /></p>
+<p>   在包管理器窗口，在 Do What I Mean 一栏下的 Package Source
+后面输入要安装的包名 SMathML，点击 Install 按钮，即可完成对 SMathML
+的安装；</p>
+<p><img src= "/img/loading.gif" data-src="https://s2.loli.net/2024/01/14/LobV4kExhNDIGrc.png" /></p>
+<p>   安装完毕后，可以在任一程序中加入语句
+<code>(require SMathML)</code> 导入
+SMathML，测试是否安装成功（如果失败，程序将会报错）。</p>
+<h3 id="smathml-的更新">SMathML 的更新</h3>
+<p>   如果你已经安装了 SMathML，后续同样可以在包管理器中 Do What I Mean
+一栏下进行更新，Update 按钮会取代原先的 Install 按钮，点击更新即可。</p>
+<p><img src= "/img/loading.gif" data-src="https://s2.loli.net/2024/01/14/UuhbOQfqHT4czFd.png" /></p>
+<p>   如果更新后，SMathML
+在使用时频频出现卡顿报错的情况，你可以在包管理器的 Currently Installed
+一栏先 Remove 已经安装的 SMathML 包（见下图），然后重新下载 SMathML
+即可。</p>
+<p><img src= "/img/loading.gif" data-src="https://s2.loli.net/2024/01/14/v2E3yMgTDZtl7ph.png" /></p>
+<h2 id="附录">附录</h2>
+<h3 id="a-racket">A   Racket</h3>
+<h3 id="b-mathml">B   MathML</h3>
+<style>
+    strong {
+        font-family: san-serif;
+    }
+
+    .noteTitle {
+      color: #444;
+      font-family: Tahoma, Verdana, Times, KaiTi, sans-serif;
+      font-size: 1.0em;
+      font-weight: bold;
+    }
+</style>
 </div>
         
           <div class="post-copyright">
@@ -294,7 +289,7 @@ title="可以玩小游戏的网站">Miniplay</a><br />
                       <span> 作者: Garden-Zen</span>
                   </div>
                   <div class="copyright-item">
-                      <span> 链接: <a href="https://garden-zen.github.io/2024/01/10/%E3%80%90%E8%B5%84%E6%BA%90%E3%80%91%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E3%80%81%E6%9C%89%E8%B6%A3%E3%80%81%E5%80%BC%E5%BE%97%E6%94%B6%E8%97%8F%E7%9A%84%E7%BD%91%E5%9D%80/">https://garden-zen.github.io/2024/01/10/%E3%80%90%E8%B5%84%E6%BA%90%E3%80%91%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E3%80%81%E6%9C%89%E8%B6%A3%E3%80%81%E5%80%BC%E5%BE%97%E6%94%B6%E8%97%8F%E7%9A%84%E7%BD%91%E5%9D%80/</a></span>
+                      <span> 链接: <a href="https://garden-zen.github.io/2024/01/13/%E3%80%90%E6%8A%80%E6%9C%AF%E3%80%91SMathML-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E2%80%94%E2%80%94SMathML-is-all-you-need/">https://garden-zen.github.io/2024/01/13/%E3%80%90%E6%8A%80%E6%9C%AF%E3%80%91SMathML-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E2%80%94%E2%80%94SMathML-is-all-you-need/</a></span>
                   </div>
                   <div class="copyright-item">
                       <span> 声明: 本博客所有文章除特别声明外，均采用许可协议 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 转载请注明出处！</span>
@@ -305,18 +300,18 @@ title="可以玩小游戏的网站">Miniplay</a><br />
 
     <div class="post_tags">
       
-        <i class="fas fa-tag"></i> <a href="/tags/%E8%B5%84%E6%BA%90%E5%A4%87%E4%BB%BD/" class="tag">资源备份</a>
+        <i class="fas fa-tag"></i> <a href="/tags/%E6%8A%80%E6%9C%AF/" class="tag">技术</a>
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="tag">编程语言</a>
+      
+        <i class="fas fa-tag"></i> <a href="/tags/Racket/" class="tag">Racket</a>
       
     </div>
     <div class="post-nav">
       
-        <div class="post-nav-prev post-nav-item">
-            <a href="/2024/01/11/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E6%B4%9B%E8%B0%B7-P2106-Sam%E6%95%B0%20%E9%A2%98%E8%A7%A3/" >【算法】洛谷 P2106 Sam数 题解<i class="fa fa-chevron-left"></i></a>
-        </div>
-      
       
         <div class="post-nav-next post-nav-item">
-            <a href="/2024/01/05/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/" >测试文件<i class="fa fa-chevron-right"></i></a>
+            <a href="/2024/01/11/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E6%B4%9B%E8%B0%B7-P2106-Sam%E6%95%B0%20%E9%A2%98%E8%A7%A3/" >【算法】洛谷 P2106 Sam数 题解<i class="fa fa-chevron-right"></i></a>
         </div>
       
     </div>
