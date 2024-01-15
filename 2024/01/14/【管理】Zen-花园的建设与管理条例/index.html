@@ -22,7 +22,7 @@
 
   
 
-  <title>标签 | Zen 花园</title>
+  <title>【管理】Zen 花园的建设与管理条例 | Zen 花园</title>
 
   
 
@@ -158,33 +158,174 @@
 </header>
 
     
-<article class="post-wrap page">
-    <h1 class="pagetitle">标签</h1>
-    <section class="content">
+<article id="post">
+  <div class="post-title">【管理】Zen 花园的建设与管理条例</div>
+  
+<div class="post-meta">
+    
+    
+      <div class="post-meta-item date">
+        <span title="发表于 2024.01.14"><i class="far fa-calendar-alt"></i> 2024.01.14</span>
+      </div>
+      <div class="post-meta-item updated">
+        <span title="更新于 2024.01.15"><i class="far fa-calendar-check"></i> 2024.01.15</span>
+      </div>
+     
+    
+      <div class="post-meta-item categories">
         
-            
-<div class="tags-cloud">		
-  <a href="/tags/Racket/" style="font-size: 10px;">Racket</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 10px;">动态规划</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E7%AE%A1%E7%90%86/" style="font-size: 10px;">博客管理</a> <a href="/tags/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" style="font-size: 10px;">常微分方程</a> <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">技术</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%9D%82%E9%A1%B9/" style="font-size: 10px;">杂项</a> <a href="/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/" style="font-size: 10px;">矩阵快速幂</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%B5%84%E6%BA%90%E5%A4%87%E4%BB%BD/" style="font-size: 10px;">资源备份</a>
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E5%8D%9A%E5%AE%A2%E7%AE%A1%E7%90%86/">博客管理</a>
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E6%9D%82%E9%A1%B9/">杂项</a>
+        
+      </div>
+     
+    
+     <div class="post-meta-item wordcount">
+        
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.4k 字</span>
+           
+        
+          <i class="far fa-clock"></i> <span class="post-count">4 分钟</span>
+                               
+      </div>
+     
+</div>
+
+
+  
+  <div class="content">
+        <div><h2 id="论博客管理的必要性">论博客管理的必要性</h2>
+<p>  
+一个系统，在孤立的条件下，总是会自发地从有序趋于无序，此所谓“熵增原理”。为了保持系统相对的有序性，集体需要凝聚共识，社会需要维持秩序，文件的读写需要加锁，博客平台当然也需要管理。一个博客平台，倘若缺少管理，随着内容的增多，整体往往也趋于混乱。为此，我们认为，在
+Zen
+花园的建设中，从多方面，尤其是内容方面，加强对博客的管理，是必要的，是迫在眉睫的。这有利于维持博客形式的一致性与内容的有序性，有利于减少歧义，避免原则的模糊不清，抑制灰色地带的出现。</p>
+<p>   基于上述观念，我们推出了如下的 《Zen
+花园建设与管理条例》，别名《Zen 花园园丁手册》。</p>
+<h2 id="条例细则">条例细则</h2>
+<ol type="1">
+<li>Markdown 文件的 Front Matter 应当尽量维护
+<strong>标签</strong>（tags）与 <strong>分类</strong>（categories）的
+<strong>一致性</strong>。<br />
+</li>
+<li>Markdown 文件的 Front Matter 原则上必须设置
+<code>auto_excerpt: true</code>（否则，默认显示全文），描述（description）为必填项。<br />
+</li>
+<li>关于文章目录设置。较长的博客文章应当添加目录，方便阅读查看。具体的做法是，在
+Markdown 文件的 Front Matter 中设置 <code>toc: true</code>。<br />
+</li>
+<li>关于文章的置顶。置顶的文章不宜过多，最好控制在 <span
+class="math inline">\(3\)</span> 篇左右，最多不应超过 <span
+class="math inline">\(10\)</span>
+篇。（这两个数字定的比较随机，不排除后面对它们作较大的改动）。置顶的博文可以是：关于作者和
+Zen
+花园的介绍（如果有的话）、对他人有较大帮助的文章、虽然不满足前两个特征但是有必要置顶的文章（<del>比如，出于作者的虚荣心</del>）。<br />
+</li>
+<li>关于标题格式。除极个别例外情况，所有博客文章的标题都应该以“【】”打头，方括号内填写一个最贴近文章的关键词，最好能体现文章内容的性质，同时，关键词不宜过长，以
+<span class="math inline">\(1 - 3\)</span> 个字为宜。<br />
+</li>
+<li>关于 Markdown 撰写正文时的使用规范。使用 Markdown
+撰写算法题解相关的博文时，原则上要达到 <a
+target="_blank" rel="noopener" href="https://help.luogu.com.cn/rules/academic/solution-standard"><u>
+洛谷题解规范 </u></a> 的标准，若无特殊情况，其他博文的 Markdown
+格式也应遵循该规范。不过，矩阵的排版可以根据个人习惯使用
+<code>pmatrix</code>，可以不使用规范中推荐的
+<code>bmatrix</code>，但是在同一博文中二者不能混用。<br />
+</li>
+<li>关于一些未来可能会出现的内容的分类说明。例如：C++、Rust、操作系统、计算机网络、数据库、编译原理等相关的博客，它们更多地是为现实中的技术服务的，可以将其归为“技术”一类，算法虽然客观上也为技术服务，但是它的理论性更强，可以将其单独归为“算法”大类，数据结构类似，由于它常常与算法相提并论，也可将其归为“算法”一类。<br />
+</li>
+<li>关于超链接。除去 Hexo 自动生成的目录以外，由于 Markdown
+超链接暗蓝的颜色在博文中不容易被注意到的缘故，应当使用 HTML
+中的下划线标签 <code>&lt;u&gt; 超链接 &lt;/u&gt;</code>
+或其他实现方案为它添加下划线，以引起注意。<br />
+</li>
+<li>关于段首空格。算法和数学相关的博客，每一段段首可以不加空格，与其他博客平台的博文保持风格的一致性；其余博文原则上每段段首应当空两格，实现方案推荐在每段开头加上
+<code>&amp;emsp;&amp;emsp;</code>。<br />
+</li>
+<li>关于句号。算法和数学相关的博客中，使用实心圆点
+<code>.</code>，其余博文原则上应当使用 <code>。</code>。<br />
+</li>
+<li>在博文中，应当尽量对有可能影响博文观感和质量的部分给予说明，方便后期的阅读与完善。比如，自己不理解的部分、模糊不清的部分、内容存疑的部分、被省略的部分、引用的部分等。<br />
+</li>
+<li>撰写博文之前，应当对题材有所选择，有所甄别，不是所有的学习过的知识都适合用博客的形式来表达。<br />
+</li>
+<li>不能为了写博客而写博客。除非特殊需要，博文的主体内容应当是自己已经理解的，可以接受的内容。目前来说，尤其是数学和算法相关的博文，应当特别注意这一点，尚不理解的部分应该及时注明。一般地，在阅读过至少一遍书本，对内容有了大致的把握与了解过后方可将其写成博文。<br />
+</li>
+<li>保留修改本条例的权利。应当根据实际的 Zen
+花园建设情况与需要适时地调整与更新此条例，切勿将其视作一成不变的规则，墨守成规。倘若对某项已有的细则作出重大的调整，应当在此注明。</li>
+</ol>
+<style>
+    /* 用于保证英文单词不被截断，且文本两端对齐 */
+    p, li {
+        word-break: normal;
+        word-wrap: break-word; 
+        /* 文本的两端对齐 */
+        text-align:justify;  
+        /* 为表意字文本提供完全两端对齐, 增加或减少表意字和词间的空格, 支持该属性的浏览器目前只有IE(见菜鸟教程) */
+        text-justify:inter-ideograph;  
+    }
+
+    strong {
+        font-family: san-serif;
+    }
+</style>
+</div>
+        
+          <div class="post-copyright">
+                  <div class="copyright-item">
+                      <span> 作者: Garden-Zen</span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> 链接: <a href="https://garden-zen.github.io/2024/01/14/%E3%80%90%E7%AE%A1%E7%90%86%E3%80%91Zen-%E8%8A%B1%E5%9B%AD%E7%9A%84%E5%BB%BA%E8%AE%BE%E4%B8%8E%E7%AE%A1%E7%90%86%E6%9D%A1%E4%BE%8B/">https://garden-zen.github.io/2024/01/14/%E3%80%90%E7%AE%A1%E7%90%86%E3%80%91Zen-%E8%8A%B1%E5%9B%AD%E7%9A%84%E5%BB%BA%E8%AE%BE%E4%B8%8E%E7%AE%A1%E7%90%86%E6%9D%A1%E4%BE%8B/</a></span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> 声明: 本博客所有文章除特别声明外，均采用许可协议 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 转载请注明出处！</span>
+                  </div>
+          </div>
+        
   </div>
-  <script type="text/javascript">
-    var list = document.querySelectorAll('.tags-cloud a');
-    Array.prototype.forEach.call(list, (item, index) => {
-      item.style.fontSize = Math.floor(Math.random() * 29 + 12) + 'px';//12 ~ 40
-      item.style.color = 'rgb(' + Math.floor(Math.random() * 201) + ', ' + Math.floor(Math.random() * 201) + ', ' + Math.floor(Math.random() * 201) + ')';// 0,0,0 -> 200,200,200
-    });
+
+    <div class="post_tags">
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E5%8D%9A%E5%AE%A2%E7%AE%A1%E7%90%86/" class="tag">博客管理</a>
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E6%9D%82%E9%A1%B9/" class="tag">杂项</a>
+      
+    </div>
+    <div class="post-nav">
+      
+      
+        <div class="post-nav-next post-nav-item">
+            <a href="/2024/01/13/%E3%80%90%E6%8A%80%E6%9C%AF%E3%80%91SMathML-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E2%80%94%E2%80%94SMathML-is-all-you-need/" >【技术】SMathML 学习记录——SMathML is all you need<i class="fa fa-chevron-right"></i></a>
+        </div>
+      
+    </div>
+      
+
+
+
+  <div id="valine"></div>
+  <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  <script>
+        new Valine({
+          el: '#valine',
+          appId: "",
+          appKey: "",
+          avatar: "mm",
+          lang: "",
+          meta: 'nick,mail,link'.split(','),
+          requiredFields: 'nick,mail'.split(','),
+          placeholder: "评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒",
+          pageSize:'10',
+          recordIP: 'false',
+          serverURLs: "",
+          emojiCDN: "",
+          enableQQ: "true",
+        });
   </script>
-
-        
-     </section>
-        
-
-
-
+  
 
 </article>
-
-
-
 
     
 <a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>

@@ -82,9 +82,21 @@
 }
 
 
-// 针对 Hexo 框架的一些特性（缺陷）增加的设置
-// 代码已删
+// 针对 Hexo 框架的一些特性（缺陷）增加的设置(此处用于备份)
+/*
+p, li {
+  word-break: normal;
+  word-wrap: break-word; 
+  // 文本的两端对齐 
+  text-align:justify;  
+  // 为表意字文本提供完全两端对齐, 增加或减少表意字和词间的空格, 支持该属性的浏览器目前只有IE(见菜鸟教程) 
+  text-justify:inter-ideograph;  
+}
 
+strong {
+  font-family: san-serif;
+}
+*/
 
 // 以下内容复制于styl文件，并做了少量修改
 .note {

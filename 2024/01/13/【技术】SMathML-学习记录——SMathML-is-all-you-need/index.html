@@ -168,7 +168,7 @@
         <span title="发表于 2024.01.13"><i class="far fa-calendar-alt"></i> 2024.01.13</span>
       </div>
       <div class="post-meta-item updated">
-        <span title="更新于 2024.01.14"><i class="far fa-calendar-check"></i> 2024.01.14</span>
+        <span title="更新于 2024.01.15"><i class="far fa-calendar-check"></i> 2024.01.15</span>
       </div>
      
     
@@ -185,10 +185,10 @@
     
      <div class="post-meta-item wordcount">
         
-          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.7k 字</span>
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">2.1k 字</span>
            
         
-          <i class="far fa-clock"></i> <span class="post-count">5 分钟</span>
+          <i class="far fa-clock"></i> <span class="post-count">7 分钟</span>
                                
       </div>
      
@@ -198,7 +198,8 @@
   
     <div id="toc" class="toc">
           <h1>目录</h1>
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-smathml"><span class="toc-number">1.</span> <span class="toc-text">关于 SMathML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#smathml-%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">SMathML 的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-racket"><span class="toc-number">2.1.</span> <span class="toc-text">安装 Racket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD-smathml-%E5%8C%85"><span class="toc-number">2.2.</span> <span class="toc-text">下载 SMathML 包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#smathml-%E7%9A%84%E6%9B%B4%E6%96%B0"><span class="toc-number">2.3.</span> <span class="toc-text">SMathML 的更新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-number">3.</span> <span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a-racket"><span class="toc-number">3.1.</span> <span class="toc-text">A   Racket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#b-mathml"><span class="toc-number">3.2.</span> <span class="toc-text">B   MathML</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-smathml"><span class="toc-number">1.</span> <span class="toc-text">关于 SMathML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#smathml-%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">SMathML 的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-racket"><span class="toc-number">2.1.</span> <span class="toc-text">安装 Racket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD-smathml-%E5%8C%85"><span class="toc-number">2.2.</span> <span class="toc-text">下载 SMathML 包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#smathml-%E7%9A%84%E6%9B%B4%E6%96%B0"><span class="toc-number">2.3.</span> <span class="toc-text">SMathML 的更新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-smathml-%E7%BC%96%E5%86%99%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%96%87%E6%A1%A3"><span class="toc-number">3.</span> <span class="toc-text">使用 SMathML
+编写自己的第一个文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-number">4.</span> <span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a-racket"><span class="toc-number">4.1.</span> <span class="toc-text">A   Racket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#b-mathml"><span class="toc-number">4.2.</span> <span class="toc-text">B   MathML</span></a></li></ol></li></ol>
       </div>
     
   <div class="content">
@@ -214,19 +215,24 @@ HTML 中嵌入 MathML，实现对网页数学内容的排版。然而，MathML
 由于较为简单的语法，适合借助特定程序进行生成。本文的主角，<strong>SMathML</strong>
 正是 <strong>MathML</strong> 和函数式编程语言 <strong>Scheme</strong>
 的巧妙结合。</p>
-<p>   SMathML 是由 <a
-target="_blank" rel="noopener" href="https://github.com/alpha-beta-eta">alpha-beta-eta 大佬</a>
-设计的，可以嵌入 Scheme 的 <strong>DSL</strong>（Domain Specific
+<p>   SMathML 是由 <a target="_blank" rel="noopener" href="https://github.com/alpha-beta-eta"><u>
+alpha-beta-eta 大佬 </u></a> 设计的，可以嵌入 Scheme 的
+<strong>DSL</strong>（Domain Specific
 Language，领域特定语言）。截至目前为止，嵌入 SMathML 的 Scheme
 程序支持将生成的 MathML 嵌于 HTML
 文件中，实现对数学内容的网页显示与排版。</p>
 <p>   关于本文所参考的主要的关于 SMathML 的直接相关资料如下：</p>
 <ol type="1">
-<li><a target="_blank" rel="noopener" href="https://alpha-beta-eta.github.io/notes/SMathML.pdf">SMathML
-论文(draft)</a><br />
+<li><a target="_blank" rel="noopener" href="https://alpha-beta-eta.github.io/notes/SMathML.pdf"><u>
+SMathML 论文(draft) </u></a><br />
 </li>
-<li><a target="_blank" rel="noopener" href="https://alpha-beta-eta.github.io/smathml.html">SMathML
-参考</a></li>
+<li><a target="_blank" rel="noopener" href="https://alpha-beta-eta.github.io/smathml.html"><u> SMathML
+参考 </u></a><br />
+</li>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/alpha-beta-eta/alpha-beta-eta.github.io"><u>
+嵌入 SMathML 的 Racket 程序 </u></a> （目前主要参考了
+<code>curry-howard.rkt</code> 和 <code>linear_algebra.rkt</code>）</li>
 </ol>
 <p>值得注意的是，这里我们使用的是一种 Scheme 方言 Racket，与其他 Scheme
 方言是存在差异的，根据大佬在《SMathML
@@ -245,7 +251,7 @@ Racket 和 MathML
 <h2 id="smathml-的安装">SMathML 的安装</h2>
 <h3 id="安装-racket">安装 Racket</h3>
 <p>   SMathML 的使用需要 Racket 编程环境，我们首先要做的就是去 <a
-target="_blank" rel="noopener" href="https://download.racket-lang.org/">官网</a> 下载并安装
+target="_blank" rel="noopener" href="https://download.racket-lang.org/"><u>官网</u></a> 下载并安装
 Racket。这一步并不难实现，即便遇到问题，也容易通过搜索引擎找到解决方案。这里不再展开。</p>
 <h3 id="下载-smathml-包">下载 SMathML 包</h3>
 <p>   在 DrRacket IDE 中找到包管理器 Package
@@ -267,10 +273,42 @@ SMathML，测试是否安装成功（如果失败，程序将会报错）。</p>
 一栏先 Remove 已经安装的 SMathML 包（见下图），然后重新下载 SMathML
 即可。</p>
 <p><img src= "/img/loading.gif" data-src="https://s2.loli.net/2024/01/14/v2E3yMgTDZtl7ph.png" /></p>
+<h2 id="使用-smathml-编写自己的第一个文档">使用 SMathML
+编写自己的第一个文档</h2>
+<p>   SMathML 常常用于编写数学内容相关的文档，由于它嵌入在 Racket
+中，我们需要熟悉一些 Racket 的语法知识，在 Racket
+编程的基础上使用它，关于 Racket
+语法的介绍这里不展开，可以参见附录部分。</p>
+<p>   我们在这里将首先介绍 SMathML
+编写文档的方法，这是是我们学习它的首要任务，亦是后面学习使用 SMathML
+编写更加复杂的数学内容的基础。所以，让我们从编写一个可以输出 “Hello,
+world!” 的 SMathML 文档开始吧。</p>
+<p>   为了实现这一目标，我们需要创建两个 Racket 文件（以后缀
+<code>.rkt</code>
+结尾），并将它们分别命名为：<code>hello_world.rkt</code> 和
+<code>generate_doc.rkt</code>。我们的 SMathML 文档完全在
+<code>hello_world.rkt</code> 中编写，<code>generate_doc.rkt</code>
+用于把我们的 SMathML 文档转化成可以在浏览器中直接打开的 HTML 文档，在
+HTML 文档中，我们将看到 SMathML 输出的 “Hello, world!”。</p>
+<p>   <code>hello_world.rkt</code> 的全貌如下。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#lang racket</span><br><span class="line"></span><br><span class="line">(provide hello_world.html)</span><br><span class="line"></span><br><span class="line">(require SMathML)</span><br><span class="line"></span><br><span class="line">(define pre:hello_world.html</span><br><span class="line">  (Prelude</span><br><span class="line">   #:title &quot;第一个 SMathML 生成的文档&quot;</span><br><span class="line">   #:css &quot;styles.css&quot;</span><br><span class="line">   (H1 &quot;第一个文档&quot;)</span><br><span class="line">   (P &quot;Hello World!&quot;)</span><br><span class="line">   ))</span><br><span class="line"></span><br><span class="line">(define hello_world.html</span><br><span class="line">  (Tn (Tm pre:hello_world.html)))</span><br></pre></td></tr></table></figure>
+<p>  </p>
+<p>   以下是 <code>generate_doc.rkt</code> 的实现。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#lang racket</span><br><span class="line"></span><br><span class="line">(require SMathML &quot;hello_world.rkt&quot;)</span><br><span class="line"></span><br><span class="line">(define (emit-web)</span><br><span class="line">  (emitXml hello_world.html &quot;hello_world.html&quot;))</span><br><span class="line"></span><br><span class="line">(emit-web)</span><br></pre></td></tr></table></figure>
 <h2 id="附录">附录</h2>
 <h3 id="a-racket">A   Racket</h3>
 <h3 id="b-mathml">B   MathML</h3>
 <style>
+    /* 用于保证英文单词不被截断，且文本两端对齐 */
+    p, li {
+        word-break: normal;
+        word-wrap: break-word; 
+        /* 文本的两端对齐 */
+        text-align:justify;  
+        /* 为表意字文本提供完全两端对齐, 增加或减少表意字和词间的空格, 支持该属性的浏览器目前只有IE(见菜鸟教程) */
+        text-justify:inter-ideograph;  
+    }
+
     strong {
         font-family: san-serif;
     }
@@ -308,6 +346,10 @@ SMathML，测试是否安装成功（如果失败，程序将会报错）。</p>
       
     </div>
     <div class="post-nav">
+      
+        <div class="post-nav-prev post-nav-item">
+            <a href="/2024/01/14/%E3%80%90%E7%AE%A1%E7%90%86%E3%80%91Zen-%E8%8A%B1%E5%9B%AD%E7%9A%84%E5%BB%BA%E8%AE%BE%E4%B8%8E%E7%AE%A1%E7%90%86%E6%9D%A1%E4%BE%8B/" >【管理】Zen 花园的建设与管理条例<i class="fa fa-chevron-left"></i></a>
+        </div>
       
       
         <div class="post-nav-next post-nav-item">

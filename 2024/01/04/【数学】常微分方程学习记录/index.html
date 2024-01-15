@@ -168,7 +168,7 @@
         <span title="发表于 2024.01.04"><i class="far fa-calendar-alt"></i> 2024.01.04</span>
       </div>
       <div class="post-meta-item updated">
-        <span title="更新于 2024.01.13"><i class="far fa-calendar-check"></i> 2024.01.13</span>
+        <span title="更新于 2024.01.15"><i class="far fa-calendar-check"></i> 2024.01.15</span>
       </div>
      
     
@@ -183,10 +183,10 @@
     
      <div class="post-meta-item wordcount">
         
-          <i class="fas fa-pencil-alt"></i> <span class="post-count">2.8k 字</span>
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">3.1k 字</span>
            
         
-          <i class="far fa-clock"></i> <span class="post-count">13 分钟</span>
+          <i class="far fa-clock"></i> <span class="post-count">14 分钟</span>
                                
       </div>
      
@@ -428,6 +428,24 @@ n}\)</span>，可以把原方程转化为如下形式的一阶线性方程：</p
   \frac{\mathrm{d}z}{\mathrm{d}x} + (1 - n)p(x)z = (1 - n)q(x).
 \]</span></p>
 <h4 id="里卡蒂方程">2.4.3 里卡蒂方程</h4>
+<p><strong>里卡蒂（Riccati）方程</strong> 的一般形式：</p>
+<p><span class="math display">\[
+  \frac{\mathrm{d}y}{\mathrm{d}x} = p(x)y^2 + q(x)y + r(x),
+  \tag{2.19}
+\]</span></p>
+<p>其中，<span class="math inline">\(p(x), q(x), r(x)\)</span> 在区间
+<span class="math inline">\(I\)</span> 上连续，且 <span
+class="math inline">\(p(x)\)</span> 不恒为零.</p>
+<p><span class="theoremId">定理2.2</span>   若已知里卡蒂方程 <span
+class="math inline">\((2.19)\)</span> 的一个特解 <span
+class="math inline">\(y = \varphi_1
+(x)\)</span>，则可用积分法求得它的通解.</p>
+<div class="note note-info">
+            <div class="noteTitle">证明思路：</div><p>作变换 <span class="math inline">\(y = u + \varphi_1(x)\)</span>，其中 <span class="math inline">\(u\)</span>为新的未知函数.</p><p>代入方程 <spanclass="math inline">\((2.19)\)</span>，化简，可以得到一个关于 <spanclass="math inline">\(u\)</span> 的伯努利方程. 可用积分法解之.</p>
+          </div>
+<div class="note note-warning">
+            <div class="noteTitle">一些关于定理 <span class="math inline">\(\small{2.2}\)</span> 想法</div><p>有一说一，虽然看得懂这个证明，并且它也不算难，但还是觉得不太理解这个定理.主要有两点：</p><ol type="1"><li>为什么证明中所作变换 <span class="math inline">\(y = u + \varphi_1(x)\)</span>是合理的？换句话说，里卡蒂方程内部具备的哪些特征，使得这个变换是可行的？<br /></li><li>关于特解与通解的关系。对于一般的微分方程，已知通解，可以根据初值条件求得特解，如果已知一个或若干个特解呢？应当如何求得通解？（在记忆里，曾经应该在高数书里见过相关的论述）</li></ol>
+          </div>
 <!--
 
 <div class="definitionId">定义</div>
