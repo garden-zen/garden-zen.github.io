@@ -49,6 +49,8 @@
     
       <link rel="stylesheet" href="/css/css_garden_zen/mathnote_style.css">
     
+      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    
   
 
   
@@ -165,20 +167,20 @@
     
     
       <div class="post-meta-item date">
-        <span title="发表于 2024.01.05"><i class="far fa-calendar-alt"></i> 2024.01.05</span>
+        <span title="发表于 2024.01.04"><i class="far fa-calendar-alt"></i> 2024.01.04</span>
       </div>
       <div class="post-meta-item updated">
-        <span title="更新于 2024.01.15"><i class="far fa-calendar-check"></i> 2024.01.15</span>
+        <span title="更新于 2024.01.26"><i class="far fa-calendar-check"></i> 2024.01.26</span>
       </div>
      
      
     
      <div class="post-meta-item wordcount">
         
-          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.3k 字</span>
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">2k 字</span>
            
         
-          <i class="far fa-clock"></i> <span class="post-count">6 分钟</span>
+          <i class="far fa-clock"></i> <span class="post-count">11 分钟</span>
                                
       </div>
      
@@ -298,6 +300,40 @@ f(n) =
     3 &amp; -20 &amp; 2000 &amp; 1+10i
 \end{array}
 \]</span></p>
+<h4 id="交换图">交换图</h4>
+<p><span class="math display">\[
+\begin{CD}
+  S^{\mathcal{W}_\Lambda}\otimes T @&gt;j&gt;&gt; T\\
+  @VVV @VV{\text{End } P}V\\
+  (S\otimes T)/I @= (Z\otimes T)/J
+\end{CD}
+\]</span></p>
+<p><br /></p>
+<p><span class="math display">\[
+\begin{CD}
+    A @&gt;&gt;&gt; B @&gt;{\text{very long label}}&gt;&gt; C \\
+    @. @AAA @| \\
+    D @= E @&lt;&lt;&lt; F
+\end{CD}
+\]</span></p>
+<p><span class="math display">\[
+\begin{CD}
+    A @&gt;a&gt;b&gt; B\\
+    @VlVrV @AlArA\\
+    C @&lt;a&lt;b&lt; D
+\end{CD}
+\]</span></p>
+<h4 id="化学">化学</h4>
+<p><span class="math inline">\(\ce{2H2 + O2 -&gt;T[燃烧]
+2H2O}\)</span></p>
+<p><span class="math inline">\(\ce{N2 + 3H2
+&lt;=&gt;T[高温、加压][催化剂] 2NH3}\)</span></p>
+<p><span class="math inline">\(\ce{SO4^2- + Ba^2+ -&gt; BaSO4
+v}\)</span></p>
+<p><span class="math inline">\(\ce{KCr(SO4)2 * 12H2O}\)</span></p>
+<p><span class="math inline">\(\ce{C6H5-CHO}\)</span></p>
+<p><span class="math inline">\(\ce{^{227}_{90}Th+}\)</span></p>
+<p><span class="math inline">\(\ce{X=Y#Z}\)</span></p>
 <h4 id="间距控制">间距控制</h4>
 <table>
 <thead>
@@ -341,6 +377,16 @@ class="math inline">\(a\  b\)</span></td>
 <td style="text-align: center;"><code>a\! b</code></td>
 <td style="text-align: left;"><span class="math inline">\(a\!
 b\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>a \hspace&#123;0.1em&#125; b</code></td>
+<td style="text-align: left;"><span
+class="math inline">\(a\hspace{0.1em}b\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>a \hspace&#123;-0.1em&#125; b</code></td>
+<td style="text-align: left;"><span
+class="math inline">\(a\hspace{-0.1em}b\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><code>ab</code></td>
@@ -400,7 +446,9 @@ class="math inline">\(\mathscr{A}\)</span><br />
 <strong>打印机体</strong><code>\mathtt</code>：<span
 class="math inline">\(\mathtt{A}\)</span><br />
 <strong>黑板报粗体</strong><code>\mathbb</code>：<span
-class="math inline">\(\mathbb{A}\)</span></p>
+class="math inline">\(\mathbb{A}\)</span><br />
+<strong>德文尖角体</strong><code>\mathfrak</code>：<span
+class="math inline">\(\mathfrak{A}\)</span></p>
 <h4 id="集合">集合</h4>
 <p><span class="math inline">\(\empty \quad \emptyset \quad
 \varnothing\)</span></p>
@@ -415,6 +463,10 @@ class="math inline">\(\mathbb{A}\)</span></p>
 <p><span class="math inline">\(\texttt{abcd}\)</span></p>
 <p><span class="math inline">\(\operatorname{and} \quad
 \operatorname{or} \quad \operatorname{xor}\)</span></p>
+<p><span class="math inline">\(i \hbar \dfrac{\partial}{\partial t}
+\ket{\psi} = H \ket{\psi}\)</span></p>
+<p><span class="math inline">\(\boldsymbol{Ax} =
+\boldsymbol{0}\)</span></p>
 <p><span class="math inline">\(d \mid n\)</span><br />
 <span class="math inline">\(\binom{n}{k} \quad \tbinom{n}{k} \quad
 \dbinom{n}{k}\)</span></p>
@@ -443,6 +495,23 @@ class="math inline">\(\overset{\underset{\mathrm{def}}{}}{=}\)</span><br />
 <p><span class="math inline">\({}_1^2\!X_3^4\)</span></p>
 <p><span class="math display">\[
 \begin{matrix} \underbrace{ a+b+\cdots+z } \newline 26 \end{matrix}
+\]</span></p>
+<p><span class="math display">\[
+\gamma \overset{\text{def}}{=}
+\lim\limits_{n \to \infty}
+  \left(
+     \sum\limits_{k=1}^n {1 \over k}
+     - \ln n
+  \right)
+\approx 0.577
+\]</span></p>
+<p><span class="math display">\[
+\mathrm{e} = 2 + \cfrac{1}{
+  1 + \cfrac{1}{
+  2 + \cfrac{2}{
+  3 + \cfrac{3}{
+  4 + \cfrac{4}{\ldots}
+}}}}
 \]</span></p>
 <p><strong>Note:</strong><br />
 - 在以 <span class="math inline">\(e\)</span>
@@ -643,6 +712,261 @@ class="inline-tag grey">灰色小标签</span></p>
             <a target="_blank" rel="noopener" href='https://github.com/a2396837/hexo-theme-blank/' title='下载源码'><i class='fas fa-download'></i>下载源码</a>
 <a target="_blank" rel="noopener" href='https://github.com/a2396837/hexo-theme-blank/#hexo-theme-blank' title='查看文档'><i class='fas fa-book-open'></i>查看文档</a>
           </div>
+<h2 id="tikz-绘图">TikZ 绘图</h2>
+<!-- 在 head.html 中修改参数 -->
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \draw (0, 0)--(5, 0);
+    \draw (0, 2) to (5, 2);
+    \draw[->] (0, 0)--(0, 3);
+    \draw[|<->|] (1, 1)--(3, 1);
+
+    \draw[dashed] (0, -1) to (5, -1);
+    \draw[dotted] (0, -2) to (5, -2);
+    \draw[dashdotted] (0, -3) to (5, -3);
+
+    \draw[dashed, thick] (0, -4) to (5, -4);
+    \draw[dashed, very thick] (0, -5) to (5, -5);
+    \draw[dashed, ultra thick] (0, -6) to (5, -6);
+    \draw[dashed, thin] (0, -7) to (5, -7);
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}[>=latex]  
+    \draw[|<->|] (0, 1)--(3, 1);
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}[>=stealth]  
+    \draw[|<->|, dashed] (0, 2)--(3, 2);
+    \draw[|<->|, dashed] (0, 1)--node[above]{3cm}(3, 1);
+
+    \draw[|<->|, dashed] (0, 0) node[above=1mm]{A} to node [below=3mm]{3cm} (3, 0) node[above=1mm]{B};
+
+    \draw[|<->|] (0, -1)--node[fill=white]{4cm}(4, -1);
+    \draw[|<->|] (0, -2)--node[fill=red!20!white]{4cm}(4, -2);
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}[>=latex]  
+    \draw[->, thick] (-1, 0)--(5, 0) node[right]{$x$};
+    \draw[->, thick] (0, -1)--(0, 5) node[right]{$y$};
+    \draw (0, 2) node[left]{$\mathrm{N}$} -- (2, 2) node[right]{$\mathrm{P}(x, y)$} -- (2, 0) node[below]{$\mathrm{M}$};
+
+    \node at (-.2, -.2){$\mathrm{O}$};
+
+    \draw (0, 1) node[left]{$1$} -- (.1, 1);
+    \draw (1, 0) node[below]{$1$} -- (1, .1);
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}[>=latex]  
+    \draw[->, thick] (-1, 0)--(8, 0) node[right]{$x$};
+    \draw[->, thick] (0, -1)--(0, 8) node[right]{$y$};
+
+    \node at (-.2, -.2){$\mathrm{O}$};
+
+    \foreach \x in {1, 2, ..., 7} {
+      \draw (0, \x) node[left]{$\x$} -- (.1, \x);
+      \draw (\x, 0) node[below]{$\x$} -- (\x, .1);
+    }
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}[>=latex]
+    \draw[fill=magenta] (-4, 0)node[above]{$A$} -- (0, 3)node[right=1mm]{$B$} -- (4, 0)node[above]{$C$} -- (0, -3)node[right=1mm]{$D$};
+
+    \draw[->] (-5, 0)--(5, 0) node[right]{$x$};
+    \draw[->] (0, -5)--(0, 5) node[right]{$y$};
+
+    \node at (-.2, -.2){$\mathrm{O}$};
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}[scale=2]
+    \fill[cyan, draw=green] (0, 0) rectangle (2, 2);
+    \fill[white] (1, 1) circle (1);
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \filldraw[fill=green!30] (1,1)--(2,2)--(3,1)--cycle;
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \draw (0, 0) -- (4, 0);
+    \draw (0, 0) -- (45 : 4);
+    \draw[->, -latex] (2, 0) arc (0:45:2); 
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \draw[thick] (0, 0) rectangle (5, 5);
+    \draw[dashed, thick] (1, 1) rectangle (4, 4);
+
+    \foreach \x in {0, 4} {
+      \foreach \y in {0, 4} {
+        \draw[thick] (\x, \y) rectangle (\x + 1, \y + 1);
+        \begin{scope}
+          \clip (\x, \y) rectangle (\x + 1, \y + 1);
+
+          \foreach \z in {-0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75} {
+            \draw[xshift=\z cm] (\x, \y) -- (\x + 1, \y + 1);
+          }
+        \end{scope}
+      }
+    }
+
+    \draw[thick] (0, 5.1) -- (0, 5.4);
+    \draw[thick] (5, 5.1) -- (5, 5.4);
+    \draw[-latex, <->, thick] (0, 5.25) -- node[fill=white]{$30$} (5, 5.25);
+
+    \draw[white] (0, -0.25) -- node{$x$} (1, -0.25);
+    \draw[white] (4, -0.25) -- node{$x$} (5, -0.25);
+
+    \foreach \x in {0, 1, 4, 5} {
+      \draw[thick] (\x, -0.1) -- (\x, -0.4);
+    }
+
+    \foreach \x in {0, 4} {
+      \draw[-latex, ->, thick] (\x - 0.4, -0.25) -- (\x, -0.25);
+      \draw[-latex, <-, thick] (\x + 1, -0.25) -- (\x + 1.4, -0.25);
+    }
+
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \usepackage{circuitikz}
+  \begin{document}
+  \begin{tikzpicture}
+    \draw (0,0) circle (0.5in);
+    \draw (0,0) circle (1in);
+  \end{tikzpicture}
+  \end{document}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \draw[red] (0,0) --(9,0);
+    \draw[green, thick] (0,1) --(9,1);
+    \draw[blue] (0,2) --(9,2);
+    \filldraw[draw=blue!80,fill=blue!20] (14 ,1) circle (1);
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<center>
+<script type="text/tikz">
+  \begin{tikzpicture}
+    [every node/.style={fill=blue!30,draw=blue!70,rounded corners, circle},
+     edge from parent/.style={blue,thick,draw}]
+        \node {root}
+            child {node {a1}}
+            child {node {a2}
+                child {node {b1}}
+                child {node {b2}}}
+            child {node {a3}};
+  \end{tikzpicture}
+</script>
+</center>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \draw[<->](3.2,0)--(0,0)--(0,3.2);
+    \draw(0,0)--(-1,0);
+    \draw[red,domain=-0.2:0.8] plot(\x,4*\x) node at (0.8,3.5){$y=4x$};
+    \draw[blue,domain=-1:1] plot(\x,2*\x*\x) node at (1.1,2.2){$y=x^2$};
+    \draw[cyan,domain=-1:2,smooth] plot(\x,{0.3*sin(4*\x r)}) node at (2.3,0.6){$y=0.3\sin(4x)$};
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture} 
+    \draw[step=1.5] (0,0) grid (6,6);
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}[scale=3]
+    \draw [<->, rounded corners, thick, purple] (0,2) -- (0,0) -- (3,0);
+    \draw [blue] (0.5,0.2) rectangle (1.5,1);
+    \draw [cyan] (0.5,2.3) ellipse (1 and 0.5);
+    \draw [red, ultra thick] (2.3,0.5) circle [radius=0.5];;
+    \draw [gray] (2,1.4) arc [radius=1.2, start angle=45, end angle= 120];
+    \draw[very thick] (0,0) to [out=90,in=195] (2,1.5);
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}[thick]
+    \draw (-2.87,3.94) ellipse (2.8cm and 0.88cm);
+    \draw (-5.52,-1.92) arc (164:376: 2.8cm and 0.88cm);
+    \draw [dashed] (-0.14,-1.92) arc (16:164: 2.8cm and 0.88cm);
+    \draw (-5.55,3.68)-- (-0.14,-1.92);
+    \draw (-5.52,-1.92)-- (-0.19,3.69);
+    \draw[blue,-stealth](-2.85,0.9)--(-1,2.84)node[black,right]{null};
+    \draw[blue,-stealth](-2.85,0.9)--(-0.8,0)node[above right,black]{spacelike};
+    \draw[blue,-stealth](-2.85,0.9)--(-4,3)node[right,yshift=-0.1cm,black]{timelike};
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \def\firstcircle{(0,0) circle (1.5cm)}
+  \def\secondcircle{(0:2cm) circle (1.5cm)}
+  \colorlet{circle edge}{blue!50}
+  \colorlet{circle area}{blue!20}
+
+  \tikzset{filled/.style={fill=circle area, draw=circle edge, thick}, outline/.style={draw=circle edge, thick}}
+
+  \setlength{\parskip}{5mm}
+
+  \begin{tikzpicture}
+    \begin{scope}
+        \clip \firstcircle;
+        \fill[filled] \secondcircle;
+    \end{scope}
+    \draw[outline] \firstcircle node {$A$};
+    \draw[outline] \secondcircle node {$B$};
+    \node[anchor=south] at (current bounding box.north) {$A \cap B$};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}
+    \draw[filled] \firstcircle node {$A$}
+                  \secondcircle node {$B$};
+    \node[anchor=south] at (current bounding box.north) {$A \cup B$};
+  \end{tikzpicture}
+</script>
+<p><br></p>
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \draw[help lines] (0,0) grid(6,3);
+    \draw[blue, thick] (0,0) to[out=90,in=180] (1,1) to[in=270,out=360] (2,2)
+    to[in=180,out=90] (3,3) to[in=90,out=360] (4,2) to[in=180,out=270] (5,1) 
+    to[in=90, out=0] (6,0);
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}\small
+  \def\r{1.8}
+  \coordinate[label=$A$] (A) at (0.5*\r,0.8*\r);
+  \coordinate[label=below:$B$] (B) at (-\r,0);
+  \coordinate[label=below:$C$] (C) at (\r,0);
+  \draw[thin] (A) -- node[above] {$c$}
+    node[pos=0.03,below,inner sep=4] {$\alpha$}
+    (B) -- (C) -- node[right] {$b$} (A);
+  \end{tikzpicture}
+</script>
 </div>
         
           <div class="post-copyright">
@@ -650,7 +974,7 @@ class="inline-tag grey">灰色小标签</span></p>
                       <span> 作者: Garden-Zen</span>
                   </div>
                   <div class="copyright-item">
-                      <span> 链接: <a href="https://garden-zen.github.io/2024/01/05/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/">https://garden-zen.github.io/2024/01/05/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/</a></span>
+                      <span> 链接: <a href="https://garden-zen.github.io/2024/01/04/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/">https://garden-zen.github.io/2024/01/04/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/</a></span>
                   </div>
                   <div class="copyright-item">
                       <span> 声明: 本博客所有文章除特别声明外，均采用许可协议 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 转载请注明出处！</span>
@@ -665,12 +989,12 @@ class="inline-tag grey">灰色小标签</span></p>
     <div class="post-nav">
       
         <div class="post-nav-prev post-nav-item">
-            <a href="/2024/01/10/%E3%80%90%E8%B5%84%E6%BA%90%E3%80%91%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E3%80%81%E6%9C%89%E8%B6%A3%E3%80%81%E5%80%BC%E5%BE%97%E6%94%B6%E8%97%8F%E7%9A%84%E7%BD%91%E5%9D%80/" >【资源】一些有用、有趣、值得收藏的网址<i class="fa fa-chevron-left"></i></a>
+            <a href="/2024/01/04/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >【数学】常微分方程学习记录<i class="fa fa-chevron-left"></i></a>
         </div>
       
       
         <div class="post-nav-next post-nav-item">
-            <a href="/2024/01/04/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >【数学】常微分方程学习记录<i class="fa fa-chevron-right"></i></a>
+            <a href="/2024/01/04/Hello%20World/" >Hello World<i class="fa fa-chevron-right"></i></a>
         </div>
       
     </div>
@@ -734,6 +1058,8 @@ class="inline-tag grey">灰色小标签</span></p>
     <script src="/js/script.js"></script>
   
     <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
   
 
  

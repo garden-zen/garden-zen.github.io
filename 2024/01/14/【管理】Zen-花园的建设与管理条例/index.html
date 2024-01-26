@@ -49,6 +49,8 @@
     
       <link rel="stylesheet" href="/css/css_garden_zen/mathnote_style.css">
     
+      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    
   
 
   
@@ -168,7 +170,7 @@
         <span title="发表于 2024.01.14"><i class="far fa-calendar-alt"></i> 2024.01.14</span>
       </div>
       <div class="post-meta-item updated">
-        <span title="更新于 2024.01.15"><i class="far fa-calendar-check"></i> 2024.01.15</span>
+        <span title="更新于 2024.01.23"><i class="far fa-calendar-check"></i> 2024.01.23</span>
       </div>
      
     
@@ -183,10 +185,10 @@
     
      <div class="post-meta-item wordcount">
         
-          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.4k 字</span>
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.8k 字</span>
            
         
-          <i class="far fa-clock"></i> <span class="post-count">4 分钟</span>
+          <i class="far fa-clock"></i> <span class="post-count">6 分钟</span>
                                
       </div>
      
@@ -222,16 +224,48 @@ Zen
 花园的介绍（如果有的话）、对他人有较大帮助的文章、虽然不满足前两个特征但是有必要置顶的文章（<del>比如，出于作者的虚荣心</del>）。<br />
 </li>
 <li>关于标题格式。除极个别例外情况，所有博客文章的标题都应该以“【】”打头，方括号内填写一个最贴近文章的关键词，最好能体现文章内容的性质，同时，关键词不宜过长，以
-<span class="math inline">\(1 - 3\)</span> 个字为宜。<br />
+<span class="math inline">\(1 - 4\)</span> 个字为宜。<br />
 </li>
 <li>关于 Markdown 撰写正文时的使用规范。使用 Markdown
-撰写算法题解相关的博文时，原则上要达到 <a
+撰写算法题解相关的博文时，原则上要尽力达到 <a
 target="_blank" rel="noopener" href="https://help.luogu.com.cn/rules/academic/solution-standard"><u>
-洛谷题解规范 </u></a> 的标准，若无特殊情况，其他博文的 Markdown
-格式也应遵循该规范。不过，矩阵的排版可以根据个人习惯使用
+洛谷题解规范 </u></a>
+的标准（实践中，部分例外是允许的），若无特殊情况，其他博文的 Markdown
+格式也应遵循该规范。<br />
+</li>
+<li>关于上一条中<a
+target="_blank" rel="noopener" href="https://help.luogu.com.cn/rules/academic/solution-standard"><u>
+洛谷题解规范
+</u></a>的例外说明。（允许例外出现的根本目的是，确保博文写作能够使用更加合适的方法更好地表意，在个人习惯、能力与规范之间达到平衡点，而不必完全拘泥于一种形式）
+<ul>
+<li>矩阵。矩阵的排版可以根据个人习惯使用
 <code>pmatrix</code>，可以不使用规范中推荐的
 <code>bmatrix</code>，但是在同一博文中二者不能混用。<br />
 </li>
+<li>位运算。可以使用两种符号系统（双轨制）。<strong>第一种</strong>
+是，用 <span class="math inline">\(\&amp;\)</span>，<span
+class="math inline">\(|\)</span>，<span
+class="math inline">\(\oplus\)</span>，<span
+class="math inline">\(\gg\)</span>，<span
+class="math inline">\(\ll\)</span>
+分别表示与、或、异或、右移、左移，这种写法在 TAOCP（卷 4A）和 Hacker's
+Delight
+中均有所体现，特别是博文中需要用到左移、右移符号时，可以使用这一套符号系统；<strong>第二种</strong>
+是洛谷题解规范中推荐使用的符号，即，用 <span
+class="math inline">\(\operatorname{and}\)</span>，<span
+class="math inline">\(\operatorname{or}\)</span>，<span
+class="math inline">\(\operatorname{xor}\)</span>
+分别表示与、或、异或，当位运不涉及左移或右移符号时，可以选择这一套符号体系。同样地，在同一博文中，这两种符号系统不能混用。<br />
+</li>
+<li>关于赋值。DP 中的状态转移方程可以不使用箭头符号 <span
+class="math inline">\(\to\)</span> 和 <span
+class="math inline">\(\gets\)</span> 表示赋值，而使用 <span
+class="math inline">\(=\)</span>，《算法导论》中采用的正是这种做法。除非在语境中表示赋值的含义非常明确，一般而言，不必刻意使用箭头符号。（洛谷规范中推荐使用箭头符号
+<span class="math inline">\(\to\)</span> 和 <span
+class="math inline">\(\gets\)</span>，而非代码中使用的 <span
+class="math inline">\(=\)</span>）<br />
+</li>
+</ul></li>
 <li>关于一些未来可能会出现的内容的分类说明。例如：C++、Rust、操作系统、计算机网络、数据库、编译原理等相关的博客，它们更多地是为现实中的技术服务的，可以将其归为“技术”一类，算法虽然客观上也为技术服务，但是它的理论性更强，可以将其单独归为“算法”大类，数据结构类似，由于它常常与算法相提并论，也可将其归为“算法”一类。<br />
 </li>
 <li>关于超链接。除去 Hexo 自动生成的目录以外，由于 Markdown
@@ -239,7 +273,9 @@ target="_blank" rel="noopener" href="https://help.luogu.com.cn/rules/academic/so
 中的下划线标签 <code>&lt;u&gt; 超链接 &lt;/u&gt;</code>
 或其他实现方案为它添加下划线，以引起注意。<br />
 </li>
-<li>关于段首空格。算法和数学相关的博客，每一段段首可以不加空格，与其他博客平台的博文保持风格的一致性；其余博文原则上每段段首应当空两格，实现方案推荐在每段开头加上
+<li>关于段首空格。算法和数学相关的博客，每一段段首可以不加空格，与其他博客平台的博文保持风格的一致性（为了凸显论述的层次，有的地方，比如一些
+note
+中，也可以酌情加上，一般不必加）；其余博文原则上每段段首应当空两格，实现方案推荐在每段开头加上
 <code>&amp;emsp;&amp;emsp;</code>。<br />
 </li>
 <li>关于句号。算法和数学相关的博客中，使用实心圆点
@@ -293,6 +329,10 @@ target="_blank" rel="noopener" href="https://help.luogu.com.cn/rules/academic/so
       
     </div>
     <div class="post-nav">
+      
+        <div class="post-nav-prev post-nav-item">
+            <a href="/2024/01/18/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >【数学】高等代数学习记录<i class="fa fa-chevron-left"></i></a>
+        </div>
       
       
         <div class="post-nav-next post-nav-item">
@@ -360,6 +400,8 @@ target="_blank" rel="noopener" href="https://help.luogu.com.cn/rules/academic/so
     <script src="/js/script.js"></script>
   
     <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
   
 
  

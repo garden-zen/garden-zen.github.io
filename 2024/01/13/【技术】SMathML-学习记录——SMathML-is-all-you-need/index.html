@@ -49,6 +49,8 @@
     
       <link rel="stylesheet" href="/css/css_garden_zen/mathnote_style.css">
     
+      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    
   
 
   
@@ -168,7 +170,7 @@
         <span title="发表于 2024.01.13"><i class="far fa-calendar-alt"></i> 2024.01.13</span>
       </div>
       <div class="post-meta-item updated">
-        <span title="更新于 2024.01.15"><i class="far fa-calendar-check"></i> 2024.01.15</span>
+        <span title="更新于 2024.01.26"><i class="far fa-calendar-check"></i> 2024.01.26</span>
       </div>
      
     
@@ -185,10 +187,10 @@
     
      <div class="post-meta-item wordcount">
         
-          <i class="fas fa-pencil-alt"></i> <span class="post-count">2.1k 字</span>
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">2.9k 字</span>
            
         
-          <i class="far fa-clock"></i> <span class="post-count">7 分钟</span>
+          <i class="far fa-clock"></i> <span class="post-count">10 分钟</span>
                                
       </div>
      
@@ -199,7 +201,7 @@
     <div id="toc" class="toc">
           <h1>目录</h1>
           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-smathml"><span class="toc-number">1.</span> <span class="toc-text">关于 SMathML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#smathml-%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">SMathML 的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-racket"><span class="toc-number">2.1.</span> <span class="toc-text">安装 Racket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD-smathml-%E5%8C%85"><span class="toc-number">2.2.</span> <span class="toc-text">下载 SMathML 包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#smathml-%E7%9A%84%E6%9B%B4%E6%96%B0"><span class="toc-number">2.3.</span> <span class="toc-text">SMathML 的更新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-smathml-%E7%BC%96%E5%86%99%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%96%87%E6%A1%A3"><span class="toc-number">3.</span> <span class="toc-text">使用 SMathML
-编写自己的第一个文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-number">4.</span> <span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a-racket"><span class="toc-number">4.1.</span> <span class="toc-text">A   Racket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#b-mathml"><span class="toc-number">4.2.</span> <span class="toc-text">B   MathML</span></a></li></ol></li></ol>
+编写自己的第一个文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-number">4.</span> <span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a-racket"><span class="toc-number">4.1.</span> <span class="toc-text">A   Racket</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AE%BE%E5%AE%9A"><span class="toc-number">4.1.1.</span> <span class="toc-text">基本设定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%80%BC%E7%9A%84%E7%BB%91%E5%AE%9A%E4%B8%8E%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89define"><span class="toc-number">4.1.2.</span> <span class="toc-text">值的绑定与函数的定义（define）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AF%BC%E5%85%A5require"><span class="toc-number">4.1.3.</span> <span class="toc-text">模块的导入（require）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#b-mathml"><span class="toc-number">4.2.</span> <span class="toc-text">B   MathML</span></a></li></ol></li></ol>
       </div>
     
   <div class="content">
@@ -291,12 +293,76 @@ world!” 的 SMathML 文档开始吧。</p>
 用于把我们的 SMathML 文档转化成可以在浏览器中直接打开的 HTML 文档，在
 HTML 文档中，我们将看到 SMathML 输出的 “Hello, world!”。</p>
 <p>   <code>hello_world.rkt</code> 的全貌如下。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#lang racket</span><br><span class="line"></span><br><span class="line">(provide hello_world.html)</span><br><span class="line"></span><br><span class="line">(require SMathML)</span><br><span class="line"></span><br><span class="line">(define pre:hello_world.html</span><br><span class="line">  (Prelude</span><br><span class="line">   #:title &quot;第一个 SMathML 生成的文档&quot;</span><br><span class="line">   #:css &quot;styles.css&quot;</span><br><span class="line">   (H1 &quot;第一个文档&quot;)</span><br><span class="line">   (P &quot;Hello World!&quot;)</span><br><span class="line">   ))</span><br><span class="line"></span><br><span class="line">(define hello_world.html</span><br><span class="line">  (Tn (Tm pre:hello_world.html)))</span><br></pre></td></tr></table></figure>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#lang racket</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="built_in">provide</span></span> hello_world.html)</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="built_in">require</span></span> SMathML)</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="built_in">define</span></span> pre:hello_world.html</span><br><span class="line">  (<span class="name">Prelude</span></span><br><span class="line">   #:title <span class="string">&quot;第一个 SMathML 生成的文档&quot;</span></span><br><span class="line">   #:css <span class="string">&quot;styles.css&quot;</span></span><br><span class="line">   (<span class="name">H1</span> <span class="string">&quot;第一个文档&quot;</span>)</span><br><span class="line">   (<span class="name">P</span> <span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line">   ))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="built_in">define</span></span> hello_world.html</span><br><span class="line">  (<span class="name">Tn</span> (<span class="name">Tm</span> pre:hello_world.html)))</span><br></pre></td></tr></table></figure>
 <p>  </p>
 <p>   以下是 <code>generate_doc.rkt</code> 的实现。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#lang racket</span><br><span class="line"></span><br><span class="line">(require SMathML &quot;hello_world.rkt&quot;)</span><br><span class="line"></span><br><span class="line">(define (emit-web)</span><br><span class="line">  (emitXml hello_world.html &quot;hello_world.html&quot;))</span><br><span class="line"></span><br><span class="line">(emit-web)</span><br></pre></td></tr></table></figure>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#lang racket</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="built_in">require</span></span> SMathML <span class="string">&quot;hello_world.rkt&quot;</span>)</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="built_in">define</span></span> (<span class="name">emit-web</span>)</span><br><span class="line">  (<span class="name">emitXml</span> hello_world.html <span class="string">&quot;hello_world.html&quot;</span>))</span><br><span class="line"></span><br><span class="line">(<span class="name">emit-web</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="附录">附录</h2>
 <h3 id="a-racket">A   Racket</h3>
+<p>   下面关于 Racket 语法的介绍是在 <a
+target="_blank" rel="noopener" href="https://docs.racket-lang.org/guide/index.html"><u> The Racket
+Guide </u></a>
+的基础上，加入个人理解的基础上写成的。由于本人水平极其有限，如果在下文中您发现了奇怪的、不明确的表述，应当以
+The Racket Guide 或其他权威的资料为准。</p>
+<h4 id="基本设定">基本设定</h4>
+<ol type="1">
+<li><strong>标识符的命名</strong>： 除了 <code>(</code> <code>)</code>
+<code>[</code> <code>]</code> <code>&#123;</code> <code>&#125;</code>
+<code>"</code> <code>,</code> <code>'</code> <code>`</code>
+<code>;</code> <code>#</code> <code>|</code> <code>\</code> 这些字符
+<strong>不能</strong>
+用于标识符的命名以外，其余字符均可用于标识符的命名。此外，标识符的名字
+<strong>不能</strong> 是数字常量。（由于 Racket
+非常自由的标识符命名规则，很多常见编程语言中不合法的标识符名称，如
+<code>+</code>、<code>string-prefix?</code>、<code>pass/fail</code> 在
+Racket 中是合法的。）<br />
+</li>
+<li><strong>注释</strong>：单行注释以 <code>;</code>
+开头，注释内容直至该行末尾。</li>
+</ol>
+<h4 id="值的绑定与函数的定义define">值的绑定与函数的定义（define）</h4>
+<p>   <code>define</code>
+可以将一个表达式（<code>&lt;expr&gt;</code>）的值绑定到一个标识符（<code>&lt;id&gt;</code>）。标识符一旦与表达式的值进行绑定，其值就不能再改变。（这与
+Rust 中的不可变变量类似，而与 C/C++
+等语言中的变量（其值可变）有所不同，应当区别开来）</p>
+<p>   以下是一个例子，将表达式 <code>3</code> 的值绑定到标识符
+<code>pie</code> 上。</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">define</span></span> pie <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>   <code>define</code>
+也可以用于定义函数（也可称为“过程”），直接看一个例子：</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">define</span></span> (<span class="name">piece</span> str)        </span><br><span class="line">  (<span class="name"><span class="built_in">substring</span></span> str <span class="number">0</span> <span class="number">3</span>)) </span><br></pre></td></tr></table></figure>
+<p>   上面的例子中，列表 <code>(piece str)</code>
+中第一个元素给出了函数名称
+<code>piece</code>，其余元素表示函数参数，在这里，<code>piece</code>
+函数仅有一个参数 <code>str</code>。在 Racket 中，函数的参数数目可以为
+<span class="math inline">\(0\)</span>，也可以是其他 <span
+class="math inline">\(0\)</span> 以上的数目。</p>
+<p>   <code>(substring str 0 3)</code>
+是一个表达式，在这里也是函数体，其功能是获取 <code>str</code> 中以位置
+<span class="math inline">\(0\)</span> 处的字符起始的长度为 <span
+class="math inline">\(3\)</span> 的子串。</p>
+<p>   在 Racket 中，函数体应该包含 <strong>一个以上</strong>
+的表达式。当函数体包含多个表达式时，函数以 <strong>最后</strong>
+一个表达式的值作为返回值，其余表达式仅仅用于产生副作用（比如，打印内容等）。在此，我们不加说明地给出一个例子如下。</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">define</span></span> (<span class="name">bake</span> flavor)</span><br><span class="line">  (<span class="name">printf</span> <span class="string">&quot;preheating oven...\n&quot;</span>) <span class="comment">; 该表达式仅产生副作用</span></span><br><span class="line">  (<span class="name"><span class="built_in">string-append</span></span> flavor <span class="string">&quot; pie&quot;</span>))  <span class="comment">; 该表达式的结果是函数的返回值</span></span><br></pre></td></tr></table></figure>
+<h4 id="模块的导入require">模块的导入（require）</h4>
+<p>   <code>require</code> 在 Racket 中的作用，正如 <code>include</code>
+之于 C/C++，<code>import</code> 之于 Java、Python，<code>use</code> 之于
+Rust。它常常用于模块的导入。</p>
+<p>   利用 <code>require</code>，我们可以方便进行 Racket
+库的导入，比如导入 SMathML ：</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">require</span></span> SMathML)</span><br></pre></td></tr></table></figure>
+<p>   <code>require</code> 也支持导入其他 <code>.rkt</code>
+文件，只需用引号括住文件的 <strong>相对路径</strong>
+即可，下面是一个简单的例子。</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">require</span></span> <span class="string">&quot;hello_world.rkt&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>   <code>require</code>
+支持同时导入多个模块，因此，我们可以这样写（把上面两个例子合并）：</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">require</span></span> SMathML <span class="string">&quot;hello_world.rkt&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>   事实上，<code>require</code>
+还有一些其他的用法，这里暂时不做过多介绍，如有兴趣，可以看 <a
+target="_blank" rel="noopener" href="https://docs.racket-lang.org/guide/module-require.html"><u> 这里
+</u></a>。</p>
 <h3 id="b-mathml">B   MathML</h3>
 <style>
     /* 用于保证英文单词不被截断，且文本两端对齐 */
@@ -417,6 +483,8 @@ HTML 文档中，我们将看到 SMathML 输出的 “Hello, world!”。</p>
     <script src="/js/script.js"></script>
   
     <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
   
 
  

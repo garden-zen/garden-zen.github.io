@@ -1,0 +1,976 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <meta name="author" content="Garden-Zen">
+  
+  
+  
+  
+  
+    <link rel="alternate" href="/atom.xml " title="Zen 花园" type="application/atom+xml">
+  
+
+  
+
+  <title>【数学】高等代数学习记录 | Zen 花园</title>
+
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="/css/style.css" >
+  <link rel="stylesheet" href="/css/partial/dark.css" >
+
+  
+  
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/partial/highlight/atom-one-light.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/iconfont.css">
+    
+      <link rel="stylesheet" href="/css/css_garden_zen/mathnote_style.css">
+    
+      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    
+  
+
+  
+    <script src="/js/todark.js"></script>
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+</html>
+    
+<div class="nav index" style="height: 60px;">
+    <div class="title animated fadeInDown">
+        <div class="layui-container">
+                <div class="nav-title"><a href="/" title="Zen 花园">Zen 花园</a></div>
+            <div class="nav-list">
+                <button> <span class=""></span><span style="display: block;"></span><span class=""></span> </button>
+                <ul class="layui-nav" lay-filter="">
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/ ">
+                            <i class=" fab fa-fort-awesome " style="color: rgb(255 107 107);"></i>
+                            <span class="layui-nav-item-name">首页</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/archives/ ">
+                            <i class=" fas fa-archive " style="color: rgb(10 189 227);"></i>
+                            <span class="layui-nav-item-name">文章</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/tags/ ">
+                            <i class=" fas fa-hashtag " style="color: rgb(254 202 87);"></i>
+                            <span class="layui-nav-item-name">标签</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/categories ">
+                            <i class=" far fa-folder-open " style="color: rgb(29 209 161);"></i>
+                            <span class="layui-nav-item-name">分类</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/shuoshuo/ ">
+                            <i class=" fas fa-coffee " style="color:#31c7c1;"></i>
+                            <span class="layui-nav-item-name">说说</span>
+                        </a>
+                    </li>
+                    
+                    
+                        <li class="layui-nav-item" id="btn-toggle-dark">🌙</li>
+                    
+                    <span class="layui-nav-bar" style="left: 342px; top: 78px; width: 0px; opacity: 0;"></span>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<header class="header">
+        
+            <div class="logo">
+                    <a href="/"><img src="/img/avatar0.jpg" onerror=this.onerror=null,this.src="/img/loading.gif"></a>
+            </div>
+         
+    </div>
+     
+    
+            <div class="social">
+                
+                        <a class="social-icon" href="https://github.com/garden-zen" target="_blank" title="Github">
+                            <i class="iconfont icon-GitHub" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="mailto:2799597049@qq.com" target="_blank" title="Email">
+                            <i class="iconfont icon-email" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="https://space.bilibili.com/471787443" target="_blank" title="Bilibili">
+                            <i class="iconfont icon-bilibili" aria-hidden="true"></i>
+                          </a>
+                 
+            </div>
+     
+</header>
+
+    
+<article id="post">
+  <div class="post-title">【数学】高等代数学习记录</div>
+  
+<div class="post-meta">
+    
+    
+      <div class="post-meta-item date">
+        <span title="发表于 2024.01.18"><i class="far fa-calendar-alt"></i> 2024.01.18</span>
+      </div>
+      <div class="post-meta-item updated">
+        <span title="更新于 2024.01.25"><i class="far fa-calendar-check"></i> 2024.01.25</span>
+      </div>
+     
+    
+      <div class="post-meta-item categories">
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E6%95%B0%E5%AD%A6/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/">高等代数</a>
+        
+      </div>
+     
+    
+     <div class="post-meta-item wordcount">
+        
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">3.9k 字</span>
+           
+        
+          <i class="far fa-clock"></i> <span class="post-count">17 分钟</span>
+                               
+      </div>
+     
+</div>
+
+
+  
+    <div id="toc" class="toc">
+          <h1>目录</h1>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">第一章 行列式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 二阶行列式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 三阶行列式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#n-%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 \(n\)
+阶行列式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E5%B1%95%E5%BC%80%E5%92%8C%E8%BD%AC%E7%BD%AE"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 行列式的展开和转置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 行列式的计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E7%AD%89%E4%BB%B7%E5%AE%9A%E4%B9%89"><span class="toc-number">1.6.</span> <span class="toc-text">1.6 行列式的等价定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#laplace-%E5%AE%9A%E7%90%86"><span class="toc-number">1.7.</span> <span class="toc-text">1.7 Laplace 定理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%9F%A9%E9%98%B5"><span class="toc-number">2.</span> <span class="toc-text">第二章 矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 矩阵的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 矩阵的运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E9%98%B5%E7%9A%84%E9%80%86%E9%98%B5"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 方阵的逆阵</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4"><span class="toc-number">3.</span> <span class="toc-text">第三章 线性空间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%9F%9F"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 数域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%BA%BF%E6%80%A7%E6%98%A0%E5%B0%84"><span class="toc-number">4.</span> <span class="toc-text">第四章 线性映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%A4%9A%E9%A1%B9%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">第五章 多项式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%85%83%E5%A4%9A%E9%A1%B9%E5%BC%8F%E4%BB%A3%E6%95%B0"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 一元多项式代数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E9%99%A4"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 整除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">6.</span> <span class="toc-text">参考资料</span></a></li></ol>
+      </div>
+    
+  <div class="content">
+        <div><h2 id="第一章-行列式">第一章 行列式</h2>
+<h3 id="二阶行列式">1.1 二阶行列式</h3>
+<div class="note note-success">
+            <div class="noteTitle">说明</div><p>这一节介绍了二阶行列式的 <span class="math inline">\(8\)</span>个性质，其实这些性质对于 <span class="math inline">\(n\)</span>阶行列式也是适用的. 该节内容在线性代数中都有涉及，不再展开.</p>
+          </div>
+<h3 id="三阶行列式">1.2 三阶行列式</h3>
+<p>余子式</p>
+<p>系数行列式</p>
+<div class="note note-success">
+            <div class="noteTitle">说明</div><p>这一节除了几个简单的定义，实质的内容并不多.</p>
+          </div>
+<h3 id="n-阶行列式">1.3 <span class="math inline">\(n\)</span>
+阶行列式</h3>
+<p>代数余子式</p>
+<div class="note note-success">
+            <div class="noteTitle">说明</div><p>这一节介绍了 <span class="math inline">\(n\)</span> 阶行列式的 <spanclass="math inline">\(7\)</span> 个性质，其实就是把 <spanclass="math inline">\(1.1\)</span> 节中二阶行列式的前 <spanclass="math inline">\(7\)</span> 个性质的推广到 <spanclass="math inline">\(n\)</span> 阶行列式而已. 不再展开.</p>
+          </div>
+<h3 id="行列式的展开和转置">1.4 行列式的展开和转置</h3>
+<p><span class="math inline">\(|\boldsymbol{A} ^
+{\prime}|\)</span>：行列式 <span
+class="math inline">\(|\boldsymbol{A}|\)</span> 的转置.</p>
+<div class="note note-default">
+            <div class="noteTitle">注意</div><p>我这里参考的教材使用 <span class="math inline">\(|\boldsymbol{A} ^{\prime}|\)</span> 表示矩阵 <spanclass="math inline">\(\boldsymbol{A}\)</span>的转置，与以前线性代数教材中的符号 <spanclass="math inline">\(|\boldsymbol{A} ^ {\mathrm{T}}|\)</span>在写法上虽有所不同，但是都表达相同的含义.若无特别说明，后文使用的转置符号都将与参考教材保持一致.</p>
+          </div>
+<p>行列式转置后的值不变</p>
+<p>Cramer（克莱姆）法则</p>
+<div class="note note-success">
+            <div class="noteTitle">说明</div><p>这一节通过定理 <span class="math inline">\(1.4.1\)</span>说明了行列式可以按<spanclass="lightEmphasis">任意列</span>展开，通过引理 <spanclass="math inline">\(1.4.1\)</span> 和定理 <spanclass="math inline">\(1.4.2\)</span> 说明了行列式可以按<spanclass="lightEmphasis">任意行</span>展开. 接下来，又证明了行列式的性质8：<span class="math inline">\(|\boldsymbol{A} ^ {\prime}| =|\boldsymbol{A}|\)</span>. 最后，定理 <spanclass="math inline">\(1.4.3\)</span> 介绍了 Cramer 法则.这些都是线性代数中的基础内容，不再详述.</p>
+          </div>
+<h3 id="行列式的计算">1.5 行列式的计算</h3>
+<div class="note note-default">
+            <div class="noteTitle">关于这一节</div><p>这一节几乎不涉及任何新的数学概念，而更多地展示行列式计算的技巧.下面举几个我认为值得放在这里的例子.</p>
+          </div>
+<div class="note note-info">
+            <div class="noteTitle">例 <span class="math inline">\(\small 1\)</span></div><p><span class="math inline">\(n\)</span> 阶 VanderMonde（范德蒙德）行列式：</p><p><span class="math display">\[  V_n =  \begin{vmatrix}    1 &amp; 1 &amp; \cdots &amp; 1 \\    x_1 &amp; x_2 &amp; \cdots &amp; x_n \\    x_1^2 &amp; x_2^2 &amp; \cdots &amp; x_n^2 \\    \vdots &amp; \vdots &amp;  &amp; \vdots \\    x_1^{n - 1} &amp; x_2^{n - 1} &amp; \cdots &amp; x_n^{n - 1}  \end{vmatrix} =  \prod_{1 \leq i \lt j \leq n} (x_j - x_i) \]</span></p>
+          </div>
+<div class="note note-info">
+            <div class="noteTitle">例 <span class="math inline">\(\small 2\)</span></div><p><span class="math inline">\(n\)</span> 阶行列式：</p><p><span class="math display">\[  \begin{aligned}    F_n &amp; =    \begin{vmatrix}      \lambda &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; a_n \\      -1 &amp; \lambda &amp; 0 &amp; \cdots &amp; 0 &amp; a_{n - 1} \\      0 &amp; -1 &amp; \lambda &amp; \cdots &amp; 0 &amp; a_{n - 2} \\      \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots &amp; \vdots\\      0 &amp; 0 &amp; 0 &amp; \cdots &amp; \lambda &amp; a_2 \\      0 &amp; 0 &amp; 0 &amp; \cdots &amp; -1 &amp; \lambda + a_1 \\    \end{vmatrix} \\ \\    &amp; = \lambda^n + a_1\lambda^{n - 1} + a_2\lambda^{n - 2}        + \cdots + a_n.  \end{aligned} \]</span></p>
+          </div>
+<h3 id="行列式的等价定义">1.6 行列式的等价定义</h3>
+<p><span class="definitionId">定义 1.6.1</span>   <span
+class="math inline">\(n\)</span> 个数 <span class="math inline">\(1, 2,
+\cdots, n\)</span> 的排列 <span class="math inline">\((1, 2, \cdots,
+n)\)</span> 叫作常序排列，即数字从小到大的排列为常序排列.
+如果在一个排列在 <span class="math inline">\(j\)</span> 排在 <span
+class="math inline">\(i\)</span> 之前而 <span class="math inline">\(j
+\gt i\)</span>，则称这是一个 <strong>逆序对</strong>.
+一个排列的所有逆序对的总个数称为这个排列的 <strong>逆序数</strong>.</p>
+<p>排列 <span class="math inline">\((k_1, k_2, \cdots, k_n)\)</span>
+的逆序数通常记为 <span class="math inline">\(N(k_1, k_2, \cdots,
+k_n)\)</span>.</p>
+<p><span class="definitionId">定义 1.6.2</span>   若排列 <span
+class="math inline">\((k_1, k_2, \dots, k_n)\)</span>
+的逆序数是一个偶数（包括零），则称之为 <strong>偶排列</strong>；若排列
+<span class="math inline">\((k_1, k_2, \cdots, k_n)\)</span>
+的逆序数是一个奇数，则称之为 <strong>奇排列</strong>.</p>
+<div class="note note-default">
+            <div class="noteTitle">符号约定</div><p>为了方便起见，我们记 <span class="math inline">\(S_n\)</span> 为<span class="math inline">\(1, 2, \cdots, n\)</span>的所有全排列构成的集合. 在本节接下来给出的引理和定理中，将不再对 <spanclass="math inline">\(S_n\)</span> 的含义进行说明.</p>
+          </div>
+<p><span class="lemmaId">引理 1.6.1</span>   设 <span
+class="math inline">\((k_1, k_2, \cdots, k_n) \in S_n\)</span>，若将其中
+<span class="math inline">\(k_i\)</span> 与 <span
+class="math inline">\(k_j\)</span>
+的位置对换，其余数位置不变，则排列的奇偶性改变.
+即奇排列变为偶排列，偶排列变为奇排列.</p>
+<p><span class="lemmaId">引理 1.6.2</span>   设 <span
+class="math inline">\(n \geq 2\)</span>，则 <span
+class="math inline">\(S_n\)</span> 中的奇排列与偶排列各占一半.</p>
+<p><span class="lemmaId">引理 1.6.3</span>   设 <span
+class="math inline">\((k_1, k_2, \cdots, k_n) \in S_n\)</span>，则通过
+<span class="math inline">\(N(k_1, k_2, \cdots, k_n)\)</span>
+次相邻对换，可将 <span class="math inline">\((k_1, k_2, \cdots,
+k_n)\)</span> 变为常序排列 <span class="math inline">\((1, 2, \cdots,
+n)\)</span>.</p>
+<div class="note note-info">
+            <div class="noteTitle">关于上述三个引理和下面的定理的说明</div><p>个人感觉这三个引理更像是组合数学的风格，在本书中的作用几乎仅限于证明定理<span class="math inline">\(1.6.1\)</span> 的正确性.<del>不值得过多地在这里浪费时间.</del> 不过它们的证明也十分巧妙.</p><p><br /></p><p>引理 <span class="math inline">\(1.6.1\)</span>的证明是从特殊到一般的过程：先考虑相邻两数的对换，再考虑一般情形.这个证明其实非常优雅，避免了分类讨论.我自己想了一下，其实也可以计算对换前后逆序数的变化量，通过分类讨论证明这个变化量是一个奇数，从而说明排列的奇偶性改变.</p><p><br /></p><p>引理 <span class="math inline">\(1.6.2\)</span> 证明仅 <spanclass="math inline">\(3\)</span> 行字，就不提了.</p><p><br /></p><p>引理 <span class="math inline">\(1.6.3\)</span> 用数学归纳法.</p><p><br /></p><p>下面的定理 <span class="math inline">\(1.6.1\)</span>的证明其实就是，把行列式 <del>疯狂</del> 拆成 <spanclass="math inline">\(n^n\)</span> 个行列式，其中有 <spanclass="math inline">\((n^n - n!)\)</span> 个行列式的值为 <spanclass="math inline">\(0\)</span>. 对于剩下的 <spanclass="math inline">\(n!\)</span> 个项，用引理 <spanclass="math inline">\(1.6.3\)</span> 确定每一项的符号（即 <spanclass="math inline">\(-1\)</span> 的指数）即可.至于过程，不想写，也不必再写.</p>
+          </div>
+<p><span class="theoremId">定理 1.6.1</span>   设有 <span
+class="math inline">\(n\)</span> 阶行列式</p>
+<p><span class="math display">\[
+  |\boldsymbol{A}| =
+  \begin{vmatrix}
+    a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+    a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+    \vdots &amp; \vdots &amp;  &amp; \vdots \\
+    a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \\
+  \end{vmatrix}
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+  |\boldsymbol{A}| = \sum_{(k_1, k_2, \cdots, k_n) \in S_n}
+                     (-1)^{N(k_1, k_2, \cdots, k_n)}
+                     a_{k_1 \hspace{0.07em} 1}
+                     a_{k_{2} \hspace{0.07em} 2}
+                     \cdots
+                     a_{k_{n} \hspace{0.07em} n}.
+  \tag{1.6.1}
+\]</span></p>
+<h3 id="laplace-定理">1.7 Laplace 定理</h3>
+<p><span class="definitionId">定义 1.7.1</span>   设 <span
+class="math inline">\(|\boldsymbol{A}|\)</span> 是一个 <span
+class="math inline">\(n\)</span> 阶行列式，<span class="math inline">\(k
+\lt n\)</span>. 又 <span class="math inline">\(i_1, i_2, \cdots,
+i_k\)</span> 及 <span class="math inline">\(j_1, j_2, \cdots,
+j_k\)</span> 是两组自然数且适合条件：</p>
+<p><span class="math display">\[
+  1 \leq i_1 \lt i_2 \lt \cdots \lt i_k \leq n; \quad
+  1 \leq j_1 \lt j_2 \lt \cdots \lt j_k \leq n.
+\]</span></p>
+<p>则行列式 <span class="math inline">\(|\boldsymbol{A}|\)</span> 中第
+<span class="math inline">\(i_1\)</span> 行，第 <span
+class="math inline">\(i_2\)</span> 行，<span
+class="math inline">\(\cdots\)</span>，第 <span
+class="math inline">\(i_k\)</span> 行以及第 <span
+class="math inline">\(j_1\)</span> 列，第 <span
+class="math inline">\(j_2\)</span> 列，<span
+class="math inline">\(\cdots\)</span>，第 <span
+class="math inline">\(j_k\)</span> 列交点上的元素，按原来 <span
+class="math inline">\(|\boldsymbol{A}|\)</span> 中的相对位置构成一个
+<span class="math inline">\(k\)</span> 阶行列式. 我们称之为 <span
+class="math inline">\(|\boldsymbol{A}|\)</span> 的一个 <span
+class="math inline">\(k\)</span> 阶子式，记为</p>
+<p><span class="math display">\[
+  \boldsymbol{A} \left(
+    \begin{matrix}
+      i_1 &amp; i_2 &amp; \cdots &amp; i_k \\
+      j_1 &amp; j_2 &amp; \cdots &amp; j_k
+    \end{matrix}
+  \right).
+  \tag{1.7.1}
+\]</span></p>
+<p>即</p>
+<p><span class="math display">\[
+  \begin{vmatrix}
+    a_{i_1 j_1} &amp; a_{i_1 j_2} &amp; \cdots &amp; a_{i_1 j_k} \\
+    a_{i_2 j_1} &amp; a_{i_2 j_2} &amp; \cdots &amp; a_{i_2 j_k} \\
+    \vdots &amp; \vdots &amp; &amp; \vdots \\
+    a_{i_k j_1} &amp; a_{i_k j_2} &amp; \cdots &amp; a_{i_k j_k} \\
+  \end{vmatrix}.
+\]</span></p>
+<p>在行列式 <span class="math inline">\(|\boldsymbol{A}|\)</span>
+中去掉第 <span class="math inline">\(i_1\)</span> 行，第 <span
+class="math inline">\(i_2\)</span> 行，<span
+class="math inline">\(\cdots\)</span>，第 <span
+class="math inline">\(i_k\)</span> 行以及第 <span
+class="math inline">\(j_1\)</span> 列，第 <span
+class="math inline">\(j_2\)</span> 列，<span
+class="math inline">\(\cdots\)</span>，第 <span
+class="math inline">\(j_k\)</span>
+列以后剩下的元素按原来的相对位置构成一个 <span class="math inline">\(n -
+k\)</span> 阶行列式. 这个行列式称为子式 <span
+class="math inline">\((1.7.1)\)</span> 的
+<strong>余子式</strong>，记为</p>
+<p><span class="math display">\[
+  M
+  \begin{pmatrix}
+    i_1 &amp; i_2 &amp; \cdots &amp; i_k \\
+    j_1 &amp; j_2 &amp; \cdots &amp; j_k
+  \end{pmatrix}.
+\]</span></p>
+<p>若令 <span class="math inline">\(p = i_1 + i_2 + \cdots +
+i_k\)</span>，<span class="math inline">\(q = j_1 + j_2 + \cdots +
+j_k\)</span>，记</p>
+<p><span class="math display">\[
+  \boldsymbol{\widehat{A}}
+  \left(
+    \begin{matrix}
+      i_1 &amp; i_2 &amp; \cdots &amp; i_k \\
+      j_1 &amp; j_2 &amp; \cdots &amp; j_k
+    \end{matrix}
+  \right) =
+  (-1)^{p + q} M
+  \begin{pmatrix}
+    i_1 &amp; i_2 &amp; \cdots &amp; i_k \\
+    j_1 &amp; j_2 &amp; \cdots &amp; j_k
+  \end{pmatrix}.
+\]</span></p>
+<p>称之为子式 <span class="math inline">\((1.7.1)\)</span> 的
+<strong>代数余子式</strong>.</p>
+<p><span class="lemmaId">引理 1.7.1</span>   <span
+class="math inline">\(n\)</span> 阶行列式 <span
+class="math inline">\(|\boldsymbol{A}|\)</span> 的任意 <span
+class="math inline">\(k\)</span>
+阶子式与其代数余子式之积的展开式中的每一项都属于 <span
+class="math inline">\(|\boldsymbol{A}|\)</span>
+的展开式.（注：此处的展开式指的是形如 <span
+class="math inline">\((1.6.1)\)</span> 式那样的行列式展开）</p>
+<p><span class="theoremId">定理 1.7.1 （Laplace 定理）</span>   设 <span
+class="math inline">\(|\boldsymbol{A}|\)</span> 是 <span
+class="math inline">\(n\)</span> 阶行列式，在 <span
+class="math inline">\(|\boldsymbol{A}|\)</span> 中任取 <span
+class="math inline">\(k\)</span> 行（列），那么含于这 <span
+class="math inline">\(k\)</span> 行（列）的全部 <span
+class="math inline">\(k\)</span>
+阶子式与它们所对应的代数余子式的乘积之和等于 <span
+class="math inline">\(|\boldsymbol{A}|\)</span>. 即若取定 <span
+class="math inline">\(k\)</span> 个行：<span class="math inline">\(1
+\leq i_1 \lt i_2 \lt \cdots \lt i_k \leq n\)</span>，则</p>
+<p><span class="math display">\[
+  |\boldsymbol{A}| =
+  \sum_{1 \leq j_1 \lt j_2 \lt \cdots \lt j_k \leq n}
+  \boldsymbol{A}
+  \begin{pmatrix}
+    i_1 &amp; i_2 &amp; \cdots &amp; i_k \\
+    j_1 &amp; j_2 &amp; \cdots &amp; j_k
+  \end{pmatrix}
+  \boldsymbol{\widehat{A}}
+  \begin{pmatrix}
+    i_1 &amp; i_2 &amp; \cdots &amp; i_k \\
+    j_1 &amp; j_2 &amp; \cdots &amp; j_k
+  \end{pmatrix}.
+\]</span></p>
+<p>同样若取定 <span class="math inline">\(k\)</span> 个列：<span
+class="math inline">\(1 \leq j_1 \lt j_2 \lt \cdots \lt j_k \leq
+n\)</span>，则</p>
+<p><span class="math display">\[
+  |\boldsymbol{A}| =
+  \sum_{1 \leq i_1 \lt i_2 \lt \cdots \lt i_k \leq n}
+  \boldsymbol{A}
+  \begin{pmatrix}
+    i_1 &amp; i_2 &amp; \cdots &amp; i_k \\
+    j_1 &amp; j_2 &amp; \cdots &amp; j_k
+  \end{pmatrix}
+  \boldsymbol{\widehat{A}}
+  \begin{pmatrix}
+    i_1 &amp; i_2 &amp; \cdots &amp; i_k \\
+    j_1 &amp; j_2 &amp; \cdots &amp; j_k
+  \end{pmatrix}.
+\]</span></p>
+<div class="note note-info">
+            <div class="noteTitle">证明思路：</div><p>   Laplace 定理可以从行列式展开式（定理 <spanclass="math inline">\(1.6.1\)</span>）的角度考虑.</p><p>   <span class="math inline">\(|\boldsymbol{A}|\)</span>的展开式一共包括 <span class="math inline">\(n!\)</span> 项，把它的一个<span class="math inline">\(k\)</span>阶子式及其代数余子式的乘积展开，一共有 <span class="math inline">\(k!(n- k)!\)</span> 项. 若固定 <span class="math inline">\(k\)</span>行（列），一共可以取到 <spanclass="math inline">\(\mathrm{C}_n^k\)</span> 个 <spanclass="math inline">\(k\)</span> 阶子式.把这些子式与对应的代数余子式之积展开，一共能得到</p><p><span class="math display">\[\mathrm{C}_n^k \cdot k! (n - k)! = n!\]</span></p><p>项. 这些项互不相同（想一想，为什么？），而且数目和 <spanclass="math inline">\(|\boldsymbol{A}|\)</span>的展开式项的数目相同，通过引理 <spanclass="math inline">\(1.7.1\)</span> 可以知道这些项都属于 <spanclass="math inline">\(|\boldsymbol{A}|\)</span> 的展开式，于是 Laplace定理成立.</p><p><br /></p><p>   引理 <span class="math inline">\(1.7.1\)</span>证明比较繁琐，但是思路很简单，就是从特殊到一般.先证明引理对一个特殊的情形</p><p><span class="math display">\[  |\boldsymbol{A}| =  \begin{vmatrix}    \boldsymbol{A_1} &amp; * \\    * &amp; \boldsymbol{A_2}  \end{vmatrix} \]</span></p><p>成立，然后把一般的情形转化成特殊情形即可.</p>
+          </div>
+<h2 id="第二章-矩阵">第二章 矩阵</h2>
+<h3 id="矩阵的概念">2.1 矩阵的概念</h3>
+<p>实矩阵、复矩阵</p>
+<p><span class="math inline">\(n\)</span> 阶单位阵记为 <span
+class="math inline">\(\boldsymbol{I_n}\)</span></p>
+<p>对角阵</p>
+<p><span class="math display">\[
+  \boldsymbol{A} =
+  \begin{pmatrix}
+    a_{11} &amp; 0 &amp; \cdots &amp; 0 \\
+    0 &amp; a_{22} &amp; \cdots &amp; 0 \\
+    \vdots &amp; \vdots &amp; &amp; \vdots \\
+    0 &amp; 0 &amp; \cdots &amp; a_{nn}
+  \end{pmatrix}
+\]</span></p>
+<p>记为 <span class="math inline">\(\operatorname{diag}\{a_{11}, a_{22},
+\cdots, a_{nn}\}\)</span>.</p>
+<div class="note note-success">
+            <div class="noteTitle">总结</div><p>这一节介绍的内容包括矩阵的定义和许多矩阵相关的术语（零矩阵、上三角阵、主对角线、行向量、列向量等等），非常基础.</p>
+          </div>
+<h3 id="矩阵的运算">2.2 矩阵的运算</h3>
+<p>矩阵的加减法</p>
+<p>矩阵的数乘</p>
+<p>矩阵的乘法</p>
+<p><span class="math inline">\((\boldsymbol{AB})\boldsymbol{C} =
+\boldsymbol{A}(\boldsymbol{BC})\)</span></p>
+<p>如果 <span class="math inline">\(\boldsymbol{AB} =
+\boldsymbol{BA}\)</span>，则</p>
+<p><span class="math display">\[
+  (\boldsymbol{A} + \boldsymbol{B})^n = \boldsymbol{A}^n +
+  \mathrm{C}_n^1 \boldsymbol{A}^{n-1} \boldsymbol{B} +
+  \mathrm{C}_n^2 \boldsymbol{A}^{n-2} \boldsymbol{B}^{2} +
+  \cdots +
+  \mathrm{C}_n^{n-1} \boldsymbol{A} \boldsymbol{B}^{n-1} +
+  \boldsymbol{B}^n.
+\]</span></p>
+<p>矩阵的转置</p>
+<p><span class="math inline">\((\boldsymbol{A} +
+\boldsymbol{B})^{\prime} = \boldsymbol{A}^{\prime} +
+\boldsymbol{B}^{\prime}\)</span></p>
+<p><span class="math inline">\((\boldsymbol{AB})^{\prime} =
+\boldsymbol{B}^{\prime} \boldsymbol{A}^{\prime}\)</span></p>
+<p>矩阵的<strong>共轭</strong></p>
+<p>复矩阵 <span class="math inline">\(\boldsymbol{A} = (a_{ij})_{m
+\times n}\)</span> 的共轭矩阵 <span
+class="math inline">\(\overline{\boldsymbol{A}}\)</span> 是一个 <span
+class="math inline">\(m \times n\)</span> 的复矩阵，且</p>
+<p><span class="math display">\[\overline{\boldsymbol{A}} =
+(\overline{a_{ij}})_{m \times n}\]</span></p>
+<p>矩阵共轭运算规则：</p>
+<p><span class="math inline">\((1)\; \overline{\boldsymbol{A} +
+\boldsymbol{B}} = \overline{\boldsymbol{A}} +
+\overline{\boldsymbol{B}}\)</span>；</p>
+<p><span class="math inline">\((2)\; \overline{c \boldsymbol{A}} =
+\overline{c} \overline{\boldsymbol{A}}\)</span>；</p>
+<p><span class="math inline">\((3)\; \overline{\boldsymbol{AB}} =
+\overline{\boldsymbol{A}} \, \overline{\boldsymbol{B}}\)</span>；</p>
+<p><span class="math inline">\((4)\;
+\overline{(\boldsymbol{A}^{\prime})} =
+(\overline{\boldsymbol{A}})^{\prime}\)</span>.</p>
+<h3 id="方阵的逆阵">2.3 方阵的逆阵</h3>
+<h2 id="第三章-线性空间">第三章 线性空间</h2>
+<h3 id="数域">3.1 数域</h3>
+<p><span class="definitionId">定义 3.1.1</span>   设 <span
+class="math inline">\(\mathbb{K}\)</span> 是复数集 <span
+class="math inline">\(\mathbb{C}\)</span> 的子集且至少有<span
+class="lightEmphasis">两个</span>不同的元素，如果 <span
+class="math inline">\(\mathbb{K}\)</span>
+中任意两个数的加法、减法、乘法及除法（除数不为零）仍属于 <span
+class="math inline">\(\mathbb{K}\)</span>，则称 <span
+class="math inline">\(\mathbb{K}\)</span> 是一个
+<strong>数域</strong>.</p>
+<p>通常我们把在加法、减法、乘法下封闭（不一定除法封闭）的数集称为
+<strong>数环</strong>.</p>
+<div class="note note-info">
+            <div class="noteTitle">一些例子</div><p><span class="commonCaseId">数域：</span> <spanclass="math inline">\(\mathbb{Q}\)</span>、<spanclass="math inline">\(\mathbb{R}\)</span>、<spanclass="math inline">\(\mathbb{C}\)</span>、<spanclass="math inline">\(\mathbb{Q}(\sqrt{2})\)</span>.</p><p><span class="commonCaseId">数环（但不是数域）：</span> <spanclass="math inline">\(\mathbb{Z}\)</span>.</p>
+          </div>
+<p><span class="theoremId">定理 3.1.1</span>   任一数域必包含有理数域
+<span class="math inline">\(\mathbb{Q}\)</span>.</p>
+<div class="note note-info">
+            <div class="noteTitle">证明思路：</div><p>对于给定的任一数域，由数域的定义，可以推出，它一定包含 <spanclass="math inline">\(0\)</span>（两个相同数之差），<spanclass="math inline">\(1\)</span>（两个相同非零数之商）两个元素.</p><p>根据数域对加法的封闭性，任意正整数都在数域中；</p><p>然后，再根据数域对减法的封闭性，整数全体都必须在数域中；</p><p>再由数域对除法的封闭性，所有分数也都在数域中，故有理数域包含于任一数域.</p>
+          </div>
+<h2 id="第四章-线性映射">第四章 线性映射</h2>
+<h2 id="第五章-多项式">第五章 多项式</h2>
+<h3 id="一元多项式代数">5.1 一元多项式代数</h3>
+<p><span class="definitionId">定义 5.1.1</span>   设 <span
+class="math inline">\(\mathbb{K}\)</span> 是数域，<span
+class="math inline">\(x\)</span> 为一个形式符号（称为未定元），若 <span
+class="math inline">\(a_0, a_1, \cdots, a_n \in \mathbb{K} \ (a_n \neq
+0, n \geq 0)\)</span>，称形式表达式</p>
+<p><span class="math display">\[
+  a_{n}x^n + a_{n - 1}x^{n - 1} + \cdots + a_1 x + a_0
+\]</span></p>
+<p>为数域 <span class="math inline">\(\mathbb{K}\)</span> 上关于未定元
+<span class="math inline">\(x\)</span> 的 <strong>一元 <span
+class="math inline">\(n\)</span> 次多项式</strong>. 域 <span
+class="math inline">\(\mathbb{K}\)</span> 上一元多项式全体记为 <span
+class="math inline">\(\mathbb{K}[x]\)</span>.（事实上，<span
+class="math inline">\(\mathbb{K}[x]\)</span> 也称为 <span
+class="math inline">\(\mathbb{K}\)</span> 上的一元多项式环）</p>
+<p>多项式 <span class="math inline">\(f(x)\)</span> 的次数记作 <span
+class="math inline">\(\deg f(x)\)</span>.</p>
+<p>若 <span class="math inline">\(f(x) = a\)</span>，则称 <span
+class="math inline">\(f(x)\)</span> 为 <strong>常数多项式</strong>. 当
+<span class="math inline">\(a \neq 0\)</span> 时，称它为
+<strong>零次多项式</strong>；当 <span class="math inline">\(a =
+0\)</span> 时，称之为 <strong>零多项式</strong>，规定其次数为 <span
+class="math inline">\(-\infty\)</span>.</p>
+<p>若</p>
+<p><span class="math display">\[
+  \begin{aligned}
+    f(x) &amp; = a_{n}x^n + a_{n - 1}x^{n - 1} + \cdots + a_1 x + a_0 ,
+    \\ \\
+    g(x) &amp; = b_{m}x^m + b_{m - 1}x^{m - 1} + \cdots + b_1 x + b_0 ,
+  \end{aligned}
+\]</span></p>
+<p>则 <span class="math inline">\(f(x) = g(x)\)</span> 当且仅当 <span
+class="math inline">\(m = n, a_i = b_i \ (i = 0, 1, \cdots,
+n)\)</span>.</p>
+<div class="note note-default">
+            <div class="noteTitle">说明</div><p>可以定义 <span class="math inline">\(\mathbb{K}[x]\)</span>上的运算，如：<span class="math inline">\(f(x) + g(x)\)</span>，<spanclass="math inline">\(cf(x)\)</span>，<span class="math inline">\(f(x)\cdot g(x)\)</span>. 由于前两个运算比较简单，故略去定义.下面仅对多项式的积 <span class="math inline">\(f(x) \cdot g(x)\)</span>进行介绍.</p>
+          </div>
+<p>记 <span class="math inline">\(h(x) = f(x) \cdot
+g(x)\)</span>，则</p>
+<p><span class="math display">\[
+  h(x) = c_{m + n}x^{m + n} + c_{m + n - 1}x^{m + n - 1} + \cdots + c_1
+x + c_0.
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+  \begin{aligned}
+    &amp; c_{m + n} = a_n b_m, \\
+    &amp; c_{m + n - 1} = a_{n - 1}b_m + a_n b_{m - 1}, \\
+    &amp; \cdots \, \cdots \\
+    &amp; c_k = \sum_{i + j = k} a_i b_j = a_0 b_k + a_1 b_{k - 1} +
+\cdots + a_k b_0,\\
+    &amp; \cdots \, \cdots \\
+    &amp; c_0 = a_0 b_0.
+  \end{aligned}
+\]</span></p>
+<p><span class="lemmaId">引理 5.1.1</span>   若 <span
+class="math inline">\(f(x), g(x) \in \mathbb{K}[x]\)</span>，则</p>
+<p><span class="math display">\[\deg(f(x)g(x)) = \deg f(x) + \deg
+g(x).\]</span></p>
+<p><span class="propositionId">命题 5.1.1</span>   若 <span
+class="math inline">\(f(x), g(x) \in \mathbb{K}[x]\)</span>，且 <span
+class="math inline">\(f(x) \neq 0\)</span>，<span
+class="math inline">\(g(x) \neq 0\)</span>，则</p>
+<p><span class="math display">\[f(x)g(x) \neq 0.\]</span></p>
+<p><span class="corollaryId">推论 5.1.1</span>   若 <span
+class="math inline">\(f(x) \neq 0\)</span> 且 <span
+class="math inline">\(f(x)g(x) = f(x)h(x)\)</span>，则</p>
+<p><span class="math display">\[g(x) = h(x).\]</span></p>
+<p><span class="propositionId">命题 5.1.2</span>   设 <span
+class="math inline">\(f(x), g(x) \in \mathbb{K}[x]\)</span>，则</p>
+<p><span class="math inline">\((1)\;\)</span> <span
+class="math inline">\(\deg(cf(x)) = \deg f(x)\)</span>，<span
+class="math inline">\(0 \neq c \in \mathbb{K}\)</span>.</p>
+<p><span class="math inline">\((2)\;\)</span> <span
+class="math inline">\(\deg(f(x) + g(x)) \leq \max \{ \deg f(x), \deg
+g(x) \}\)</span>.</p>
+<h3 id="整除">5.2 整除</h3>
+<p><span class="definitionId">定义 5.2.1</span>   设 <span
+class="math inline">\(f(x), g(x) \in \mathbb{K}[x]\)</span>，若存在
+<span class="math inline">\(h(x) \in \mathbb{K}[x]\)</span>，使</p>
+<p><span class="math display">\[ f(x) = g(x)h(x), \]</span></p>
+<p>则称 <span class="math inline">\(g(x)\)</span> 是 <span
+class="math inline">\(f(x)\)</span> 的 <strong>因式</strong>，或 <span
+class="math inline">\(g(x)\)</span> 可以 <strong>整除</strong> <span
+class="math inline">\(f(x)\)</span>. 记为 <span
+class="math inline">\(g(x) \mid f(x)\)</span>. 否则称 <span
+class="math inline">\(g(x)\)</span> 不能整除 <span
+class="math inline">\(f(x)\)</span>.</p>
+<p><span class="propositionId">命题 5.2.1</span>   设 <span
+class="math inline">\(f(x), g(x), h(x) \in \mathbb{K}[x]\)</span>，<span
+class="math inline">\(0 \neq c \in \mathbb{K}\)</span>，则</p>
+<p><span class="math inline">\((1)\;\)</span> 若 <span
+class="math inline">\(f(x) \mid g(x)\)</span>，则 <span
+class="math inline">\(cf(x) \mid g(x)\)</span>；（非零常数多项式 <span
+class="math inline">\(c\)</span> 是任一非零多项式的因子）</p>
+<p><span class="math inline">\((2)\;\)</span> <span
+class="math inline">\(f(x) \mid f(x)\)</span>；</p>
+<p><span class="math inline">\((3)\;\)</span> 若 <span
+class="math inline">\(f(x) \mid g(x)\)</span>，<span
+class="math inline">\(g(x) \mid h(x)\)</span>，则 <span
+class="math inline">\(f(x) \mid h(x)\)</span>；</p>
+<p><span class="math inline">\((4)\;\)</span> 若 <span
+class="math inline">\(f(x) \mid g(x)\)</span>，<span
+class="math inline">\(f(x) \mid h(x)\)</span>，则对任意的多项式 <span
+class="math inline">\(u(x)\)</span>，<span
+class="math inline">\(v(x)\)</span>，有</p>
+<p><span class="math display">\[f(x) \mid g(x)u(x) +
+h(x)v(x).\]</span></p>
+<p><span class="math inline">\((5)\;\)</span> 若 <span
+class="math inline">\(f(x) \mid g(x)\)</span>，<span
+class="math inline">\(g(x) \mid f(x)\)</span>，且 <span
+class="math inline">\(f(x), g(x)\)</span> 都是非零多项式，则存在 <span
+class="math inline">\(\mathbb{K}\)</span> 中非零元 <span
+class="math inline">\(c\)</span>，使</p>
+<p><span class="math display">\[f(x) = c g(x).\]</span></p>
+<h2 id="参考资料">参考资料</h2>
+<ol type="1">
+<li>高等代数学（第三版）. 姚慕生，吴泉水，谢启鸿.</li>
+</ol>
+<style>
+
+    strong {
+      font-family: sans-serif;
+    }
+
+    /* 用于保证英文单词不被截断，且文本两端对齐 */
+    p, li {
+        word-break: normal;
+        word-wrap: break-word; 
+        /* 文本的两端对齐 */
+        text-align:justify;  
+        /* 为表意字文本提供完全两端对齐, 增加或减少表意字和词间的空格, 支持该属性的浏览器目前只有IE(见菜鸟教程) */
+        text-justify:inter-ideograph;  
+    }
+  
+    /* 定义 */
+    .definitionId {
+      color: #0099ff;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    /* 定理 */
+    .theoremId {
+      color: #ff00ff;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    /* 性质 */
+    .propertyId {
+      color: #40f;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    /* 推论 */
+    .corollaryId {
+      color: orange;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    /* 引理 */
+    .lemmaId {
+      color: #009000; /* green */
+      font-family: san-serif;
+      font-weight: bold;
+    }
+
+    /* 公理 */
+    .axiomId {
+      color: red;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    /* 命题 */
+    .propositionId {
+      color: #B8860B;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    .commonCaseId {
+      font-family: Tahoma, Verdana, Times, KaiTi, sans-serif;
+      font-weight: bold;
+    }
+
+    .greenCaseId {
+      font-family: Tahoma, Verdana, Times, KaiTi, sans-serif;
+      font-weight: bold;
+      color: #00dd33;
+    }
+
+    .specialNote {
+      color: #ff6600;
+      font-family: sans-serif;
+      font-size: 0.8em; 
+    }
+
+    .noteTitle {
+      color: #444;
+      font-family: Tahoma, Verdana, Times, KaiTi, sans-serif;
+      font-size: 1.0em;
+      font-weight: bold;
+      // font-style: italic;
+    }
+
+    .lightEmphasis {
+      color: #ff0000;
+    }
+
+    .emphasis {
+      color: #ff0000;
+      font-weight: bold;
+    }
+</style>
+</div>
+        
+          <div class="post-copyright">
+                  <div class="copyright-item">
+                      <span> 作者: Garden-Zen</span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> 链接: <a href="https://garden-zen.github.io/2024/01/18/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">https://garden-zen.github.io/2024/01/18/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</a></span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> 声明: 本博客所有文章除特别声明外，均采用许可协议 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 转载请注明出处！</span>
+                  </div>
+          </div>
+        
+  </div>
+
+    <div class="post_tags">
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E6%95%B0%E5%AD%A6/" class="tag">数学</a>
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/" class="tag">高等代数</a>
+      
+    </div>
+    <div class="post-nav">
+      
+      
+        <div class="post-nav-next post-nav-item">
+            <a href="/2024/01/14/%E3%80%90%E7%AE%A1%E7%90%86%E3%80%91Zen-%E8%8A%B1%E5%9B%AD%E7%9A%84%E5%BB%BA%E8%AE%BE%E4%B8%8E%E7%AE%A1%E7%90%86%E6%9D%A1%E4%BE%8B/" >【管理】Zen 花园的建设与管理条例<i class="fa fa-chevron-right"></i></a>
+        </div>
+      
+    </div>
+      
+
+
+
+  <div id="valine"></div>
+  <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  <script>
+        new Valine({
+          el: '#valine',
+          appId: "",
+          appKey: "",
+          avatar: "mm",
+          lang: "",
+          meta: 'nick,mail,link'.split(','),
+          requiredFields: 'nick,mail'.split(','),
+          placeholder: "评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒",
+          pageSize:'10',
+          recordIP: 'false',
+          serverURLs: "",
+          emojiCDN: "",
+          enableQQ: "true",
+        });
+  </script>
+  
+
+</article>
+
+    
+<a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    
+
+
+
+
+
+
+    
+<div id="bottom-outer">
+    <div id="bottom-inner">
+        © 2024 <i class="fa fa-heart" id="heart"></i> Garden-Zen 
+        <br>
+        Powered by 
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo</a> | Theme is <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank/">blank</a>
+        
+          <div class="icp-info">
+            
+          <a href="" target="_blank"> </a>
+        </div>
+        
+    </div>  
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/layui-src@2.5.5/dist/layui.min.js"></script>
+
+
+
+  
+    <script src="/js/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+  
+
+ 
+
+
+
+  <script>
+    window.lazyLoadOptions = {
+      elements_selector: 'img',
+      threshold: 0
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>   
+  
+
+
+  <script>
+    var images = $('img').not('.nav-logo img').not('.card img').not($('a>img')).not('.reward-content img')
+    images.each(function (i, o) {
+      var lazyloadSrc = $(o).attr('data-src') ? $(o).attr('data-src') : $(o).attr('src')
+      $(o).wrap(`<a href="${lazyloadSrc}" data-fancybox="group" data-caption="${$(o).attr('alt')}" class="fancybox"></a>`)
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+  <script>
+        $().fancybox({
+      selector: '[data-fancybox]',
+      loop: true,
+      transitionEffect: 'slide',
+      protect: true,
+      buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
+    })
+  </script>   
+  
+
+
+  <script>
+  if (!window.MathJax) {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]],
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+              const display = !!node.type.match(/; *mode=display/)
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+              const text = document.createTextNode('')
+              node.parentNode.replaceChild(text, node)
+              math.start = {node: text, delim: '', n: 0}
+              math.end = {node: text, delim: '', n: 0}
+              doc.math.push(math)
+            }
+          }, '']
+        }
+      }
+    }
+    
+    var script = document.createElement('script')
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"
+    script.id = 'MathJax-script'
+    script.async = true
+    document.head.appendChild(script)
+  } else {
+    MathJax.startup.document.state(0)
+    MathJax.texReset()
+    MathJax.typeset()
+  }
+  </script>
+  
+
+
+  
+<script>
+if (document.getElementsByClassName('mermaid').length) {
+    if (window.mermaidJsLoad) mermaid.init()
+    else {
+      $.getScript("https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js", function () {
+        window.mermaidJsLoad = true
+        mermaid.initialize({
+          theme: "default",
+        })
+      })
+    }
+  }
+  </script>
+  
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script>
+  
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js"></script>
+<script>
+!function (e, t, a) {
+  var initCopyCode = function(){
+    var copyHtml = '';
+    copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+    copyHtml += '  <i class="fa fa-clipboard"></i><span>复制</span>';
+    copyHtml += '</button>';
+    $(".highlight .code pre").before(copyHtml);
+    new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+  }
+  initCopyCode();
+}(window, document);
+</script>  
+  
+
+<script>
+  var btntop = $('#gotop');
+  btntop.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
+  });
+
+  var $table = $('.content table').not($('figure.highlight > table'))
+$table.each(function () {
+  $(this).wrap('<div class="table-wrap"></div>')
+})
+</script>
+
+
+
+</html>
