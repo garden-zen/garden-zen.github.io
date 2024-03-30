@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <meta name="author" content="Garden-Zen">
+  
+  
+  
+  
+  
+    <link rel="alternate" href="/atom.xml " title="Zen 花园" type="application/atom+xml">
+  
+
+  
+
+  <title>【算法】洛谷 P2604 [ZJOI2010] 网络扩容 题解 | Zen 花园</title>
+
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="/css/style.css" >
+  <link rel="stylesheet" href="/css/partial/dark.css" >
+
+  
+  
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/partial/highlight/atom-one-light.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/iconfont.css">
+    
+      <link rel="stylesheet" href="/css/css_garden_zen/mathnote_style.css">
+    
+      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    
+  
+
+  
+    <script src="/js/todark.js"></script>
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+</html>
+    
+<div class="nav index" style="height: 60px;">
+    <div class="title animated fadeInDown">
+        <div class="layui-container">
+                <div class="nav-title"><a href="/" title="Zen 花园">Zen 花园</a></div>
+            <div class="nav-list">
+                <button> <span class=""></span><span style="display: block;"></span><span class=""></span> </button>
+                <ul class="layui-nav" lay-filter="">
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/ ">
+                            <i class=" fab fa-fort-awesome " style="color: rgb(255 107 107);"></i>
+                            <span class="layui-nav-item-name">首页</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/archives/ ">
+                            <i class=" fas fa-archive " style="color: rgb(10 189 227);"></i>
+                            <span class="layui-nav-item-name">文章</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/tags/ ">
+                            <i class=" fas fa-hashtag " style="color: rgb(254 202 87);"></i>
+                            <span class="layui-nav-item-name">标签</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/categories ">
+                            <i class=" far fa-folder-open " style="color: rgb(29 209 161);"></i>
+                            <span class="layui-nav-item-name">分类</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/shuoshuo/ ">
+                            <i class=" fas fa-coffee " style="color:#31c7c1;"></i>
+                            <span class="layui-nav-item-name">说说</span>
+                        </a>
+                    </li>
+                    
+                    
+                        <li class="layui-nav-item" id="btn-toggle-dark">🌙</li>
+                    
+                    <span class="layui-nav-bar" style="left: 342px; top: 78px; width: 0px; opacity: 0;"></span>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<header class="header">
+        
+            <div class="logo">
+                    <a href="/"><img src="/img/avatar0.jpg" onerror=this.onerror=null,this.src="/img/loading.gif"></a>
+            </div>
+         
+    </div>
+     
+    
+            <div class="social">
+                
+                        <a class="social-icon" href="https://github.com/garden-zen" target="_blank" title="Github">
+                            <i class="iconfont icon-GitHub" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="mailto:2799597049@qq.com" target="_blank" title="Email">
+                            <i class="iconfont icon-email" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="https://space.bilibili.com/471787443" target="_blank" title="Bilibili">
+                            <i class="iconfont icon-bilibili" aria-hidden="true"></i>
+                          </a>
+                 
+            </div>
+     
+</header>
+
+    
+<article id="post">
+  <div class="post-title">【算法】洛谷 P2604 [ZJOI2010] 网络扩容 题解</div>
+  
+<div class="post-meta">
+    
+    
+      <div class="post-meta-item date">
+        <span title="发表于 2024.02.17"><i class="far fa-calendar-alt"></i> 2024.02.17</span>
+      </div>
+      <div class="post-meta-item updated">
+        <span title="更新于 2024.02.27"><i class="far fa-calendar-check"></i> 2024.02.27</span>
+      </div>
+     
+    
+      <div class="post-meta-item categories">
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E7%AE%97%E6%B3%95/%E7%BD%91%E7%BB%9C%E6%B5%81/">网络流</a>
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E7%AE%97%E6%B3%95/%E7%BD%91%E7%BB%9C%E6%B5%81/%E8%B4%B9%E7%94%A8%E6%B5%81/">费用流</a>
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E7%AE%97%E6%B3%95/%E7%BD%91%E7%BB%9C%E6%B5%81/%E6%9C%80%E5%A4%A7%E6%B5%81/">最大流</a>
+        
+      </div>
+     
+    
+     <div class="post-meta-item wordcount">
+        
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.7k 字</span>
+           
+        
+          <i class="far fa-clock"></i> <span class="post-count">7 分钟</span>
+                               
+      </div>
+     
+</div>
+
+
+  
+  <div class="content">
+        <div><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2604"
+title="点击跳转题目页面"><u> P2604 [ZJOI2010] 网络扩容 </u></a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>给定一张有向图，<span class="math inline">\(n\)</span> 个点，<span
+class="math inline">\(m\)</span> 条边，每条边都有一个容量 <span
+class="math inline">\(c\)</span> 和扩容费用 <span
+class="math inline">\(w\)</span>（容量扩大 <span
+class="math inline">\(1\)</span> 所需的费用），求：</p>
+<ol type="1">
+<li>不扩容时，从 <span class="math inline">\(1\)</span> 到 <span
+class="math inline">\(n\)</span> 的最大流；</li>
+<li><span class="math inline">\(1\)</span> 到 <span
+class="math inline">\(n\)</span> 的最大流增加 <span
+class="math inline">\(k\)</span> 所需的最小扩容费用.</li>
+</ol>
+<h2 id="输入格式">输入格式</h2>
+<p>第一行，三个整数 <span class="math inline">\(n, m, k\)</span>；<br />
+接下来 <span class="math inline">\(m\)</span> 行，每行 <span
+class="math inline">\(4\)</span> 个整数 <span class="math inline">\(u,
+v, c, w\)</span>，表示一条从 <span class="math inline">\(u\)</span> 到
+<span class="math inline">\(v\)</span> 有一条容量为 <span
+class="math inline">\(c\)</span> 且扩容费用为 <span
+class="math inline">\(w\)</span> 的边；<br />
+其中 <span class="math inline">\(1 \le n \le 10^3\)</span>，<span
+class="math inline">\(1 \le m \le 5 \times 10^3\)</span>，<span
+class="math inline">\(1 \le k \le 10\)</span>，<span
+class="math inline">\(1 \le u, v \le n\)</span>.（这里没有给出 <span
+class="math inline">\(c, w\)</span> 的范围哦 <del>,真奇怪</del>）</p>
+<h2 id="输出格式">输出格式</h2>
+<p>一行，两个整数，分别表示问题 <span class="math inline">\(1\)</span>
+和问题 <span class="math inline">\(2\)</span> 的答案.</p>
+<h2 id="题解">题解</h2>
+<p>第一问是入门级别的 <strong>最大流</strong> 问题，一般可以用
+<strong>Edmonds-Karp</strong> 算法（时间复杂度 <span
+class="math inline">\(O(nm^2)\)</span>）或者 <strong>Dinic</strong>
+算法（时间复杂度 <span class="math inline">\(O(n^2m)\)</span>）求解.
+事实上，为了方便第二问的求解（复用代码），最终的实现选择了 Edmonds-Karp
+算法.</p>
+<p>第二问的思路是，在原图的基础上，建立新图，转化成
+<strong>最小费用最大流（MCMF）</strong> 模型.</p>
+<p>我们先设置原图每条边的费用为 <span
+class="math inline">\(0\)</span>，跑一遍最小费用最大流，即可求出第一问中从
+<span class="math inline">\(1\)</span>（记为源点 <span
+class="math inline">\(s\)</span>）到 <span
+class="math inline">\(n\)</span>（记为汇点 <span
+class="math inline">\(t\)</span>）的最大流，得到残量网络.
+对于跑过一遍最大流的残量网络而言，已经无法再找到一条新的增广路径，倘若想增加从
+<span class="math inline">\(1\)</span> 到 <span
+class="math inline">\(n\)</span> 的最大流，则需扩大一部分边的容量.</p>
+<h3 id="失败的尝试">失败的尝试</h3>
+<p>应当对哪些边扩容呢？尝试从贪心的角度考虑，当然是优先选择增广路径中容量最小的那些边.
+但是！输入的图可能千奇百怪，从源点 <span
+class="math inline">\(s\)</span> 到汇点 <span
+class="math inline">\(t\)</span>
+的增广路径往往不止一条，一条增广路径中容量最小的边也可能有多个，不同的增广路径可能会有部分边是重叠的······似乎并不能找到一个简单的贪心策略，用以确定具体的需要扩容的边.</p>
+<p>即使我们知道应当对哪些边扩容，应该如何分配每条边的扩容费用，保证扩容费用最小呢（同时保证程序的时间复杂度合理）？大概很难（至少我没有思路）.
+种种迹象表明，寻求一个简单的贪心策略几乎是不切实际的.</p>
+<p>回到起点，抓关键词，<strong>图</strong>，<strong>容量</strong>，<strong>最小费用</strong>，你应该会自然地想这可能与最小费用最大流相关.
+由于残量网络已经无法继续增广，我们需要对其做一些改动，建立新图.
+接下来主要考虑如何建图.</p>
+<h3 id="建图两步走">建图（两步走）</h3>
+<p>残量网络源点 <span class="math inline">\(s\)</span> 到汇点 <span
+class="math inline">\(t\)</span> 之间不存在增广路径，怎么办？</p>
+<p>答案是：加边！再加边！（没有增广路径就把它创造出来）</p>
+<p>对于每一条有向边 <span class="math inline">\(u \to
+v\)</span>，连一条从 <span class="math inline">\(u\)</span> 到 <span
+class="math inline">\(v\)</span> 的容量 <span
+class="math inline">\(+\infty\)</span>，费用 <span
+class="math inline">\(w\)</span> 的新的有向边. 这样，对于结点 <span
+class="math inline">\(u\)</span> 来说，如果原来的 <span
+class="math inline">\(u \to v\)</span>（费用为 <span
+class="math inline">\(0\)</span>）还有容量可用，就可以继续复用它，而不必刻意扩容，以降低成本；无容量可用时，就可以选择连接的新边（费用为
+<span class="math inline">\(w\)</span>），适当地扩展容量.</p>
+<p>对于一条边，只要愿意，我们理论上可以无限扩大它的容量.
+然而，扩容后的图最大流增加 <span class="math inline">\(k\)</span>
+就足够了，所以应当避免过度扩容. 怎样才能保证最大流恰好增加 <span
+class="math inline">\(k\)</span> 呢？我们新建一个超级源点 <span
+class="math inline">\(s^{\prime}\)</span>，<span
+class="math inline">\(s^{\prime}\)</span> 到 <span
+class="math inline">\(1\)</span> 之间连一条容量为 <span
+class="math inline">\(k\)</span>，费用为 <span
+class="math inline">\(0\)</span> 的有向边.
+这样就限制了最大流增加的上限.（妙）</p>
+<p>建完了图，就可以开心地跑费用流了，用 SPFA 替换 Edmonds-Karp 算法中的
+BFS 求增广路，理论上求一次增广路的时间复杂度是 <span
+class="math inline">\(O(nm)\)</span>. 记不扩容时的最大流是 <span
+class="math inline">\(f\)</span>，因此，整个求解过程中，最多需要求 <span
+class="math inline">\(f + k\)</span> 次增广路，最终的时间复杂度是 <span
+class="math inline">\(O(nm(f + k))\)</span>.
+这个时间复杂度看上去很高（伪多项式时间），千万别被吓到.
+一般来说，它仅仅是一个很松的复杂度上界，实际运行时间会少很多.</p>
+<p>附上 AC 的代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Edge</span> &#123;</span><br><span class="line">    <span class="type">int</span> to, cap, cst, nxt;</span><br><span class="line">&#125; edges[<span class="number">21000</span>];</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m, k, st, ed, cnt, weight[<span class="number">5005</span>];</span><br><span class="line"><span class="type">int</span> head[<span class="number">1005</span>], dis[<span class="number">1005</span>], inq[<span class="number">1005</span>], flow[<span class="number">1005</span>], pre[<span class="number">1005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> v, <span class="type">int</span> c, <span class="type">int</span> w)</span> </span>&#123;</span><br><span class="line">    edges[cnt] = (Edge)&#123;v, c, w, head[u]&#125;;</span><br><span class="line">    head[u] = cnt++;</span><br><span class="line">    edges[cnt] = (Edge)&#123;u, <span class="number">0</span>, -w, head[v]&#125;;</span><br><span class="line">    head[v] = cnt++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">SPFA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dis, <span class="number">0x3f</span>, <span class="keyword">sizeof</span> dis);</span><br><span class="line">    <span class="built_in">memset</span>(pre, <span class="number">-1</span>, <span class="keyword">sizeof</span> pre);</span><br><span class="line">    </span><br><span class="line">    dis[st] = <span class="number">0</span>;</span><br><span class="line">    flow[st] = INF;</span><br><span class="line">    </span><br><span class="line">    std::queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">    q.<span class="built_in">push</span>(st);</span><br><span class="line">    inq[st] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        <span class="type">int</span> u = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        inq[u] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = head[u]; i != <span class="number">-1</span>; i = edges[i].nxt) &#123;</span><br><span class="line">            <span class="type">int</span> v = edges[i].to, c = edges[i].cap, w = edges[i].cst;</span><br><span class="line">            <span class="keyword">if</span> (c &gt; <span class="number">0</span> &amp;&amp; dis[v] &gt; dis[u] + w) &#123;</span><br><span class="line">                dis[v] = dis[u] + w;</span><br><span class="line">                flow[v] = std::<span class="built_in">min</span>(flow[u], c);</span><br><span class="line">                pre[v] = i;</span><br><span class="line">                <span class="keyword">if</span> (!inq[v]) &#123;</span><br><span class="line">                    q.<span class="built_in">push</span>(v);</span><br><span class="line">                    inq[v] = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> pre[ed] != <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">change</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">add</span>(<span class="number">0</span>, <span class="number">1</span>, k, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="type">int</span> w = weight[i], pos = i &lt;&lt; <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> u = edges[pos ^ <span class="number">1</span>].to, v = edges[pos].to;</span><br><span class="line">        <span class="built_in">add</span>(u, v, INF, w);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(head, <span class="number">-1</span>, <span class="keyword">sizeof</span> head);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;n, &amp;m, &amp;k);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>, u, v, c; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>, &amp;u, &amp;v, &amp;c, &amp;weight[i]);</span><br><span class="line">        <span class="built_in">add</span>(u, v, c, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">ans1</span><span class="params">(<span class="number">0</span>)</span>, <span class="title">ans2</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">    </span><br><span class="line">    st = <span class="number">1</span>, ed = n;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">SPFA</span>()) &#123;</span><br><span class="line">        ans1 += flow[ed];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = pre[ed]; i != <span class="number">-1</span>; i = pre[edges[i ^ <span class="number">1</span>].to]) &#123;</span><br><span class="line">            edges[i].cap -= flow[ed];</span><br><span class="line">            edges[i ^ <span class="number">1</span>].cap += flow[ed];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    st = <span class="number">0</span>, ed = n;</span><br><span class="line">    <span class="built_in">change</span>();</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">SPFA</span>()) &#123;</span><br><span class="line">        ans2 += dis[ed] * flow[ed];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = pre[ed]; i != <span class="number">-1</span>; i = pre[edges[i ^ <span class="number">1</span>].to]) &#123;</span><br><span class="line">            edges[i].cap -= flow[ed];</span><br><span class="line">            edges[i ^ <span class="number">1</span>].cap += flow[ed];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>, ans1, ans2);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="感想">感想</h2>
+<p>严格来说，我并不会做这道题（第二问完全就是看的题解）.
+一般来说，网络流的题目难就难在图论建模上了.
+后面有时间划水的话，可以继续搞一搞网络流.
+<del>（仔细想想，好像还挺有意思？）</del></p>
+<style>
+
+    strong {
+      font-family: sans-serif;
+    }
+
+    p, li {
+        word-break: normal;
+        word-wrap: break-word; 
+        /* 文本的两端对齐 */
+        text-align:justify;  
+        /* 为表意字文本提供完全两端对齐, 增加或减少表意字和词间的空格, 支持该属性的浏览器目前只有IE(见菜鸟教程) */
+        text-justify:inter-ideograph;  
+    }
+</style>
+</div>
+        
+          <div class="post-copyright">
+                  <div class="copyright-item">
+                      <span> 作者: Garden-Zen</span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> 链接: <a href="https://garden-zen.github.io/2024/02/17/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E6%B4%9B%E8%B0%B7-P2604-ZJOI2010-%E7%BD%91%E7%BB%9C%E6%89%A9%E5%AE%B9-%E9%A2%98%E8%A7%A3/">https://garden-zen.github.io/2024/02/17/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E6%B4%9B%E8%B0%B7-P2604-ZJOI2010-%E7%BD%91%E7%BB%9C%E6%89%A9%E5%AE%B9-%E9%A2%98%E8%A7%A3/</a></span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> 声明: 本博客所有文章除特别声明外，均采用许可协议 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 转载请注明出处！</span>
+                  </div>
+          </div>
+        
+  </div>
+
+    <div class="post_tags">
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E7%AE%97%E6%B3%95/" class="tag">算法</a>
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" class="tag">网络流</a>
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E8%B4%B9%E7%94%A8%E6%B5%81/" class="tag">费用流</a>
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E6%9C%80%E5%A4%A7%E6%B5%81/" class="tag">最大流</a>
+      
+    </div>
+    <div class="post-nav">
+      
+      
+        <div class="post-nav-next post-nav-item">
+            <a href="/2024/01/18/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" >【数学】高等代数学习记录<i class="fa fa-chevron-right"></i></a>
+        </div>
+      
+    </div>
+      
+
+
+
+  <div id="valine"></div>
+  <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  <script>
+        new Valine({
+          el: '#valine',
+          appId: "",
+          appKey: "",
+          avatar: "mm",
+          lang: "",
+          meta: 'nick,mail,link'.split(','),
+          requiredFields: 'nick,mail'.split(','),
+          placeholder: "评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒",
+          pageSize:'10',
+          recordIP: 'false',
+          serverURLs: "",
+          emojiCDN: "",
+          enableQQ: "true",
+        });
+  </script>
+  
+
+</article>
+
+    
+<a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    
+
+
+
+
+
+
+    
+<div id="bottom-outer">
+    <div id="bottom-inner">
+        © 2024 <i class="fa fa-heart" id="heart"></i> Garden-Zen 
+        <br>
+        Powered by 
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo</a> | Theme is <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank/">blank</a>
+        
+          <div class="icp-info">
+            
+          <a href="" target="_blank"> </a>
+        </div>
+        
+    </div>  
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/layui-src@2.5.5/dist/layui.min.js"></script>
+
+
+
+  
+    <script src="/js/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+  
+
+ 
+
+
+
+  <script>
+    window.lazyLoadOptions = {
+      elements_selector: 'img',
+      threshold: 0
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>   
+  
+
+
+  <script>
+    var images = $('img').not('.nav-logo img').not('.card img').not($('a>img')).not('.reward-content img')
+    images.each(function (i, o) {
+      var lazyloadSrc = $(o).attr('data-src') ? $(o).attr('data-src') : $(o).attr('src')
+      $(o).wrap(`<a href="${lazyloadSrc}" data-fancybox="group" data-caption="${$(o).attr('alt')}" class="fancybox"></a>`)
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+  <script>
+        $().fancybox({
+      selector: '[data-fancybox]',
+      loop: true,
+      transitionEffect: 'slide',
+      protect: true,
+      buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
+    })
+  </script>   
+  
+
+
+  <script>
+  if (!window.MathJax) {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]],
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+              const display = !!node.type.match(/; *mode=display/)
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+              const text = document.createTextNode('')
+              node.parentNode.replaceChild(text, node)
+              math.start = {node: text, delim: '', n: 0}
+              math.end = {node: text, delim: '', n: 0}
+              doc.math.push(math)
+            }
+          }, '']
+        }
+      }
+    }
+    
+    var script = document.createElement('script')
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"
+    script.id = 'MathJax-script'
+    script.async = true
+    document.head.appendChild(script)
+  } else {
+    MathJax.startup.document.state(0)
+    MathJax.texReset()
+    MathJax.typeset()
+  }
+  </script>
+  
+
+
+  
+<script>
+if (document.getElementsByClassName('mermaid').length) {
+    if (window.mermaidJsLoad) mermaid.init()
+    else {
+      $.getScript("https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js", function () {
+        window.mermaidJsLoad = true
+        mermaid.initialize({
+          theme: "default",
+        })
+      })
+    }
+  }
+  </script>
+  
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script>
+  
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js"></script>
+<script>
+!function (e, t, a) {
+  var initCopyCode = function(){
+    var copyHtml = '';
+    copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+    copyHtml += '  <i class="fa fa-clipboard"></i><span>复制</span>';
+    copyHtml += '</button>';
+    $(".highlight .code pre").before(copyHtml);
+    new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+  }
+  initCopyCode();
+}(window, document);
+</script>  
+  
+
+<script>
+  var btntop = $('#gotop');
+  btntop.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
+  });
+
+  var $table = $('.content table').not($('figure.highlight > table'))
+$table.each(function () {
+  $(this).wrap('<div class="table-wrap"></div>')
+})
+</script>
+
+
+
+</html>

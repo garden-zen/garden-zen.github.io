@@ -170,17 +170,17 @@
         <span title="发表于 2024.01.04"><i class="far fa-calendar-alt"></i> 2024.01.04</span>
       </div>
       <div class="post-meta-item updated">
-        <span title="更新于 2024.01.26"><i class="far fa-calendar-check"></i> 2024.01.26</span>
+        <span title="更新于 2024.01.29"><i class="far fa-calendar-check"></i> 2024.01.29</span>
       </div>
      
      
     
      <div class="post-meta-item wordcount">
         
-          <i class="fas fa-pencil-alt"></i> <span class="post-count">2k 字</span>
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">3k 字</span>
            
         
-          <i class="far fa-clock"></i> <span class="post-count">11 分钟</span>
+          <i class="far fa-clock"></i> <span class="post-count">17 分钟</span>
                                
       </div>
      
@@ -191,7 +191,8 @@
   <div class="content">
         <div><h2 id="数学公式">数学公式</h2>
 <h4 id="括号">括号</h4>
-<p><span class="math inline">\(\{ x + y \}\)</span> <span
+<p><span class="math inline">\(\vert x + y \vert\)</span> <span
+class="math inline">\(\{ x + y \}\)</span> <span
 class="math inline">\(\langle x + y \rangle\)</span> <span
 class="math inline">\(\| x + y \|\)</span></p>
 <p><span class="math inline">\(\lceil x + y \rceil\)</span> <span
@@ -246,9 +247,11 @@ class="math inline">\(\lfloor x + y \rfloor\)</span></p>
 \]</span></p>
 <p><span class="math display">\[
 \left(
-    \begin{array}{cc|c}
+    \begin{array}{c:c|c}
       1 &amp; 2 &amp; 3 \newline
+      \hdashline
       4 &amp; 5 &amp; 6 \newline
+      \hline
       7 &amp; 8 &amp; 9
     \end{array}
 \right)
@@ -379,6 +382,16 @@ class="math inline">\(a\  b\)</span></td>
 b\)</span></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;"><code>a \negmedspace b</code></td>
+<td style="text-align: left;"><span class="math inline">\(a \negmedspace
+b\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>a \negthickspace b</code></td>
+<td style="text-align: left;"><span class="math inline">\(a
+\negthickspace b\)</span></td>
+</tr>
+<tr class="even">
 <td style="text-align: center;"><code>a \hspace&#123;0.1em&#125; b</code></td>
 <td style="text-align: left;"><span
 class="math inline">\(a\hspace{0.1em}b\)</span></td>
@@ -432,6 +445,12 @@ class="math inline">\(ab\)</span></td>
 \quad \rightleftharpoons\)</span></p>
 <p><span class="math inline">\(\rightsquigarrow \quad
 \leftrightsquigarrow\)</span></p>
+<p><span class="math inline">\(\Lleftarrow \quad
+\Rrightarrow\)</span></p>
+<p><span class="math inline">\(\dashleftarrow \quad
+\dashrightarrow\)</span></p>
+<p><span
+class="math inline">\(\stackrel{f}{\longrightarrow}\)</span></p>
 <h4 id="字体">字体</h4>
 <p><strong>粗体</strong><code>\mathbf</code>：<span
 class="math inline">\(\mathbf{A}\)</span><br />
@@ -452,31 +471,69 @@ class="math inline">\(\mathfrak{A}\)</span></p>
 <h4 id="集合">集合</h4>
 <p><span class="math inline">\(\empty \quad \emptyset \quad
 \varnothing\)</span></p>
-<p><span class="math inline">\(\in \quad \notin \quad \ni \quad
-\notni\)</span></p>
+<p><span class="math inline">\(\in \quad \notin \quad \ni \quad \owns
+\quad \notni\)</span></p>
 <p><span class="math inline">\(\cap \quad \bigcap\)</span></p>
 <p><span class="math inline">\(\cup \quad \bigcup\)</span></p>
 <p><span class="math inline">\(\subset \quad \subseteq \quad \supset
 \quad \supseteq\)</span></p>
+<p><span class="math inline">\(\complement\)</span></p>
 <p><span class="math inline">\(\setminus\)</span></p>
+<h4 id="声调记号">声调记号</h4>
+<p><span class="math inline">\(\hat x \quad \widehat{x}\)</span><br />
+<span class="math inline">\(\tilde{x} \quad \widetilde{x} \quad
+\utilde{x}\)</span><br />
+<span class="math inline">\(\dot{x} \quad \ddot{x}\)</span><br />
+<span class="math inline">\(\check{x} \quad \widecheck{x}\)</span></p>
+<p><span class="math inline">\(\acute{x} \quad \grave{x}\)</span></p>
+<p><span class="math inline">\(\breve{x}\)</span></p>
+<p><span class="math inline">\(\mathring{x}\)</span></p>
+<p><span class="math inline">\(\overline{x} \quad \underline{x} \quad
+\bar{x}\)</span></p>
+<p><span class="math inline">\(\vec{x} \quad \overleftarrow{x} \quad
+\overrightarrow{x} \quad \overrightarrow{AB}\)</span></p>
+<p><span class="math inline">\(\underrightarrow{AB}\)</span></p>
+<p><span class="math inline">\(\overgroup{AB} \quad
+\undergroup{AB}\)</span></p>
+<p><span class="math inline">\({}_1^2\!X_3^4\)</span></p>
 <h4 id="杂项">杂项</h4>
 <p><span class="math inline">\(\texttt{abcd}\)</span></p>
 <p><span class="math inline">\(\operatorname{and} \quad
 \operatorname{or} \quad \operatorname{xor}\)</span></p>
-<p><span class="math inline">\(i \hbar \dfrac{\partial}{\partial t}
-\ket{\psi} = H \ket{\psi}\)</span></p>
+<p><span
+class="math inline">\(\rm{E}\raisebox{-0.5ex}{E}\raisebox{0.5ex}{E}\rm{E}\)</span></p>
+<p><span class="math inline">\(\cancel{x} \quad \bcancel{x} \quad
+\xcancel{x} \quad \sout{x}\)</span></p>
+<p><span class="math inline">\(90^{\circ}\)</span></p>
+<p><span class="math inline">\(\ast \quad \star \quad
+\bigstar\)</span></p>
+<p><span class="math inline">\(\bowtie \quad \Join\)</span></p>
+<p><span class="math inline">\(\Re \quad \Im\)</span></p>
+<p><span class="math inline">\(\S \quad \dagger \quad
+\ddagger\)</span></p>
+<p><span class="math inline">\(\aleph \quad \beth\)</span></p>
+<p><span class="math inline">\(\mho\)</span></p>
 <p><span class="math inline">\(\boldsymbol{Ax} =
 \boldsymbol{0}\)</span></p>
-<p><span class="math inline">\(d \mid n\)</span><br />
-<span class="math inline">\(\binom{n}{k} \quad \tbinom{n}{k} \quad
+<p><span class="math inline">\(\nabla f(x)\)</span></p>
+<p><span class="math inline">\(d \mid n\)</span></p>
+<p><span class="math inline">\(\varliminf \quad \varlimsup\)</span></p>
+<p><span class="math inline">\(a \atop b\)</span></p>
+<p><span class="math inline">\(\binom{n}{k} \quad \tbinom{n}{k} \quad
 \dbinom{n}{k}\)</span></p>
-<p><span class="math inline">\(\doteq \quad \doteqdot \quad
-\equiv\)</span><br />
+<p><span class="math inline">\(i \hbar \dfrac{\partial}{\partial t}
+\ket{\psi} = H \ket{\psi}\)</span></p>
+<p><span class="math inline">\(\coloneqq \quad \doteq \quad \doteqdot
+\quad \equiv\)</span><br />
 <span
 class="math inline">\(\overset{\underset{\mathrm{def}}{}}{=}\)</span><br />
 <span class="math inline">\(\approx \quad \thickapprox\)</span><br />
 <span class="math inline">\(\propto \quad \varpropto\)</span><br />
-<span class="math inline">\(\leqslant \quad \geqslant\)</span></p>
+<span class="math inline">\(\leqslant \quad \geqslant\)</span><br />
+<span class="math inline">\(\sim \quad \backsim\)</span><br />
+<span class="math inline">\(\simeq \quad \backsimeq\)</span><br />
+<span class="math inline">\(\cong\)</span><br />
+<span class="math inline">\(\wr\)</span></p>
 <p><span class="math inline">\(\neg \quad \forall \quad \exists \quad
 \because \quad \therefore\)</span></p>
 <p><span class="math inline">\(\lor \quad \vee \quad
@@ -484,15 +541,37 @@ class="math inline">\(\overset{\underset{\mathrm{def}}{}}{=}\)</span><br />
 <span class="math inline">\(\land \quad \wedge \quad
 \bigwedge\)</span><br />
 <span class="math inline">\(\oplus \quad \bigoplus\)</span></p>
-<p><span class="math inline">\(\overline{x}\quad \underline{x}\quad
-\bar{x}\)</span><br />
-<span class="math inline">\(\hat x \quad \widehat{x}\)</span><br />
-<span class="math inline">\(\tilde{x} \quad \widetilde{x}\)</span><br />
-<span class="math inline">\(\dot{x} \quad \ddot{x}\)</span><br />
-<span class="math inline">\(\check{x} \quad \breve{x}\)</span></p>
-<p><span class="math inline">\(\vec{x} \quad \overleftarrow{x} \quad
-\overrightarrow{x} \quad \overrightarrow{AB}\)</span></p>
-<p><span class="math inline">\({}_1^2\!X_3^4\)</span></p>
+<p><span class="math inline">\(\odot \quad \bigodot\)</span></p>
+<p><span class="math inline">\(\otimes \quad \bigotimes\)</span></p>
+<p><span class="math inline">\(\sqcap \quad \sqcup \quad
+\bigsqcup\)</span></p>
+<p><span class="math inline">\(\uplus \quad \biguplus\)</span></p>
+<p><span class="math inline">\(\prod \quad \coprod\)</span></p>
+<p><span class="math inline">\(\prec \quad \preceq\)</span><br />
+<span class="math inline">\(\succ \quad \succeq\)</span></p>
+<p><span class="math inline">\(\lhd \quad \rhd \quad \unlhd \quad
+\unrhd\)</span></p>
+<p><span class="math inline">\(\triangleleft \quad \triangleright \quad
+\triangleq \quad \trianglerighteq \quad \trianglelefteq \quad
+\triangledown\)</span></p>
+<p><span class="math display">\[
+  \stackrel{f}{\longrightarrow}
+\]</span></p>
+<p><span class="math display">\[
+  \{x\colon 0\leq x&lt;1\}
+\]</span></p>
+<p><span class="math display">\[
+  \left. f \right|_{x=0} = 0
+\]</span></p>
+<p><span class="math display">\[
+  \underset{bbbbbb}{\overset{000000}{1\kern{30pt}1}}
+\]</span></p>
+<p><span class="math display">\[
+  \sum_{\substack{0 \lt i \le j \le n \\ i, j \in \mathbb{N}}} i^2 j^2
+\]</span></p>
+<p><span class="math display">\[
+  \boxed{\pi=\frac c d}
+\]</span></p>
 <p><span class="math display">\[
 \begin{matrix} \underbrace{ a+b+\cdots+z } \newline 26 \end{matrix}
 \]</span></p>
@@ -842,6 +921,37 @@ class="inline-tag grey">灰色小标签</span></p>
       \draw[-latex, ->, thick] (\x - 0.4, -0.25) -- (\x, -0.25);
       \draw[-latex, <-, thick] (\x + 1, -0.25) -- (\x + 1.4, -0.25);
     }
+    
+  \end{tikzpicture}
+</script>
+<p><br /></p>
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \draw[->, thick] (0, -1) -- (0, 9) node[left]{$y$};
+    \draw[->, thick] (-5, 0) -- (5, 0) node[below]{$x$};
+
+    \node at (-.2, -.2){$O$};
+
+    
+    \foreach \x in {-3, -1, 1, 3} {
+      \draw (\x, 0) -- (\x, .1);
+    }
+    \foreach \x in {1, 3, 5, 7} {
+      \draw (0, \x) -- (.1, \x);
+    }
+
+    \foreach \x in {2, 4, 6, 8} {
+      \draw (0, \x) node[left]{$\x$} -- (.1, \x);
+    }
+    \foreach \y in {4, 2} {
+      \draw (\y, 0) node[below]{$\y$} -- (\y, 0.1);
+      \draw (-\y, 0) node[below]{$\textnormal{-}\y$} -- (-\y, 0.1);
+    }
+
+
+    \node[draw] at (5, 6){$\displaystyle y = {1 \atop \bar{2}} x^2$};
+
+    \draw [domain=-4:4, samples=500, thick] plot(\x, {0.5*\x*\x});
 
   \end{tikzpicture}
 </script>
@@ -967,6 +1077,9 @@ class="inline-tag grey">灰色小标签</span></p>
     (B) -- (C) -- node[right] {$b$} (A);
   \end{tikzpicture}
 </script>
+<div class="note note-warning">
+            <div style="font-weight: bold; font-family: KaiTi;">注意</div><p>此处使用的 <a target="_blank" rel="noopener" href="https://github.com/kisonecat/tikzjax"><u> TikZJax</u></a> 的在绘图方面缺陷还是不少的，甚至还有不少严重的 bug：</p><ul><li>对数学公式的支持远远不如 MathJax 和 KaTeX；</li><li>部分数学符号的渲染出现错误，比如把减号（<spanclass="math inline">\(-\)</span>）渲染成乘号（<spanclass="math inline">\(\times\)</span>），分数、根式渲染出现严重的错误，据说部分希腊字母也不能正确显示；</li></ul><p>另外，据说 <a target="_blank" rel="noopener" href="https://github.com/jsxgraph/jsxgraph"><u>JSXGraph </u></a> 也支持绘图，但是目前还不会用（也懒得再去学了）。</p>
+          </div>
 </div>
         
           <div class="post-copyright">
