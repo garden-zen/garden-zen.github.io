@@ -1,0 +1,2061 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <meta name="author" content="Garden-Zen">
+  
+  
+  
+  
+  
+    <link rel="alternate" href="/atom.xml " title="Zen 花园" type="application/atom+xml">
+  
+
+  
+
+  <title>【数学】矩阵论学习笔记（一） | Zen 花园</title>
+
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="/css/style.css" >
+  <link rel="stylesheet" href="/css/partial/dark.css" >
+
+  
+  
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/partial/highlight/atom-one-light.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/iconfont.css">
+    
+      <link rel="stylesheet" href="/css/css_garden_zen/mathnote_style.css">
+    
+      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    
+  
+
+  
+    <script src="/js/todark.js"></script>
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+</html>
+    
+<div class="nav index" style="height: 60px;">
+    <div class="title animated fadeInDown">
+        <div class="layui-container">
+                <div class="nav-title"><a href="/" title="Zen 花园">Zen 花园</a></div>
+            <div class="nav-list">
+                <button> <span class=""></span><span style="display: block;"></span><span class=""></span> </button>
+                <ul class="layui-nav" lay-filter="">
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/ ">
+                            <i class=" fab fa-fort-awesome " style="color: rgb(255 107 107);"></i>
+                            <span class="layui-nav-item-name">首页</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/archives/ ">
+                            <i class=" fas fa-archive " style="color: rgb(10 189 227);"></i>
+                            <span class="layui-nav-item-name">文章</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/tags/ ">
+                            <i class=" fas fa-hashtag " style="color: rgb(254 202 87);"></i>
+                            <span class="layui-nav-item-name">标签</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/categories ">
+                            <i class=" far fa-folder-open " style="color: rgb(29 209 161);"></i>
+                            <span class="layui-nav-item-name">分类</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/shuoshuo/ ">
+                            <i class=" fas fa-coffee " style="color:#31c7c1;"></i>
+                            <span class="layui-nav-item-name">说说</span>
+                        </a>
+                    </li>
+                    
+                    
+                        <li class="layui-nav-item" id="btn-toggle-dark">🌙</li>
+                    
+                    <span class="layui-nav-bar" style="left: 342px; top: 78px; width: 0px; opacity: 0;"></span>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<header class="header">
+        
+            <div class="logo">
+                    <a href="/"><img src="/img/avatar0.jpg" onerror=this.onerror=null,this.src="/img/loading.gif"></a>
+            </div>
+         
+    </div>
+     
+    
+            <div class="social">
+                
+                        <a class="social-icon" href="https://github.com/garden-zen" target="_blank" title="Github">
+                            <i class="iconfont icon-GitHub" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="mailto:2799597049@qq.com" target="_blank" title="Email">
+                            <i class="iconfont icon-email" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="https://space.bilibili.com/471787443" target="_blank" title="Bilibili">
+                            <i class="iconfont icon-bilibili" aria-hidden="true"></i>
+                          </a>
+                 
+            </div>
+     
+</header>
+
+    
+<article id="post">
+  <div class="post-title">【数学】矩阵论学习笔记（一）</div>
+  
+<div class="post-meta">
+    
+    
+      <div class="post-meta-item date">
+        <span title="发表于 2024.07.05"><i class="far fa-calendar-alt"></i> 2024.07.05</span>
+      </div>
+      <div class="post-meta-item updated">
+        <span title="更新于 2025.01.18"><i class="far fa-calendar-check"></i> 2025.01.18</span>
+      </div>
+     
+    
+      <div class="post-meta-item categories">
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E6%95%B0%E5%AD%A6/%E7%9F%A9%E9%98%B5%E8%AE%BA/">矩阵论</a>
+        
+      </div>
+     
+    
+     <div class="post-meta-item wordcount">
+        
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">7.2k 字</span>
+           
+        
+          <i class="far fa-clock"></i> <span class="post-count">35 分钟</span>
+                               
+      </div>
+     
+</div>
+
+
+  
+    <div id="toc" class="toc">
+          <h1>目录</h1>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%8F%98%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">第一章 矩阵的相似变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 矩阵的特征值与特征向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%AF%B9%E8%A7%92%E5%8C%96"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 矩阵的相似对角化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84-jordan-%E6%A0%87%E5%87%86%E5%BD%A2"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 矩阵的 Jordan 标准形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hamilton-cayley-%E5%AE%9A%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 Hamilton-Cayley 定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E5%86%85%E7%A7%AF"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 向量的内积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%85%89%E7%9B%B8%E4%BC%BC"><span class="toc-number">1.6.</span> <span class="toc-text">1.6 矩阵的酉相似</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%8C%83%E6%95%B0%E7%90%86%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">第二章 范数理论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E8%8C%83%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 向量的范数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 矩阵范数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E6%95%B0%E5%BA%94%E7%94%A8%E4%B8%BE%E4%BE%8B"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 范数应用举例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">3.</span> <span class="toc-text">参考资料：</span></a></li></ol>
+      </div>
+    
+  <div class="content">
+        <div><p><strong>符号约定</strong>：</p>
+<ul>
+<li><p><span
+class="math inline">\(\boldsymbol{I}\)</span>：单位矩阵</p></li>
+<li><p><span
+class="math inline">\(\boldsymbol{A}^{\mathrm{H}}\)</span>：<span
+class="math inline">\(\boldsymbol{A}\)</span> 的
+<strong>共轭转置</strong></p></li>
+<li><p><span class="math inline">\(\operatorname{rank}
+\boldsymbol{A}\)</span>：<span
+class="math inline">\(\boldsymbol{A}\)</span> 的
+<strong>秩</strong></p></li>
+<li><p><span
+class="math inline">\(\operatorname{cond}(\boldsymbol{A})\)</span>：<span
+class="math inline">\(\boldsymbol{A}\)</span> 的
+<strong>条件数</strong></p></li>
+<li><p><span
+class="math inline">\(\mathbb{C_{r}^{m}}\)</span>：<strong>秩为 <span
+class="math inline">\(r\)</span></strong> 的复 <span
+class="math inline">\(m \times n\)</span> <strong>矩阵</strong>
+集合</p></li>
+</ul>
+<h2 id="第一章-矩阵的相似变换">第一章 矩阵的相似变换</h2>
+<h3 id="矩阵的特征值与特征向量">1.1 矩阵的特征值与特征向量</h3>
+<p><strong>定义 <span
+class="math inline">\(1\)</span>（特征值、特征向量）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，若 <span class="math inline">\(\exists \lambda \in
+\mathbb{C}\)</span> 和 <span class="math inline">\(x \in \mathbb{C^{n}},
+\; x \neq 0\)</span> 使得</p>
+<p><span class="math display">\[Ax = \lambda x\]</span></p>
+<p>则称 <span class="math inline">\(\lambda\)</span> 是 <span
+class="math inline">\(A\)</span> 的 <strong>特征值</strong>，<span
+class="math inline">\(x\)</span> 称为 <span
+class="math inline">\(A\)</span> 的属于 <span
+class="math inline">\(\lambda\)</span> 的
+<strong>特征向量</strong>.</p></li>
+</ul>
+<p><span class="math inline">\(\mathbb{C^{m}}\)</span></p>
+<p><strong>定义 <span class="math inline">\(2\)</span></strong></p>
+<p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，</p>
+<ul>
+<li><p>称 <span class="math inline">\(\lambda I_n - A\)</span> 为 <span
+class="math inline">\(A\)</span> 的 <strong>特征矩阵</strong>.</p></li>
+<li><p>称 <span class="math inline">\(\det (\lambda I_n - A) = \lvert
+\lambda I_n - A \rvert\)</span> 为 <span
+class="math inline">\(A\)</span> 的
+<strong>特征多项式</strong>.</p></li>
+<li><p>称 <span class="math inline">\(| \lambda I_n - A | = 0\)</span>
+为 <span class="math inline">\(A\)</span> 的
+<strong>特征方程</strong>.</p></li>
+</ul>
+<p><em>📝 Notations</em></p>
+<ol type="1">
+<li><p><span class="math inline">\(A\)</span> 的特征值就是 <span
+class="math inline">\(A\)</span> 的特征方程的根；</p></li>
+<li><p><span class="math inline">\(n\)</span> 阶方阵 <span
+class="math inline">\(A\)</span> 在复数范围内一定有 <span
+class="math inline">\(n\)</span> 个特征值.</p></li>
+</ol>
+<p><strong>定义 <span
+class="math inline">\(3\)</span>（矩阵的迹）</strong></p>
+<ul>
+<li>设 <span class="math inline">\(A = (a_{ij})_{n \times n} \in
+\mathbb{C^{n \times n}}\)</span>，称 <span class="math inline">\(a_{11}
++ a_{22} + \cdots + a_{nn}\)</span> 为 <span
+class="math inline">\(A\)</span> 的 <strong>迹</strong>，记为 <span
+class="math inline">\(\operatorname{tr} A\)</span>.</li>
+</ul>
+<p><strong>定理 <span class="math inline">\(1\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(n\)</span> 阶方阵 <span
+class="math inline">\(A = (a_{ij})_{n \times n}\)</span> 的特征值为
+<span class="math inline">\(\lambda_1, \lambda_2, \cdots,
+\lambda_n\)</span>，则</p>
+<ol type="1">
+<li><p><span class="math inline">\(\lambda_1 + \lambda_2, \cdots +
+\lambda_n = a_{11} + a_{22} + \cdots + a_{nn} = \operatorname{tr}
+A\)</span>.</p></li>
+<li><p><span class="math inline">\(\displaystyle \prod_{k=1}^{n}
+\lambda_{k} = |A|\)</span> <span class="math inline">\(\quad
+\Longrightarrow \quad\)</span> <span class="math inline">\(A\)</span>
+可逆的充要条件是 <span class="math inline">\(A\)</span>
+的特征值非零.</p></li>
+<li><p><span class="math inline">\(A^{\scriptscriptstyle
+\mathrm{T}}\)</span> 的特征值是 <span class="math inline">\(\lambda_1,
+\lambda_2, \dotsc, \lambda_n\)</span></p></li>
+<li><p><span class="math inline">\(A^{\scriptscriptstyle
+\mathrm{H}}\)</span> 的特征值是 <span
+class="math inline">\(\overline{\lambda_1}, \overline{\lambda_2},
+\dotsc, \overline{\lambda_n}\)</span></p></li>
+</ol></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(2\)</span></strong></p>
+<ul>
+<li>设 <span class="math inline">\(\lambda_i\)</span> 是 <span
+class="math inline">\(A \in \mathbb{C^{n \times n}}\)</span> 的 <span
+class="math inline">\(r_i\)</span> 重特征值（称 <span
+class="math inline">\(r_i\)</span> 为特征值 <span
+class="math inline">\(\lambda_i\)</span> 的代数重数），对应 <span
+class="math inline">\(\lambda_i\)</span> 有 <span
+class="math inline">\(s_i\)</span> 个线性无关的特征向量（称 <span
+class="math inline">\(s_i\)</span> 为特征值 <span
+class="math inline">\(\lambda_i\)</span> 的几何重数），则 <span
+class="math inline">\(1 \leq s_i \leq r_i\)</span>.</li>
+</ul>
+<p><strong>定义 <span class="math inline">\(4\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(f(\lambda)\)</span> 是 <span
+class="math inline">\(\lambda\)</span> 的多项式</p>
+<p><span class="math display">\[
+  f(\lambda) = a_s\lambda^s + a_{s-1}\lambda^{s-1} + \cdots + a_1\lambda
++ a_0
+\]</span></p>
+<p>对于 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，规定</p>
+<p><span class="math display">\[
+  f(A) = a_sA^s + a_{s-1}A^{s-1} + \cdots + a_1A + a_0I
+\]</span></p>
+<p>称 <span class="math inline">\(f(A)\)</span> 为矩阵 <span
+class="math inline">\(A\)</span> 的多项式.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(3\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，<span class="math inline">\(A\)</span> 的 <span
+class="math inline">\(n\)</span> 个特征值为 <span
+class="math inline">\(\lambda_1, \lambda_2, \cdots,
+\lambda_n\)</span>，对应的特征向量分别为 <span
+class="math inline">\(x_1, x_2, \cdots, x_n\)</span>，又设 <span
+class="math inline">\(f(\lambda)\)</span> 为一多项式，则 <span
+class="math inline">\(f(A)\)</span> 的特征值为 <span
+class="math inline">\(f(\lambda_1), f(\lambda_2), \cdots,
+f(\lambda_n)\)</span>，对应的特征向量分别仍为 <span
+class="math inline">\(x_1, x_2, \cdots, x_n\)</span>.</p></li>
+<li><p><em>特别地</em>，<span class="math inline">\(f(A) = 0\)</span>
+时，<span class="math inline">\(A\)</span> 的任意特征值 <span
+class="math inline">\(\lambda_i\)</span> 都满足 <span
+class="math inline">\(f(\lambda_i) = 0\)</span>.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(4\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(\lambda_1, \lambda_2, \cdots,
+\lambda_s\)</span> 是方阵 <span class="math inline">\(A\)</span>
+的互不相同的特征值，<span class="math inline">\(x_1, x_2, \cdots,
+x_s\)</span> 是分别与之对应的特征向量，则 <span
+class="math inline">\(x_1, x_2, \cdots, x_s\)</span> 线性无关.</p></li>
+<li><p><em>特别地</em>，属于实对称阵的不同特征值的特征向量是正交的.</p></li>
+</ul>
+<h3 id="矩阵的相似对角化">1.2 矩阵的相似对角化</h3>
+<p><strong>定义 <span class="math inline">\(1\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A, B \in \mathbb{C^{n \times
+n}}\)</span>，若 <span class="math inline">\(\exists P \in \mathbb{C^{n
+\times n}}\)</span> 使得 <span class="math inline">\(P^{-1}AP =
+B\)</span>，则称 <span class="math inline">\(A\)</span> 和 <span
+class="math inline">\(B\)</span> <strong>相似</strong>，记为 <span
+class="math inline">\(A \sim B\)</span>；并称可逆阵 <span
+class="math inline">\(P\)</span> 为把 <span
+class="math inline">\(A\)</span> 变成 <span
+class="math inline">\(B\)</span> 的
+<strong>相似变换矩阵</strong>.</p></li>
+<li><p>当 <span class="math inline">\(A\)</span> 与对角阵相似时，称
+<span class="math inline">\(A\)</span>
+<strong>可对角化</strong>.</p></li>
+</ul>
+<p><strong>定理 <span
+class="math inline">\(1\)</span>（性质）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A, B, C \in \mathbb{C^{n \times
+n}}\)</span>，则</p>
+<ol type="1">
+<li><p>反身性：<span class="math inline">\(A \sim A\)</span></p></li>
+<li><p>对称性：若 <span class="math inline">\(A \sim B\)</span>，则
+<span class="math inline">\(B \sim A\)</span>.</p></li>
+<li><p>传递性：若 <span class="math inline">\(A \sim B, B \sim
+C\)</span>，则 <span class="math inline">\(A \sim C\)</span>.</p></li>
+</ol></li>
+<li><p>相似关系为等价关系.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(2\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A, B \in \mathbb{C^{n \times n}},
+A \sim B\)</span>，<span class="math inline">\(f(\lambda)\)</span>
+是一多项式，则</p>
+<ol type="1">
+<li><p><span class="math inline">\(\operatorname{rank}(A) =
+\operatorname{rank}(B)\)</span>，<span class="math inline">\(|A| =
+|B|\)</span>；</p></li>
+<li><p><span class="math inline">\(\det(\lambda I - A) = \det(\lambda I
+- B)\)</span>，即 <span class="math inline">\(A\)</span> 与 <span
+class="math inline">\(B\)</span>
+有相同的特征多项式，从而有相同的特征值.</p></li>
+<li><p><span class="math inline">\(A^{-1} \sim B^{-1}, \;
+A^{\scriptscriptstyle \mathrm{T}} \sim B^{\scriptscriptstyle
+\mathrm{T}}, \; f(A) \sim f(B)\)</span>.</p></li>
+</ol></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(3\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，则 <span class="math inline">\(A\)</span>
+可对角化的充分必要条件是 <span class="math inline">\(A\)</span> 有 <span
+class="math inline">\(n\)</span> 个线性无关的特征向量 <span
+class="math inline">\(\xi_1, \xi_2, \cdots, \xi_n\)</span>.</p></li>
+<li><p><strong>推论</strong>：设 <span class="math inline">\(A \in
+\mathbb{C^{n \times n}}\)</span>，如果 <span
+class="math inline">\(A\)</span> 有 <span
+class="math inline">\(n\)</span> 个不同的特征值，则 <span
+class="math inline">\(A\)</span> 可对角化.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(4\)</span></strong></p>
+<ul>
+<li>设 <span class="math inline">\(\lambda_1, \lambda_2, \cdots,
+\lambda_s\)</span> 是 <span class="math inline">\(n\)</span> 阶方阵
+<span class="math inline">\(A\)</span>
+的所有互不相同的特征值，其重数分别为 <span class="math inline">\(r_1,
+r_2, \cdots, r_s\)</span>. 则 <span class="math inline">\(A\)</span>
+可对角化的充要条件是 <span class="math inline">\(r_i\)</span> 重特征值
+<span class="math inline">\(\lambda_i\)</span> 有 <span
+class="math inline">\(r_i \; (i = 1, \cdots, s)\)</span>
+个线性无关的特征向量.</li>
+</ul>
+<p>求解一阶线性常系数微分方程组</p>
+<h3 id="矩阵的-jordan-标准形">1.3 矩阵的 Jordan 标准形</h3>
+<p><strong>定义 <span class="math inline">\(1\)</span></strong></p>
+<ul>
+<li><p>形如</p>
+<p><span class="math display">\[
+  J_i =
+  \begin{pmatrix}
+      \lambda_i &amp; 1 &amp;  &amp;  \\
+      &amp; \lambda_i &amp; \ddots &amp;  \\
+      &amp; &amp; \ddots &amp; 1 \\
+      &amp; &amp; &amp; \lambda_i
+  \end{pmatrix}_{r_i \times r_i}
+\]</span></p>
+<p>的矩阵称为 <span class="math inline">\(r_i\)</span> 阶 <strong>Jordan
+块</strong>.</p></li>
+<li><p>由若干个 Jordan 块构成的分块对角阵</p>
+<p><span class="math display">\[
+  J =
+  \begin{pmatrix}
+      J_1 &amp; &amp; &amp; \\
+      &amp; J_2 &amp; &amp; \\
+      &amp; &amp; \ddots &amp; \\
+      &amp; &amp; &amp; J_s
+  \end{pmatrix}
+\]</span></p>
+<p>称为 <strong>Jordan 矩阵</strong>.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(1\)</span></strong></p>
+<ul>
+<li><p>对于 <span class="math inline">\(r_i\)</span> 阶 Jordan 块</p>
+<p><span class="math display">\[
+  J_i =
+  \begin{pmatrix}
+      \lambda_i &amp; 1 &amp;  &amp;  \\
+      &amp; \lambda_i &amp; \ddots &amp;  \\
+      &amp; &amp; \ddots &amp; 1 \\
+      &amp; &amp; &amp; \lambda_i
+  \end{pmatrix}_{r_i \times r_i}
+\]</span></p>
+<p>有</p>
+<p><span class="math display">\[
+  \newcommand{\lambi}[1]{\lambda_{i}^{ #1 }}
+  \newcommand{\flamb}[2]{\dfrac{1}{ #1 !}\left(\lambda^k\right)^{ #2 }}
+  \newcommand{\C}[2]{\mathrm{C}_{ #2 }^{ #1 }}
+  \begin{aligned}
+      J_i^k &amp; =
+      \begin{pmatrix}
+          \lambi{k} &amp; \C{1}{k}\lambi{k-1} &amp; \C{2}{k}\lambi{k-2}
+&amp; \cdots &amp; \C{r_i - 1}{k}\lambi{k-r_i+1} \\
+          &amp; \lambi{k} &amp; \C{1}{k}\lambi{k-1} &amp; \cdots &amp;
+\C{r_i - 2}{k}\lambi{k-r_i+2} \\
+          &amp; &amp; \ddots &amp; \ddots &amp; \vdots \\
+          &amp; &amp; &amp; \ddots &amp; \C{1}{k}\lambi{k-1} \\
+          &amp; &amp; &amp; &amp; \lambi{k}
+      \end{pmatrix} \\
+      &amp; = \left.
+      \begin{pmatrix}
+          \lambda^k &amp; \flamb{1}{\prime} &amp;
+\flamb{2}{\prime\prime} &amp; \cdots &amp; \flamb{(r_i - 1)}{(r_i - 1)}
+\\
+          &amp; \lambda^k &amp; \flamb{1}{\prime} &amp; \cdots &amp;
+\flamb{(r_i - 2)}{(r_i - 2)} \\
+          &amp; &amp; \ddots &amp; \ddots &amp; \vdots \\
+          &amp; &amp; &amp; \ddots &amp; \flamb{1}{\prime} \\
+          &amp; &amp; &amp; &amp; \lambda^k
+      \end{pmatrix}
+      \right |_{\lambda = \lambda_i}
+  \end{aligned}
+\]</span></p></li>
+</ul>
+<p>对于 Jordan 阵</p>
+<p><span class="math display">\[
+    J =
+    \begin{pmatrix}
+        J_1 &amp; &amp; &amp; \\
+        &amp; J_2 &amp; &amp; \\
+        &amp; &amp; \ddots &amp; \\
+        &amp; &amp; &amp; J_s
+    \end{pmatrix}
+\]</span></p>
+<p>有</p>
+<p><span class="math display">\[
+    J^k =
+    \begin{pmatrix}
+        J_1^k &amp; &amp; &amp; \\
+        &amp; J_2^k &amp; &amp; \\
+        &amp; &amp; \ddots &amp; \\
+        &amp; &amp; &amp; J_s^k
+    \end{pmatrix}
+\]</span></p>
+<p><strong>定理 <span class="math inline">\(2\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，则 <span class="math inline">\(A\)</span> 与一个 Jordan
+矩阵 <span class="math inline">\(J\)</span> 相似，即存在可逆矩阵 <span
+class="math inline">\(P \in \mathbb{C_n^{n \times n}}\)</span>，使得</p>
+<p><span class="math display">\[P^{-1}AP = J\]</span></p>
+<p>这个 Jordan 矩阵 <span class="math inline">\(J\)</span> 除 Jordan
+块的排列次序外由 <span class="math inline">\(A\)</span> 唯一确定，并称
+<span class="math inline">\(J\)</span> 为 <span
+class="math inline">\(A\)</span> 的 <strong>Jordan
+标准形</strong>.</p></li>
+</ul>
+<p><span class="math inline">\(\lambda\)</span> 矩阵的初等变换包括：</p>
+<ol type="1">
+<li><p>交换两行（列）；</p></li>
+<li><p>某一行（列）同乘以一个非零常数；</p></li>
+<li><p>某一行（列）同乘以多项式 <span
+class="math inline">\(\varphi(\lambda)\)</span>
+加到另一行（列）.</p></li>
+</ol>
+<p><strong>定理 <span class="math inline">\(3\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，则 <span class="math inline">\(\lambda I_n - A\)</span>
+经过初等变换可化为如下 Smith 标准形</p>
+<p><span class="math display">\[
+  S(\lambda) =
+  \begin{pmatrix}
+      d_1(\lambda) &amp; &amp; &amp; \\
+      &amp; d_2(\lambda) &amp; &amp; \\
+      &amp; &amp; \ddots &amp; \\
+      &amp; &amp; &amp; d_n(\lambda)
+  \end{pmatrix}
+\]</span></p>
+<p>其中 <span class="math inline">\(d_i(\lambda)\)</span>
+是首一多项式（最高次项系数为 <span class="math inline">\(1\)</span>
+的多项式），<span class="math inline">\(i = 1, 2, \cdots, n\)</span>，且
+<span class="math inline">\(d_i(\lambda) \mid d_{i+1}(\lambda), \; i =
+1, 2, \cdots, n-1\)</span>. <span
+class="math inline">\(d_i(\lambda)\)</span> 称为 <span
+class="math inline">\(A\)</span> 的 <strong>不变因子</strong>.</p></li>
+</ul>
+<p>由 <strong>初等变换求矩阵 <span class="math inline">\(A\)</span> 的
+Jordan 标准形</strong> 的方法：</p>
+<ol type="1">
+<li><p>用初等变换化特征矩阵 <span class="math inline">\(\lambda I_n -
+A\)</span> 为 Smith 标准形，求出 <span class="math inline">\(A\)</span>
+的不变因子 <span class="math inline">\(d_1(\lambda), d_2(\lambda),
+\cdots, d_n(\lambda)\)</span>.</p></li>
+<li><p>将 <span class="math inline">\(A\)</span>
+的每个次数大于零的不变因子 <span
+class="math inline">\(d_i(\lambda)\)</span>
+分解为互不相同的一次因式方幂的乘积，这些一次因式的方幂称为 <span
+class="math inline">\(A\)</span> 的 <strong>初等因子</strong>. 设 <span
+class="math inline">\(A\)</span> 的全部初等因子为：</p>
+<p><span class="math display">\[
+\newcommand{\primfac}[1]{(\lambda - \lambda_{ #1 })^{r_{ #1 }}}
+\primfac{1}, \; \primfac{2}, \;
+\cdots, \; \primfac{s}
+\]</span></p>
+<p>其中 <span class="math inline">\(\lambda_1, \lambda_2, \cdots,
+\lambda_s\)</span> 可能有相同的值，且 <span class="math inline">\(r_1 +
+r_2 + \cdots + r_s = n\)</span>.</p></li>
+<li><p>写出每个初等因子 <span class="math inline">\((\lambda -
+\lambda_i)^{r_i}, i = 1, 2, \cdots, s\)</span> 对应的 Jordan 块</p>
+<p><span class="math display">\[
+J_i =
+\begin{pmatrix}
+     \lambda_i &amp; 1 &amp; &amp; \\
+     &amp; \lambda_i &amp; \ddots &amp; \\
+     &amp; &amp; \ddots &amp; 1 \\
+     &amp; &amp; &amp; \lambda_i
+\end{pmatrix}_{r_i \times r_i} \;
+(i = 1, 2, \cdots, s)
+\]</span></p>
+<p>以这些 Jodan 块构成的 Jordan 阵</p>
+<p><span class="math display">\[
+J =
+\begin{pmatrix}
+     J_1 &amp; &amp; &amp; \\
+     &amp; J_2 &amp; &amp; \\
+     &amp; &amp; \ddots &amp; \\
+     &amp; &amp; &amp; J_s
+\end{pmatrix}
+\]</span></p>
+<p>即为 <span class="math inline">\(A\)</span> 的 Jordan
+标准形.</p></li>
+</ol>
+<p><strong>定义 <span class="math inline">\(2\)</span></strong></p>
+<ul>
+<li>设 <span class="math inline">\(A \in \mathbb{C^{m \times
+n}}\)</span>，<span class="math inline">\(\lambda I_n - A\)</span>
+的所有 <span class="math inline">\(k\)</span> 阶子式
+<em>首一最大公因式</em> <span
+class="math inline">\(D_k(\lambda)\)</span> 称为 <span
+class="math inline">\(A\)</span> 的 <strong><span
+class="math inline">\(k\)</span> 阶行列式因子</strong>，<span
+class="math inline">\(k = 1,2,\cdots,n\)</span>.</li>
+</ul>
+<p><strong>定理 <span class="math inline">\(4\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{m \times
+n}}\)</span>，<span class="math inline">\(D_k(\lambda)\)</span> 是 <span
+class="math inline">\(A\)</span> 的 <span
+class="math inline">\(k\)</span> 阶行列式因子，<span
+class="math inline">\(d_k(\lambda)\)</span> 是 <span
+class="math inline">\(A\)</span> 的不变因子，<span
+class="math inline">\(k = 1,2,\cdots,n\)</span>，则</p>
+<p><span class="math display">\[
+  \begin{aligned}
+      d_1(\lambda) &amp; = D_1(\lambda) \\
+      d_k(\lambda) &amp; = D_k(\lambda) \mathop{/} D_{k-1}(\lambda), \;
+k = 2, 3, \cdots, n.
+  \end{aligned}
+\]</span></p></li>
+</ul>
+<p>由 <strong>行列式因子求矩阵 <span class="math inline">\(A\)</span> 的
+Jordan 标准形</strong> 方法：</p>
+<ol type="1">
+<li><p>求 <span class="math inline">\(\lambda I_n - A\)</span> 的 <span
+class="math inline">\(n\)</span> 个行列式因子 <span
+class="math inline">\(D_1(\lambda), D_2(\lambda), \cdots,
+D_n(\lambda)\)</span></p></li>
+<li><p>由 <span class="math inline">\(d_1(\lambda) = D_1(\lambda), \;
+d_k(\lambda) = D_k(\lambda) \mathop{/} D_{k-1}(\lambda)\)</span>，求
+<span class="math inline">\(A\)</span> 的不变因子.</p></li>
+<li><p>求 <span class="math inline">\(A\)</span> 的初等因子和 Jordan
+标准形.</p></li>
+</ol>
+<h3 id="hamilton-cayley-定理">1.4 Hamilton-Cayley 定理</h3>
+<p><strong>定理 <span class="math inline">\(1\)</span>（Hamilton-Cayley
+定理）</strong></p>
+<ul>
+<li>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，<span class="math inline">\(\varphi(\lambda) = \det
+(\lambda I_n - A)\)</span>，则 <span class="math inline">\(\varphi(A) =
+O\)</span>.</li>
+</ul>
+<p><em>📝 Notations</em></p>
+<ul>
+<li><p>利用定理 <span class="math inline">\(1\)</span>
+可以简化矩阵运算.</p></li>
+<li><p><em>可逆矩阵逆的多项式表示</em>：设 <span class="math inline">\(A
+\in \mathbb{C^{n \times n}}\)</span>，</p>
+<p><span class="math display">\[
+  \varphi(\lambda) = |\lambda I_n - A| = \lambda^n + a_1\lambda^{n-1} +
+\cdots + a_{n-1}\lambda + a_n
+\]</span></p>
+<p>若 <span class="math inline">\(\det A \neq 0\)</span>（<span
+class="math inline">\(A\)</span> 可逆），则</p>
+<p><span class="math display">\[
+  A^{-1} = -\dfrac{1}{a_n}
+  \left(
+      A^{n-1} + a_1A^{n-2} + \cdots + a_{n-1}I
+  \right)
+\]</span></p></li>
+</ul>
+<p><strong>定义 <span
+class="math inline">\(1\)</span>（零化多项式）</strong></p>
+<ul>
+<li>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，<span class="math inline">\(f(\lambda)\)</span>
+是多项式，如果 <span class="math inline">\(f(A) = O\)</span>，则称 <span
+class="math inline">\(f(\lambda)\)</span> 为 <span
+class="math inline">\(A\)</span> 的 <strong>零化多项式</strong>.</li>
+</ul>
+<p><strong>定义 <span
+class="math inline">\(2\)</span>（最小多项式）</strong></p>
+<ul>
+<li>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，在 <span class="math inline">\(A\)</span>
+的零化多项式中，次数最低的首一多项式，称为 <span
+class="math inline">\(A\)</span> 的 <strong>最小多项式</strong>，记为
+<span class="math inline">\(m_{A}(\lambda)\)</span>.</li>
+</ul>
+<p><strong>定理 <span class="math inline">\(2\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，<span class="math inline">\(\varphi(\lambda) =
+\det(\lambda I_n - A)\)</span>，又设 <span
+class="math inline">\(D_{n-1}(\lambda)\)</span> 是 <span
+class="math inline">\(\lambda I_n - A\)</span> 的 <span
+class="math inline">\(n-1\)</span> 阶行列式因子，则</p>
+<p><span class="math display">\[
+  m_A(\lambda) = \dfrac{\varphi(\lambda
+  )}{D_{n-1}(\lambda)}
+\]</span></p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(3\)</span></strong></p>
+<ul>
+<li>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，则 <span class="math inline">\(A\)</span> 的最小多项式
+<span class="math inline">\(m_A(\lambda)\)</span> 能整除 <span
+class="math inline">\(A\)</span>
+的任一零化多项式，且最小多项式是唯一的.</li>
+</ul>
+<p><strong>定理 <span class="math inline">\(4\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，<span class="math inline">\(\lambda_1, \lambda_2, \cdots,
+\lambda_s\)</span> 是 <span class="math inline">\(A\)</span>
+的所有互不相同的特征值，则</p>
+<p><span class="math display">\[
+\newcommand{\lambfac}[1]{\left(\lambda -\lambda _ { #1 } \right)^{m _ {
+#1 }}}
+  m_A(\lambda) =  \lambfac{1} \lambfac{2} \dotsb \lambfac{s}
+\]</span></p>
+<p>其中，<span class="math inline">\(m_i\)</span> 是 <span
+class="math inline">\(A\)</span> 的 Jordan 标准形 <span
+class="math inline">\(J\)</span> 中含 <span
+class="math inline">\(\lambda_i\)</span> 的 Jordan 块的最高阶数</p></li>
+</ul>
+<h3 id="向量的内积">1.5 向量的内积</h3>
+<p><strong>定义 <span
+class="math inline">\(1\)</span>（向量的内积）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(x = (x_1, x_2, \cdots,
+x_n)^{\scriptscriptstyle \mathrm{T}} \in \mathbb{C^n}\)</span>，<span
+class="math inline">\(y = (y_1, y_2, \cdots, y_n)^{\scriptscriptstyle
+\mathrm{T}} \in \mathbb{C^n}\)</span>，令</p>
+<p><span class="math display">\[
+  (x, y) = \sum_{i = 1}^{n} x_i\overline{y_i} = y^{\scriptscriptstyle
+\mathrm{H}} x
+\]</span></p>
+<p>称 <span class="math inline">\((x, y)\)</span> 为 <span
+class="math inline">\(x\)</span> 与 <span
+class="math inline">\(y\)</span> 的 <strong>内积</strong>.（这里，<span
+class="math inline">\(y^{\scriptscriptstyle \mathrm{H}} =
+(\overline{y_1}, \overline{y_2}, \cdots, \overline{y_n}) \in
+\mathbb{C^{1 \times n}}\)</span>）</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(1\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(x, y, z \in
+\mathbb{C^n}\)</span>，<span class="math inline">\(\lambda \in
+\mathbb{C}\)</span>，则</p>
+<ol type="1">
+<li><p><strong>酉对称性</strong>：</p>
+<p><span class="math display">\[
+   (x, y) = \overline{(y, x)}
+\]</span></p></li>
+<li><p><strong>单线性性</strong>：</p>
+<p><span class="math display">\[
+   \begin{aligned}
+       &amp; (x + y, z) = (x, z) + (y, z) \\
+       &amp; (\lambda x, y) = \lambda(x, y), \;
+       (x, \lambda y) = \overline{\lambda}(x, y)
+   \end{aligned}
+\]</span></p></li>
+<li><p><strong>正定性</strong>：</p>
+<p><span class="math display">\[
+   (x, x) \geq 0
+\]</span></p>
+<p>当且仅当 <span class="math inline">\(x = 0\)</span> 时，有 <span
+class="math inline">\((x, x) = 0\)</span>.</p></li>
+</ol></li>
+</ul>
+<p><strong>定义 <span class="math inline">\(2\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(x = (x_1, x_2, \cdots,
+x_n)^{\scriptscriptstyle \mathrm{T}} \in \mathbb{C^n}\)</span>，令</p>
+<p><span class="math display">\[
+  \Vert x \Vert = \sqrt{(x, x)} = \sqrt{\sum_{i=1}^{n}|x_i|^2} =
+\sqrt{x^{\scriptscriptstyle \mathrm{H}}x}
+\]</span></p>
+<p>称 <span class="math inline">\(\| x \|\)</span> 为向量 <span
+class="math inline">\(x\)</span> 的 <strong>长度</strong> 或
+<strong><span class="math inline">\(2\)</span> - 范数</strong>.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(2\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(x, y \in
+\mathbb{C^n}\)</span>，<span class="math inline">\(\lambda \in
+\mathbb{C}\)</span>，则</p>
+<ol type="1">
+<li><p><strong>非负性</strong>：当 <span class="math inline">\(x \neq
+0\)</span> 时，<span class="math inline">\(\|x \| \gt 0\)</span>；当
+<span class="math inline">\(x = 0\)</span> 时，<span
+class="math inline">\(\| x \| = 0\)</span>；</p></li>
+<li><p><strong>齐次性</strong>：</p></li>
+</ol>
+<p><span class="math display">\[
+      \|\lambda x\| = |\lambda| \| x \|
+  \]</span></p>
+<ol start="3" type="1">
+<li><strong>三角不等式</strong>：</li>
+</ol>
+<p><span class="math display">\[
+      \| x+y \| \leq \| x \| + \| y \|
+  \]</span></p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(3\)</span>（Cauchy-Schwarz
+不等式）</strong></p>
+<ul>
+<li><p>对任意 <span class="math inline">\(x, y \in
+\mathbb{C^n}\)</span>，有</p>
+<p><span class="math display">\[
+  |(x, y)| \leq \lVert x \rVert \lVert y \rVert
+\]</span></p>
+<p>即</p>
+<p><span class="math display">\[
+  (x, y)(y, x) \leq (x, x)(y, y)
+\]</span></p></li>
+</ul>
+<p><strong>定义 <span class="math inline">\(3\)</span></strong></p>
+<ul>
+<li>设 <span class="math inline">\(x, y \in \mathbb{C^n}\)</span>，若
+<span class="math inline">\((x, y) = 0\)</span>，则称 <span
+class="math inline">\(x\)</span> 与 <span
+class="math inline">\(y\)</span> 正交，记作 <span
+class="math inline">\(x \perp y\)</span>.</li>
+</ul>
+<p><strong>定理 <span class="math inline">\(4\)</span></strong></p>
+<ul>
+<li><span class="math inline">\(\mathbb{C^n}\)</span>
+中两两正交的非零向量组线性无关.</li>
+</ul>
+<p><strong>定义 <span class="math inline">\(4\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(x_1, x_2, \cdots, x_n\)</span> 是
+<span class="math inline">\(\mathbb{C^{n}}\)</span> 的一组基，若</p>
+<p><span class="math display">\[
+  (x_i, x_j) = \delta_{ij} =
+  \begin{cases}
+    0, &amp; i \neq j, \\
+    1, &amp; i = j.
+  \end{cases}
+\]</span></p>
+<p>则称 <span class="math inline">\(x_1, x_2, \cdots, x_n\)</span> 是
+<span class="math inline">\(\mathbb{C^n}\)</span> 空间中的一组
+<strong>标准正交基</strong>.</p></li>
+</ul>
+<p><strong>Schmidt 正交化</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(x_1, x_2, \cdots, x_n\)</span> 是
+<span class="math inline">\(\mathbb{C^n}\)</span> 空间这的一组基，令</p>
+<p><span class="math display">\[
+  \begin{aligned}
+    y_1 &amp;= x_1 \\
+    y_2 &amp;= x_2 - \dfrac{(x_2, y_1)}{(y_1, y_1)} y_1 \\
+    y_3 &amp;= x_3 - \dfrac{(x_3, y_1)}{(y_1, y_1)} y_1 - \dfrac{(x_3,
+y_2)}{(y_2, y_2)} y_2 \\
+    \cdots \\
+    y_n &amp;= x_n - \dfrac{(x_n, y_1)}{(y_1, y_1)} y_1 - \dfrac{(x_n,
+y_2)}{(y_2, y_2)} y_2 - \cdots - \dfrac{(x_n, y_{n-1})}{(y_{n-1},
+y_{n-1})} y_{n-1}
+  \end{aligned}
+\]</span></p>
+<p>此时，<span class="math inline">\(y_1, y_2, \cdots, y_n\)</span>
+两两正交（再进行单位化，即可得到一组标准正交基）.</p></li>
+</ul>
+<p><strong>定义 <span
+class="math inline">\(5\)</span>（酉矩阵）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，若 <span class="math inline">\(A\)</span> 满足</p>
+<p><span class="math display">\[
+  A^{\scriptscriptstyle \mathrm{H}}A = AA^{\scriptscriptstyle
+\mathrm{H}} = I
+\]</span></p>
+<p>则称 <span class="math inline">\(A\)</span> 为
+<strong>酉矩阵</strong>.</p></li>
+</ul>
+<p><em>📝 Notations</em></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，则</p>
+<p><span class="math display">\[
+  \begin{aligned}
+    &amp; A^{\scriptscriptstyle \mathrm{H}}A = AA^{\scriptscriptstyle
+\mathrm{H}} = I \\
+    \iff &amp; A^{\scriptscriptstyle \mathrm{H}}A = I \\
+    \iff &amp; AA^{\scriptscriptstyle \mathrm{H}} = I \\
+    \iff &amp; A^{-1} = A^{\scriptscriptstyle \mathrm{H}}
+  \end{aligned}
+\]</span></p></li>
+<li><p>当 <span class="math inline">\(A \in \mathbb{R^{n \times
+n}}\)</span> 时，酉矩阵就是正交矩阵.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(5\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span> 是酉矩阵，则</p>
+<ol type="1">
+<li><p><span class="math inline">\(|\det A| = 1\)</span>；</p></li>
+<li><p><span class="math inline">\(A^{\scriptscriptstyle \mathrm{T}}, \;
+A^{\scriptscriptstyle \mathrm{H}}, \; A^{-1}\)</span>
+仍为酉矩阵；</p></li>
+<li><p>若 <span class="math inline">\(B \in \mathbb{C^{n \times
+n}}\)</span> 是酉矩阵，则 <span class="math inline">\(AB\)</span>
+也是酉矩阵.</p></li>
+</ol></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(6\)</span></strong></p>
+<ul>
+<li>设 <span class="math inline">\(A = (x_1, x_2, \cdots, x_n) \in
+\mathbb{C^{n \times n}}\)</span>，则 <span
+class="math inline">\(A\)</span> 是酉矩阵的充要条件是 <span
+class="math inline">\(x_1, x_2, \cdots, x_n\)</span> 是 <span
+class="math inline">\(\mathbb{C^n}\)</span> 中的一组标准正交基.</li>
+</ul>
+<h3 id="矩阵的酉相似">1.6 矩阵的酉相似</h3>
+<p><strong>定义 <span
+class="math inline">\(1\)</span>（酉相似）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A, B \in \mathbb{C^{n \times
+n}}\)</span>，若存在酉矩阵 <span class="math inline">\(U\)</span>
+使得</p>
+<p><span class="math display">\[
+  U^{-1}AU = U^{\scriptscriptstyle \mathrm{H}}AU = B
+\]</span></p>
+<p>则称 <span class="math inline">\(A\)</span> 和 <span
+class="math inline">\(B\)</span> <strong>酉相似</strong>.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(1\)</span>（Schur
+分解定理）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，则 <span class="math inline">\(A\)</span> 可酉相似于
+<em>上三角矩阵</em> <span class="math inline">\(T\)</span>，即存在 <span
+class="math inline">\(n\)</span> 阶酉矩阵 <span
+class="math inline">\(U\)</span>，使得</p>
+<p><span class="math display">\[
+  U^{-1}AU = U^{\scriptscriptstyle \mathrm{H}}AU = T =
+  \begin{pmatrix}
+    \lambda_1 &amp; * &amp; \cdots &amp; * \\
+    &amp; \lambda_2 &amp; \ddots &amp; \vdots \\
+    &amp; &amp; \ddots &amp; * \\
+    &amp; &amp; &amp; \lambda_n
+  \end{pmatrix}
+\]</span></p>
+<p>其中 <span class="math inline">\(\lambda_1, \lambda_2, \cdots,
+\lambda_n\)</span> 是 <span class="math inline">\(A\)</span>
+的特征值.</p></li>
+</ul>
+<p><strong>定义 <span
+class="math inline">\(2\)</span>（正规矩阵）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，若 <span class="math inline">\(A\)</span> 满足</p>
+<p><span class="math display">\[
+  A^{\scriptscriptstyle \mathrm{H}}A = AA^{\scriptscriptstyle
+\mathrm{H}}
+\]</span></p>
+<p>则称 <span class="math inline">\(A\)</span> 为
+<strong>正规矩阵</strong>.</p></li>
+</ul>
+<p><em>📝 Notations（正规矩阵的例子）</em></p>
+<ul>
+<li><p>实对称阵：<span class="math inline">\(A \in \mathbb{R^{n \times
+n}}, \; A^{\scriptscriptstyle \mathrm{T}} = A\)</span>；</p></li>
+<li><p>实反对称阵：<span class="math inline">\(A \in \mathbb{R^{n \times
+n}}, \; A^{\scriptscriptstyle \mathrm{T}} = -A\)</span>；</p></li>
+<li><p>实正交矩阵：<span class="math inline">\(A \in \mathbb{R^{n \times
+n}}, \; A^{\scriptscriptstyle \mathrm{T}}A = AA^{\scriptscriptstyle
+\mathrm{T}} = I\)</span>；</p></li>
+<li><p>Hermite 矩阵：<span class="math inline">\(A \in \mathbb{C^{n
+\times n}}, \; A^{\scriptscriptstyle \mathrm{H}} = A\)</span>；</p></li>
+<li><p>反 Hermite 矩阵：<span class="math inline">\(A \in \mathbb{C^{n
+\times n}}, \; A^{\scriptscriptstyle \mathrm{H}} =
+-A\)</span>；</p></li>
+<li><p>酉矩阵：<span class="math inline">\(A \in \mathbb{C^{n \times
+n}}, \; A^{\scriptscriptstyle \mathrm{H}}A = AA^{\scriptscriptstyle
+\mathrm{H}} = I\)</span>.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(2\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，则 <span class="math inline">\(A\)</span>
+可以酉相似对角化的充要条件是</p>
+<p><span class="math display">\[
+  A^{\scriptscriptstyle \mathrm{H}}A = AA^{\scriptscriptstyle
+\mathrm{H}}
+\]</span></p>
+<p>即 <span class="math inline">\(A\)</span> 为正规矩阵.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(3\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span> 是正规矩阵，则</p>
+<ol type="1">
+<li><p><span class="math inline">\(A\)</span> 是 Hermite 矩阵 <span
+class="math inline">\(\iff\)</span> <span
+class="math inline">\(A\)</span> 的特征值全是实数；</p></li>
+<li><p><span class="math inline">\(A\)</span> 是反 Hermite 矩阵 <span
+class="math inline">\(\iff\)</span> <span
+class="math inline">\(A\)</span> 的特征值是 <span
+class="math inline">\(0\)</span> 或纯虚数；</p></li>
+<li><p><span class="math inline">\(A\)</span> 是酉矩阵 <span
+class="math inline">\(\iff\)</span> <span
+class="math inline">\(A\)</span> 的特征值的模是 <span
+class="math inline">\(1\)</span>；</p></li>
+<li><p><span class="math inline">\(\lambda\)</span> 是 <span
+class="math inline">\(A\)</span> 的特征值，<span
+class="math inline">\(x\)</span> 是对应 <span
+class="math inline">\(\lambda\)</span> 的特征向量，则 <span
+class="math inline">\(\overline{\lambda}\)</span> 是 <span
+class="math inline">\(A^{\scriptscriptstyle \mathrm{H}}\)</span>
+的特征值，对应 <span class="math inline">\(\overline{\lambda}\)</span>
+的特征向量仍为 <span class="math inline">\(x\)</span>.</p></li>
+</ol></li>
+</ul>
+<p><strong>酉相似对角化</strong>方法：</p>
+<ol type="1">
+<li><p>求出 <span class="math inline">\(A\)</span> 的全部特征值，设
+<span class="math inline">\(\lambda_1, \lambda_2, \cdots,
+\lambda_s\)</span> 是 <span class="math inline">\(A\)</span>
+的互不相同的特征值，其重数分别为 <span class="math inline">\(r_1, r_2,
+\cdots, r_s\)</span>，且 <span class="math inline">\(r_1 + r_2 + \cdots
++ r_s = n\)</span>.</p></li>
+<li><p>对于特征值 <span class="math inline">\(\lambda_i, \, i =
+1,2,\cdots,s\)</span>，求出对应的 <span
+class="math inline">\(r_i\)</span> 个线性无关的特征向量 <span
+class="math inline">\(p_{i1}, p_{i2}, \cdots, p_{ir_i}, \, i =
+1,2,\cdots,s\)</span>.</p></li>
+<li><p>用 Schmidt 正交化方法将 <span class="math inline">\(p_{i1},
+p_{i2}, \cdots, p_{ir_i}\)</span> 正交化再单位化得 <span
+class="math inline">\(u_{i1}, u_{i2}, \cdots, u_{ir_i}, \, i =
+1,2,\cdots,s\)</span>，则酉矩阵</p>
+<p><span class="math display">\[
+\begin{aligned}
+   &amp; U = \left(
+     u_{11}, \cdots, u_{1r_1}, u_{21}, \cdots, u_{2r_2}, \cdots, u_{s1},
+\cdots, u_{sr_s},
+   \right) \\ \\
+   &amp; U^{-1}AU = U^{\scriptscriptstyle \mathrm{H}}AU = \Lambda =
+   \begin{pmatrix}
+     \lambda_1 I_{r_1} &amp; &amp; &amp; \\
+     &amp; \lambda_2 I_{r_2} &amp; &amp; \\
+     &amp; &amp; \ddots &amp; \\
+     &amp; &amp; &amp; \lambda_s I_{r_s}
+   \end{pmatrix}
+\end{aligned}
+\]</span></p></li>
+</ol>
+<p><strong>定义 <span class="math inline">\(3\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span> 是一个 Hermite 矩阵，如果</p>
+<p><span class="math display">\[
+  x^{\scriptscriptstyle \mathrm{H}}Ax \gt 0, \; \forall x \in
+\mathbb{C^n}, x \neq 0
+\]</span></p>
+<p>则称 <span class="math inline">\(A\)</span> 是一个
+<strong>正定</strong> 的 Hermite 矩阵.</p>
+<p>如果</p>
+<p><span class="math display">\[
+  x^{\scriptscriptstyle \mathrm{H}}Ax \geq 0, \; \forall x \in
+\mathbb{C^n}
+\]</span></p>
+<p>则称 <span class="math inline">\(A\)</span> 是一个
+<strong>非负定</strong>（<strong>半正定</strong>）的 Hermite
+矩阵.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(4\)</span>（正定 Hermite
+矩阵的性质）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span> 是 Hermite 矩阵，则下述条件等价：</p>
+<ol type="1">
+<li><p><span class="math inline">\(A\)</span> 是正定的 Hermite
+矩阵；</p></li>
+<li><p><span class="math inline">\(A\)</span>
+的特征值全为正数；</p></li>
+<li><p>存在可逆矩阵 <span class="math inline">\(P\)</span>，使得 <span
+class="math inline">\(A = P^{\scriptscriptstyle
+\mathrm{H}}P\)</span>；</p></li>
+<li><p><span class="math inline">\(A\)</span>
+的顺序主子式全为正数.</p></li>
+</ol></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(5\)</span>（非负定 Hermite
+矩阵的性质）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span> 是 Hermite 矩阵，则下述条件等价：</p>
+<ol type="1">
+<li><p><span class="math inline">\(A\)</span> 是非负定的 Hermite
+矩阵；</p></li>
+<li><p><span class="math inline">\(A\)</span>
+的特征值全为非负数；</p></li>
+<li><p>存在矩阵 <span class="math inline">\(P\)</span>，使得 <span
+class="math inline">\(A = P^{\scriptscriptstyle
+\mathrm{H}}P\)</span>.</p></li>
+</ol></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(6\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，则</p>
+<ol type="1">
+<li><p><span class="math inline">\(A^{\scriptscriptstyle
+\mathrm{H}}A\)</span> 和 <span
+class="math inline">\(AA^{\scriptscriptstyle \mathrm{H}}\)</span>
+的特征值全为非负实数；</p></li>
+<li><p><span class="math inline">\(A^{\scriptscriptstyle
+\mathrm{H}}A\)</span> 和 <span
+class="math inline">\(AA^{\scriptscriptstyle \mathrm{H}}\)</span>
+的非零特征值相同；</p></li>
+<li><p><span
+class="math inline">\(\operatorname{rank}(A^{\scriptscriptstyle
+\mathrm{H}}A) = \operatorname{rank}(AA^{\scriptscriptstyle \mathrm{H}})
+= \operatorname{rank}(A)\)</span>.</p></li>
+</ol></li>
+</ul>
+<h2 id="第二章-范数理论">第二章 范数理论</h2>
+<h3 id="向量的范数">2.1 向量的范数</h3>
+<p><strong>定义 <span
+class="math inline">\(1\)</span>（向量范数）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(\lVert\cdot\rVert\)</span> 是
+<span class="math inline">\(\mathbb{C^n}\)</span> 上一个泛函，满足</p>
+<ol type="1">
+<li><p><strong>正定性</strong>：</p>
+<p><span class="math display">\[
+\forall x \in \mathbb{C^n}, \, \lVert x \rVert \ge 0
+\]</span></p>
+<p>且 <span class="math inline">\(\lVert x \rVert = 0\)</span> 当且仅当
+<span class="math inline">\(x = 0\)</span>.</p></li>
+<li><p><strong>齐次性</strong>：</p>
+<p><span class="math display">\[
+\forall \lambda\in\mathbb{C}, \, x \in \mathbb{C^n}, \, \lVert \lambda x
+\rVert = \lvert \lambda \rvert \cdot \lVert x \rVert
+\]</span></p></li>
+<li><p><strong>三角不等式</strong>：</p>
+<p><span class="math display">\[
+\forall x,y \in \mathbb{C^n}, \, \lVert x+y \rVert \le \lVert x \rVert +
+\lVert y \rVert
+\]</span></p>
+<p>则称 <span class="math inline">\(\lVert \cdot \rVert\)</span> 是
+<span class="math inline">\(\mathbb{C^n}\)</span> 上的一个
+<strong>向量范数</strong>.</p></li>
+</ol></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(1\)</span></strong></p>
+<ul>
+<li><p>对任意 <span class="math inline">\(x, y \in
+\mathbb{C^n}\)</span>，有</p>
+<ol type="1">
+<li><p><span class="math inline">\(\lVert x \rVert = \lVert -x
+\rVert\)</span></p></li>
+<li><p><span class="math inline">\(\newcommand{\norm}[1]{\lVert #1
+\rVert} \big \lvert \norm{x} - \norm{y} \big \rvert \le
+\norm{x-y}\)</span></p></li>
+</ol></li>
+</ul>
+<p><strong>定义 <span class="math inline">\(2\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(x = (x_1, x_2, \dotsc,
+x_n)^{\scriptscriptstyle \mathrm{T}} \in \mathbb{C^n}\)</span>，定义</p>
+<p><span class="math display">\[
+  \newcommand{\norm}[1]{\lVert #1 \rVert}
+  \newcommand{\abs}[1]{\lvert #1 \rvert}
+  \begin{aligned}
+    \norm{x}_1 \; &amp; = \sum_{i = 1}^n \abs{x_i} \\
+    \norm{x}_2 \; &amp; = \left(
+      \sum_{i = 1}^{n} \abs{x_i}^2
+    \right)^{\frac{1}{2}} \\
+    \norm{x}_p \; &amp; = \left(
+      \sum_{i = 1}^{n} \abs{x_i}^p
+    \right)^{\frac{1}{p}}, \,
+    1 \le p \lt +\infty \\
+    \norm{x}_{\infty} &amp; = \max_{1 \le i \le n} \, \abs{x_i}  
+  \end{aligned}
+\]</span></p>
+<p>可以验证 <span class="math inline">\(\newcommand{\normx}[2]{\lVert #1
+\rVert_{ #2 }} \normx{\cdot}{1}, \; \normx{\cdot}{2}, \;
+\normx{\cdot}{p}, \; \normx{\cdot}{\infty}\)</span> 均是 <span
+class="math inline">\(\mathbb{C^n}\)</span> 上的向量范数，分别称为
+<strong><span class="math inline">\(1\)</span> -
+范数</strong>，<strong><span class="math inline">\(2\)</span> -
+范数</strong>，<strong><span class="math inline">\(p\)</span> -
+范数</strong> 和 <strong><span class="math inline">\(\infty\)</span> -
+范数</strong>.</p></li>
+</ul>
+<p><strong>Hölder 不等式</strong></p>
+<ul>
+<li><p>对任意 <span class="math inline">\(x_i, y_i \in \mathbb{C}, \, i
+= 1, 2, \dotsc, n\)</span>，有</p>
+<p><span class="math display">\[
+  \sum_{i=1}^{n} \lvert x_iy_i \rvert \le
+  \left(
+    \sum_{i=1}^{n} \lvert x_i \rvert^{p}
+  \right)^{\frac{1}{p}}
+  \left(
+    \sum_{i=1}^{n} \lvert y_i \rvert^{q}
+  \right)^{\frac{1}{q}}
+\]</span></p>
+<p>其中 <span class="math inline">\(1\le p, q \le +\infty\)</span> 且
+<span class="math inline">\(\dfrac{1}{p} + \dfrac{1}{q} =
+1\)</span>.</p></li>
+</ul>
+<p><strong>Minkowski 不等式</strong>（<span
+class="math inline">\(p\)</span> - 范数的三角不等式）</p>
+<ul>
+<li><p>对任意 <span class="math inline">\(x_i, y_i \in \mathbb{C}, \, i
+= 1, 2, \dotsc, n\)</span>，有</p>
+<p><span class="math display">\[
+  \newcommand{\unit}[1]{\left(
+    \sum_{i=1}^{n} \lvert
+      #1
+    \rvert^{p}
+  \right)^{\frac{1}{p}}}
+  \unit{x_i + y_i} \le \unit{x_i} + \unit{y_i}
+\]</span></p>
+<p>其中 <span class="math inline">\(1 \le p \lt
++\infty\)</span>.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(2\)</span></strong></p>
+<ul>
+<li><span class="math inline">\(\forall x \in \mathbb{C^n}, \;
+\lim\limits_{p\to\infty} \lVert x \rVert_p = \lVert x
+\rVert_{\infty}\)</span>.</li>
+</ul>
+<p><em>📝 Notations</em></p>
+<ul>
+<li>如果 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span> 是 Hermite 正定矩阵，则 <span class="math inline">\(\lVert
+x \rVert_{A} = \sqrt{x^{\scriptscriptstyle \mathrm{H}}Ax}, \, x \in
+\mathbb{C^n}\)</span> 也是 <span
+class="math inline">\(\mathbb{C^n}\)</span> 上的向量范数.</li>
+</ul>
+<p><strong>定义 <span class="math inline">\(3\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{v}_1}\)</span> 与 <span class="math inline">\(\lVert
+\cdot \rVert_{\mathrm{v}_2}\)</span> 是 <span
+class="math inline">\(\mathbb{C^n}\)</span> 上两个向量范数，如果存在常数
+<span class="math inline">\(c_1, c_2 \gt 0\)</span>，使得</p>
+<p><span class="math display">\[
+  \forall x \in \mathbb{C^n}, \; c_1 \lVert x \rVert_{\mathrm{v}_1} \le
+\lVert x \rVert_{\mathrm{v}_2} \le c_2 \lVert x \rVert_{\mathrm{v}_1}
+\]</span></p>
+<p>则称向量范数 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{v}_1}\)</span> 和 <span class="math inline">\(\lVert
+\cdot \rVert_{\mathrm{v}_2}\)</span> <strong>等价</strong>.</p></li>
+</ul>
+<p>向量范数的等价是 <strong>等价关系</strong>：</p>
+<ul>
+<li><p><strong>自反性</strong>：所有范数与自己等价.</p></li>
+<li><p><strong>对称性</strong>：若向量范数 <span
+class="math inline">\(\lVert \cdot \rVert_{\mathrm{v}_1}\)</span> 与
+<span class="math inline">\(\lVert \cdot \rVert_{\mathrm{v}_2}\)</span>
+等价，则向量范数 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{v}_2}\)</span> 与 <span class="math inline">\(\lVert
+\cdot \rVert_{\mathrm{v}_1}\)</span> 等价.</p></li>
+<li><p><strong>传递性</strong>：若向量范数 <span
+class="math inline">\(\lVert \cdot \rVert_{\mathrm{v}_1}\)</span> 与
+<span class="math inline">\(\lVert \cdot \rVert_{\mathrm{v}_2}\)</span>
+等价，且向量范数 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{v}_2}\)</span> 与 <span class="math inline">\(\lVert
+\cdot \rVert_{\mathrm{v}_3}\)</span> 等价，则向量范数 <span
+class="math inline">\(\lVert \cdot \rVert_{\mathrm{v}_1}\)</span> 与
+<span class="math inline">\(\lVert \cdot \rVert_{\mathrm{v}_3}\)</span>
+等价.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(3\)</span></strong></p>
+<ul>
+<li><span class="math inline">\(\mathbb{C^n}\)</span>
+上所有向量范数等价.</li>
+</ul>
+<p><strong>定义 <span class="math inline">\(4\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(\def\k{\scriptscriptstyle
+\left(k\right)} x^{\k} = \left(x_1^{\k}, x_2^{\k}, \dotsc, x_n^{\k}
+\right)^{\scriptscriptstyle \mathrm{T}} \in \mathbb{C^n}\)</span>，<span
+class="math inline">\(k = 1, 2, \dotsc\)</span> 是一个向量序列，如果</p>
+<p><span class="math display">\[
+  \lim_{k \to \infty}
+  x_i^{\scriptscriptstyle \left(k\right)}
+  = x_i, \,
+  i = 1, 2, \dotsc, n
+\]</span></p>
+<p>则称向量序列 <span
+class="math inline">\(\lbrace  x^{\scriptscriptstyle \left(k\right)}
+\rbrace\)</span> <strong>收敛于</strong> <span class="math inline">\(x =
+(x_1, x_2, \dotsc, x_n)^{\scriptscriptstyle
+\mathrm{T}}\)</span>，记为</p>
+<p><span class="math display">\[
+  \lim_{k \to \infty}
+  x^{\scriptscriptstyle \left(k\right)}
+  = x
+\]</span></p>
+<p>否则，称 <span class="math inline">\(\lbrace  x^{\scriptscriptstyle
+\left(k\right)} \rbrace\)</span> <strong>发散</strong>.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(4\)</span></strong></p>
+<ul>
+<li><p><span class="math display">\[
+  \def\k{\scriptscriptstyle \left(k\right)}
+  \lim_{k \to \infty}x^{\k}
+  = x
+  \iff
+  \lim_{k \to \infty} \lVert x^{\k} - x \rVert = 0
+\]</span></p>
+<p>其中，<span class="math inline">\(\lVert \cdot \rVert\)</span> 是
+<span class="math inline">\(\mathbb{C^n}\)</span>
+上任一向量范数.</p></li>
+</ul>
+<h3 id="矩阵范数">2.2 矩阵范数</h3>
+<p><strong>定义 <span
+class="math inline">\(1\)</span>（矩阵范数）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(\lVert \cdot \rVert\)</span> 是
+<span class="math inline">\(\mathbb{C^{n \times n}}\)</span>
+上的一个泛函，满足</p>
+<ol type="1">
+<li><p><strong>正定性</strong>：</p>
+<p><span class="math display">\[
+\forall A \in \mathbb{C^{n \times n}}, \;
+\lVert A \rVert \ge 0
+\]</span></p>
+<p>其中 <span class="math inline">\(\lVert A \rVert = 0\)</span>
+当且仅当 <span class="math inline">\(A = O\)</span>.</p></li>
+<li><p><strong>齐次性</strong>：</p>
+<p><span class="math display">\[
+\forall \lambda \in \mathbb{C}, A \in \mathbb{C^{n \times n}}, \;
+\lVert \lambda A \rVert =
+\lvert \lambda \rvert
+\lVert A \rVert
+\]</span></p></li>
+<li><p><strong>三角不等式</strong>：</p>
+<p><span class="math display">\[
+\forall A, B \in \mathbb{C^{n \times n}}, \;
+\lVert A+B \rVert \le
+\lVert A \rVert +
+\lVert B \rVert
+\]</span></p></li>
+<li><p><strong>乘积不等式</strong>（<strong>相容性</strong>）：</p>
+<p><span class="math display">\[
+\forall A, B \in \mathbb{C^{n \times n}}, \;
+\lVert AB \rVert \le
+\lVert A \rVert \cdot
+\lVert B \rVert
+\]</span></p></li>
+</ol>
+<p>则称 <span class="math inline">\(\lVert \cdot \rVert\)</span> 是
+<span class="math inline">\(\mathbb{C^{n \times n}}\)</span> 上的一个
+<strong>矩阵范数</strong>.</p></li>
+</ul>
+<p><strong>定义 <span class="math inline">\(2\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A = \left( a_{ij} \right) \in
+\mathbb{C^{n \times n}}\)</span>，定义</p>
+<ul>
+<li><p><strong><span class="math inline">\(\mathrm{m}_1\)</span> -
+范数</strong>：</p>
+<p><span class="math display">\[
+  \newcommand{\abs}[1]{\lvert #1 \rvert}
+  \newcommand{\norm}[1]{\lVert #1 \rVert}
+  \norm{A}_{\mathrm{m}_1} =
+  \sum_{i=1}^n \sum_{j=1}^n \abs{a_{ij}}
+\]</span></p></li>
+<li><p><strong><span class="math inline">\(\mathrm{F}\)</span> -
+范数</strong>：</p>
+<p><span class="math display">\[
+  \newcommand{\abs}[1]{\lvert #1 \rvert}
+  \newcommand{\norm}[1]{\lVert #1 \rVert}
+  \def\H{\scriptscriptstyle \mathrm{H}}
+  \norm{A}_{\mathrm{F}} = \left(
+    \sum_{i=1}^n \sum_{j=1}^n \abs{a_{ij}}^2
+  \right)^{\frac{1}{2}} =
+  \sqrt{\operatorname{tr} \left( AA^{\H} \right)}
+\]</span></p></li>
+<li><p><strong><span class="math inline">\(\mathrm{m}_{\infty}\)</span>
+- 范数</strong>：</p>
+<p><span class="math display">\[
+  \newcommand{\abs}[1]{\lvert #1 \rvert}
+  \newcommand{\norm}[1]{\lVert #1 \rVert}
+  \norm{A}_{\mathrm{m}_{\infty}} =
+  n \cdot \max_{1 \le i,j \le n} \abs{a_{ij}}
+\]</span></p></li>
+</ul></li>
+</ul>
+<p><strong>定义 <span class="math inline">\(3\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{m}}\)</span> 是 <span class="math inline">\(\mathbb{C^{n
+\times n}}\)</span> 上的矩阵范数，<span class="math inline">\(\lVert
+\cdot \rVert_{\mathrm{v}}\)</span> 是 <span
+class="math inline">\(\mathbb{C^n}\)</span> 上的向量范数，如果对任意
+<span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，<span class="math inline">\(x \in
+\mathbb{C^n}\)</span>，</p>
+<p><span class="math display">\[
+  \lVert Ax \rVert_{\mathrm{v}} \le
+  \lVert A \rVert_{\mathrm{m}} \cdot
+  \lVert x \rVert_{\mathrm{v}}
+\]</span></p>
+<p>则称矩阵范数 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{m}}\)</span> 与向量范数 <span
+class="math inline">\(\lVert \cdot \rVert_{\mathrm{v}}\)</span>
+<strong>相容</strong>.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(1\)</span></strong></p>
+<ul>
+<li><p>矩阵范数 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{m}_1}, \, \lVert \cdot \rVert_{\mathrm{F}}\)</span>
+分别与 <span class="math inline">\(\lVert \cdot \rVert_{1}, \, \lVert
+\cdot \rVert_{2}\)</span> 相容；</p></li>
+<li><p>矩阵范数 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{m}_{\infty}}\)</span> 与向量范数 <span
+class="math inline">\(\lVert \cdot \rVert_{1}, \, \lVert \cdot
+\rVert_{2}, \, \lVert \cdot \rVert_{\infty}\)</span> 相容.</p></li>
+</ul>
+<p><strong>定义 <span
+class="math inline">\(4\)</span>（由矩阵范数诱导的向量范数）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{m}}\)</span> 是 <span class="math inline">\(\mathbb{C^{n
+\times n}}\)</span> 上的一个矩阵范数，取 <span class="math inline">\(a
+\in \mathbb{C^n}\)</span>，且 <span class="math inline">\(a \neq
+0\)</span>. 定义</p>
+<p><span class="math display">\[
+  \lVert x \rVert_{\mathrm{v}} =
+  \lVert xa^{\scriptscriptstyle \mathrm{H}} \rVert_{\mathrm{m}}, \;
+  x \in \mathbb{C^n}
+\]</span></p>
+<p>可以证明，它是 <span class="math inline">\(\mathbb{C}^n\)</span>
+上的向量范数，称为由矩阵范数 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{m}}\)</span> 所 <strong>诱导的</strong>
+向量范数.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(2\)</span></strong></p>
+<ul>
+<li><span class="math inline">\(\mathbb{C^{n \times n}}\)</span>
+是任意一矩阵范数 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{m}}\)</span> 与它所诱导的向量范数 <span
+class="math inline">\(\lVert \cdot \rVert_{\mathrm{v}}\)</span>
+相容.</li>
+</ul>
+<p><strong>定义 <span
+class="math inline">\(5\)</span>（由向量范数诱导的矩阵范数）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{v}}\)</span> 是 <span
+class="math inline">\(\mathbb{C^n}\)</span> 上一个向量范数，定义</p>
+<p><span class="math display">\[
+  \newcommand{\norm}[1]{\lVert #1 \rVert}
+  \def\v{\mathrm{v}}
+  \norm{A}_{\mathrm{m}} =
+  \max_{\norm{x}_{\v} = 1} \norm{Ax}_{\v} =
+  \max_{x \neq 0} \dfrac{\norm{Ax}_{\v}}{\norm{x}_{\v}}, \,
+  A \in \mathbb{C^{n \times n}}
+\]</span></p>
+<p>可以证明（下面的定理 <span class="math inline">\(3\)</span>），它是
+<span class="math inline">\(\mathbb{C^{n \times n}}\)</span>
+上的矩阵范数，称为由向量范数 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{v}}\)</span> <strong>诱导的</strong> 矩阵范数，简称
+<strong>从属范数</strong>.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(3\)</span></strong></p>
+<ul>
+<li>设 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{v}}\)</span> 是 <span
+class="math inline">\(\mathbb{C^n}\)</span> 上任一向量范数，则它所诱导的
+<span class="math inline">\(\lVert \cdot \rVert_{\mathrm{m}}\)</span>
+为一个矩阵范数且与其相容.</li>
+</ul>
+<p><strong>定理 <span class="math inline">\(4\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A = (a_{ij})_{n \times n} \in
+\mathbb{C^{n \times n}}\)</span>，记由向量 <span
+class="math inline">\(1\)</span>，<span
+class="math inline">\(2\)</span>，<span
+class="math inline">\(\infty\)</span> 范数导出的矩阵范数分别为 <span
+class="math inline">\(\lVert A \rVert_{1}\)</span>，<span
+class="math inline">\(\lVert A \rVert_{2}\)</span>，<span
+class="math inline">\(\lVert A \rVert_{\infty}\)</span>，则有</p>
+<p><span class="math display">\[
+  \newcommand{\norm}[1]{\lVert #1 \rVert}
+  \newcommand{\abs}[1]{\lvert #1 \rvert}
+  \begin{aligned}
+    \norm{A}_1 \; &amp;= \max_j \sum_{i=1}^n \abs{a_{ij}} \\
+    \norm{A}_2 \; &amp;= \sqrt{\lambda_1} \\
+    \norm{A}_{\infty} &amp;= \max_i \sum_{j=1}^n \abs{a_{ij}} \\
+  \end{aligned}
+\]</span></p>
+<p>其中，<span class="math inline">\(\lambda_1\)</span> 是 <span
+class="math inline">\(A^{\scriptscriptstyle \mathrm{H}}A\)</span>
+的最大特征值.</p>
+<p>分别称 <span class="math inline">\(\lVert A
+\rVert_{1}\)</span>，<span class="math inline">\(\lVert A
+\rVert_{2}\)</span> 和 <span class="math inline">\(\lVert A
+\rVert_{\infty}\)</span> 为矩阵的 <strong><span
+class="math inline">\(1\)</span> - 范数</strong>，<strong><span
+class="math inline">\(2\)</span> - 范数</strong> 和 <strong><span
+class="math inline">\(\infty\)</span> - 范数</strong>.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(5\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，则</p>
+<ol type="1">
+<li><p><span class="math inline">\(\lVert A^{\scriptscriptstyle
+\mathrm{H}} \rVert_{\mathrm{F}} = \lVert A
+\rVert_{\mathrm{F}}\)</span>，<span class="math inline">\(\lVert
+A^{\scriptscriptstyle \mathrm{H}} \rVert_{2} = \lVert A
+\rVert_{2}\)</span></p></li>
+<li><p><strong>酉不变性</strong>：对任意酉矩阵 <span
+class="math inline">\(U, V \in \mathbb{C^{n \times n}}\)</span>，有</p>
+<p><span class="math display">\[
+\newcommand{\norm}[1]{\lVert #1 \rVert}
+\def \F{\mathrm{F}}
+\begin{aligned}
+   \norm{UA}_{\F} &amp;= \norm{AV}_{\F} = \norm{UAV}_{\F} \\
+   \norm{UA}_{2} &amp;= \norm{AV}_{2} = \norm{UAV}_{2}
+\end{aligned}
+\]</span></p></li>
+<li><p>若 <span class="math inline">\(A\)</span> 是正规矩阵，且 <span
+class="math inline">\(\lambda_1, \lambda_2, \dotsc, \lambda_n\)</span>
+是 <span class="math inline">\(A\)</span> 的 <span
+class="math inline">\(n\)</span> 个特征值，则</p>
+<p><span class="math display">\[
+\lVert A \rVert_{2} = \max_k \, \lvert \lambda_k \rvert
+\]</span></p></li>
+</ol></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(6\)</span></strong></p>
+<ul>
+<li><span class="math inline">\(\mathbb{C^{n \times n}}\)</span>
+上所有矩阵范数等价.</li>
+</ul>
+<p><strong>长方阵的范数</strong></p>
+<p>对方阵范数的定义稍作修改可以推广到 <span class="math inline">\(m
+\times n\)</span> 矩阵的情形：</p>
+<ul>
+<li><p>矩阵范数的 <strong>相容性</strong>：对任意 <span
+class="math inline">\(A \in \mathbb{C^{m \times n}}\)</span>，<span
+class="math inline">\(B \in \mathbb{C^{n \times l}}\)</span> 有</p>
+<p><span class="math display">\[
+  \lVert AB \rVert \le
+  \lVert A \rVert \cdot
+  \lVert B \rVert
+\]</span></p></li>
+<li><p>矩阵范数 <strong>与向量范数的相容性</strong>：对任意 <span
+class="math inline">\(A \in \mathbb{C^{m \times n}}\)</span>，<span
+class="math inline">\(x \in \mathbb{C^{n}}\)</span> 有</p>
+<p><span class="math display">\[
+  \lVert Ax \rVert \le
+  \lVert A \rVert \cdot
+  \lVert x \rVert
+\]</span></p></li>
+<li><p><strong>从属范数</strong>：</p>
+<p><span class="math display">\[
+  \newcommand{\norm}[1]{\lVert #1 \rVert}
+  \def \v{\mathrm{v}}
+  \norm{A} = \max_{\norm{x}_{\v} = 1} \, \norm{Ax}_{\v} =
+  \max_{x \neq 0} \,
+  \dfrac{\norm{Ax}_{\v}}{\norm{x}_{\v}}, \,
+  A \in \mathbb{C^{m \times n}}
+\]</span></p>
+<p>其中 <span class="math inline">\(\lVert Ax
+\rVert_{\mathrm{v}}\)</span> 是 <span
+class="math inline">\(\mathbb{C^m}\)</span> 上的范数，<span
+class="math inline">\(\lVert x \rVert_{\mathrm{v}}\)</span> 是 <span
+class="math inline">\(\mathbb{C^n}\)</span>
+上的范数，它们应取为同类的向量范数.</p></li>
+</ul>
+<p><strong>常用矩阵范数</strong></p>
+<p>设 <span class="math inline">\(A \in \mathbb{C^{m \times
+n}}\)</span>，</p>
+<ul>
+<li><p><strong><span class="math inline">\(\mathrm{m_1}\)</span>
+范数</strong>：</p>
+<p><span class="math display">\[
+  \lVert A \rVert_{\mathrm{m}_1} =
+  \sum_{i=1}^{m} \sum_{j=1}^{n} \,
+  \lvert a_{ij} \rvert
+\]</span></p></li>
+<li><p><strong><span class="math inline">\(\mathrm{F}\)</span>
+范数</strong>：</p>
+<p><span class="math display">\[
+  \lVert A \rVert_{\mathrm{F}} = \sqrt{
+    \sum_{i=1}^{m} \sum_{j=1}^{n} \,
+    \lvert a_{ij} \rvert^2
+  } =
+  \sqrt{\operatorname{tr}(
+    A^{\scriptscriptstyle \mathrm{H}}A
+  )}
+\]</span></p></li>
+<li><p><strong><span class="math inline">\(\mathrm{M}\)</span>
+范数（最大范数）</strong>：</p>
+<p><span class="math display">\[
+  \lVert A \rVert_{\mathrm{M}} =
+  \max\{m, n\} \, \max_{i, j} \lvert a_{ij} \rvert
+\]</span></p></li>
+<li><p><strong><span class="math inline">\(\mathrm{G}\)</span>
+范数（几何平均范数）</strong>：</p>
+<p><span class="math display">\[
+  \lVert A \rVert_{\mathrm{G}} =
+  \sqrt{nm} \, \max_{i, j} \lvert a_{ij} \rvert
+\]</span></p></li>
+<li><p><strong><span class="math inline">\(1\)</span>
+范数（列和范数）</strong></p>
+<p><span class="math display">\[
+  \lVert A \rVert_{1} =
+  \max_{j} \sum_{i=1}^{m} \, \lvert a_{ij} \rvert
+\]</span></p></li>
+<li><p><strong><span class="math inline">\(2\)</span>
+范数（谱范数）</strong></p>
+<p><span class="math display">\[
+  \lVert A \rVert_{2} =
+  \sqrt{
+    A^{\scriptscriptstyle \mathrm{H}}A \,
+    \text{的最大特征值}
+  }
+\]</span></p></li>
+<li><p><strong><span class="math inline">\(\infty\)</span>
+范数（行和范数）</strong></p>
+<p><span class="math display">\[
+  \lVert A \rVert_{\infty} =
+  \max_{i} \sum_{j=1}^{n} \, \lvert a_{ij} \rvert
+\]</span></p></li>
+<li><p><em>矩阵范数的性质：</em></p>
+<ol type="1">
+<li><p><span class="math inline">\(\mathrm{F}\)</span> 范数和 <span
+class="math inline">\(2\)</span> 范数是 <strong>酉不变</strong>
+的.</p></li>
+<li><p><span class="math inline">\(\mathrm{m}_1\)</span> 范数与向量
+<span class="math inline">\(1\)</span> 范数相容；</p>
+<p><span class="math inline">\(\mathrm{F}\)</span> 范数、<span
+class="math inline">\(\mathrm{G}\)</span> 范数与向量 <span
+class="math inline">\(2\)</span> 范数相容；</p>
+<p><span class="math inline">\(\mathrm{M}\)</span> 范数与向量 <span
+class="math inline">\(1, 2, \infty\)</span> 范数相容.</p></li>
+<li><p>矩阵的 <span class="math inline">\(1, 2, \infty\)</span>
+范数分别由向量 <span class="math inline">\(1, 2, \infty\)</span>
+范数导出，从而相容.</p></li>
+<li><p><span class="math inline">\(\mathbb{C^{m \times n}}\)</span>
+上所有矩阵范数 <strong>等价</strong>.</p></li>
+</ol></li>
+</ul>
+<h3 id="范数应用举例">2.3 范数应用举例</h3>
+<p><strong>定义 <span
+class="math inline">\(1\)</span>（矩阵的谱半径）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，<span class="math inline">\(\lambda_1, \lambda_2, \dotsc,
+\lambda_n\)</span> 是 <span class="math inline">\(A\)</span>
+的特征值，则称</p>
+<p><span class="math display">\[
+  \rho(A) = \max_{1 \le i \le n} \, \lvert \lambda_i \rvert
+\]</span></p>
+<p>为矩阵 <span class="math inline">\(A\)</span> 的
+<strong>谱半径</strong>.</p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(1\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，则</p>
+<ol type="1">
+<li><p><span class="math inline">\(\rho(A^{\scriptscriptstyle
+\mathrm{H}}) = \rho(A^{\scriptscriptstyle \mathrm{T}}) =
+\rho(A)\)</span></p></li>
+<li><p><span class="math inline">\(\rho(A^k) = \left[ \rho(A)
+\right]^k\)</span></p></li>
+<li><p>当 <span class="math inline">\(A\)</span> 是正规矩阵时，<span
+class="math inline">\(\rho(A) = \lVert A \rVert_2\)</span></p></li>
+</ol></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(2\)</span></strong></p>
+<ul>
+<li><span class="math inline">\(\rho(A) \le \lVert A
+\rVert\)</span>，其中 <span class="math inline">\(\lVert A
+\rVert\)</span> 是 <span class="math inline">\(A\)</span>
+的任一矩阵范数.</li>
+</ul>
+<p><strong>定理 <span class="math inline">\(3\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C^{n \times
+n}}\)</span>，则 <span class="math inline">\(\forall \varepsilon \gt
+0\)</span>，必存在 <span class="math inline">\(\mathbb{C^{n \times
+n}}\)</span> 上的矩阵范数 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{m}}\)</span>，使得</p>
+<p><span class="math display">\[
+  \lVert A \rVert_{\mathrm{m}} \le
+  \rho(A) + \varepsilon
+\]</span></p></li>
+</ul>
+<p><strong>引理</strong></p>
+<ul>
+<li>设 <span class="math inline">\(P \in \mathbb{C^{n \times
+n}}\)</span>，若对 <span class="math inline">\(\mathbb{C^{n \times
+n}}\)</span> 上的某一矩阵范数 <span class="math inline">\(\lVert \cdot
+\rVert\)</span>，有 <span class="math inline">\(\lVert P \rVert \lt
+1\)</span>，则 <span class="math inline">\(I - P\)</span> 可逆.</li>
+</ul>
+<p><strong>定理 <span class="math inline">\(4\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C_{n}^{n \times
+n}}\)</span>，<span class="math inline">\(\delta A \in \mathbb{C^{n
+\times n}}\)</span>. 若对 <span class="math inline">\(\mathbb{C^{n
+\times n}}\)</span> 上的某一矩阵范数 <span class="math inline">\(\lVert
+\cdot \rVert\)</span>，有 <span class="math inline">\(\lVert
+A^{-1}\delta A \rVert \lt 1\)</span> ，则</p>
+<ol type="1">
+<li><p><span class="math inline">\(A + \delta A\)</span> 可逆；</p></li>
+<li><p><span class="math inline">\(\lVert (A + \delta A)^{-1} \rVert \le
+\dfrac{\lVert A^{-1} \rVert}{1 - \lVert A^{-1}\delta A
+\rVert}\)</span></p></li>
+<li><p><span class="math inline">\(\dfrac{\lVert A^{-1} - (A + \delta
+A)^{-1} \rVert}{\lVert A^{-1} \rVert} \le \dfrac{\lVert A^{-1}\delta A
+\rVert}{1 - \lVert A^{-1}\delta A \rVert}\)</span></p></li>
+</ol></li>
+</ul>
+<p><strong>定义 <span
+class="math inline">\(2\)</span>（条件数）</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C_{n}^{n \times
+n}}\)</span>，<span class="math inline">\(\lVert \cdot \rVert\)</span>
+是 <span class="math inline">\(\mathbb{C^{n \times n}}\)</span>
+上的某一矩阵范数，称</p>
+<p><span class="math display">\[
+  \operatorname{cond}(A) =
+  \lVert A \rVert \,
+  \lVert A^{-1} \rVert
+\]</span></p>
+<p>为矩阵 <span class="math inline">\(A\)</span> 的
+<strong>条件数（condition number）</strong>.</p></li>
+</ul>
+<p><strong>推论</strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C_{n}^{n \times
+n}}\)</span>，<span class="math inline">\(\delta A \in \mathbb{C^{n
+\times n}}\)</span>，若对 <span class="math inline">\(\mathbb{C^{n
+\times n}}\)</span> 上的某一矩阵范数 <span class="math inline">\(\lVert
+\cdot \rVert\)</span>，有 <span class="math inline">\(\lVert A^{-1}
+\rVert \lVert \delta A \rVert \lt 1\)</span> ，则</p>
+<p><span class="math display">\[
+  \newcommand{\norm}[1]{\lVert #1 \rVert}
+  \def \cond{\operatorname{cond}}
+  \def \dA{\delta A}
+  \dfrac{\norm{A^{-1} - (A + \dA)^{-1}}}{\norm{A^{-1}}} \le
+  \dfrac{\cond (A) \dfrac{\norm{\dA}}{\norm{A}}}{1 - \cond (A)
+\dfrac{\norm{\dA}}{\norm{A}}}
+\]</span></p></li>
+</ul>
+<p><strong>定理 <span class="math inline">\(5\)</span></strong></p>
+<ul>
+<li><p>设 <span class="math inline">\(A \in \mathbb{C_{n}^{n \times
+n}}\)</span>，<span class="math inline">\(\delta A \in \mathbb{C^{n
+\times n}}\)</span>，<span class="math inline">\(b, \delta b \in
+\mathbb{C^n}\)</span>，若对 <span class="math inline">\(\mathbb{C^{n
+\times n}}\)</span> 上的某一矩阵范数 <span class="math inline">\(\lVert
+\cdot \rVert\)</span>，有 <span class="math inline">\(\left \Vert A^{-1}
+\right \Vert \big \lVert \delta A \big \rVert \lt
+1\)</span>，则非齐次线性方程组</p>
+<p><span class="math display">\[
+  Ax = b
+\]</span></p>
+<p>与</p>
+<p><span class="math display">\[
+  (A + \delta A)(x + \delta x) = b + \delta b
+\]</span></p>
+<p>的解满足</p>
+<p><span class="math display">\[
+  \newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+  \def \cond{\operatorname{cond}}
+  \def \dA{\delta A}
+  \def \v{\mathrm{v}}
+  \newcommand{\unit}[2]{\dfrac{\norm{\delta #1}_{ #2 }}{\norm{ #1 }_{ #2
+}}}
+  \unit{x}{\v} \le \dfrac{\cond(A)}{1 - \cond(A)\unit{A}{}} \left(
+    \unit{A}{} + \unit{b}{\v}
+  \right)
+\]</span></p>
+<p>其中 <span class="math inline">\(\lVert \cdot
+\rVert_{\mathrm{v}}\)</span> 是 <span
+class="math inline">\(\mathbb{C^n}\)</span> 上与矩阵范数 <span
+class="math inline">\(\lVert \cdot \rVert\)</span>
+相容的向量范数.</p></li>
+</ul>
+<p><em>📝 Notations</em></p>
+<ul>
+<li>如果矩阵 <span class="math inline">\(A\)</span> 的条件数很大，则称
+<span class="math inline">\(A\)</span> 对于求逆矩阵或求解线性方程组是
+<strong>病态的（坏条件的）</strong>，否则，称为
+<strong>良态的（好条件的）</strong>.</li>
+</ul>
+<h2 id="参考资料">参考资料：</h2>
+<ol type="1">
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16E411D7R8/"
+title="网课视频">矩阵论 (武汉理工大学)</a></p></li>
+<li><p>矩阵论简明教程（第三版）. 徐仲，张凯院，陆全，冷国伟
+编著</p></li>
+</ol>
+<style>
+
+    strong {
+      font-family: sans-serif;
+    }
+
+    /* 用于保证英文单词不被截断，且文本两端对齐 */
+    p, li {
+        word-break: normal;
+        word-wrap: break-word; 
+        /* 文本的两端对齐 */
+        text-align:justify;  
+        /* 为表意字文本提供完全两端对齐, 增加或减少表意字和词间的空格, 支持该属性的浏览器目前只有IE(见菜鸟教程) */
+        text-justify:inter-ideograph;  
+    }
+
+</style>
+</div>
+        
+          <div class="post-copyright">
+                  <div class="copyright-item">
+                      <span> 作者: Garden-Zen</span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> 链接: <a href="https://garden-zen.github.io/2024/07/05/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E7%9F%A9%E9%98%B5%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">https://garden-zen.github.io/2024/07/05/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E7%9F%A9%E9%98%B5%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</a></span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> 声明: 本博客所有文章除特别声明外，均采用许可协议 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 转载请注明出处！</span>
+                  </div>
+          </div>
+        
+  </div>
+
+    <div class="post_tags">
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E6%95%B0%E5%AD%A6/" class="tag">数学</a>
+      
+        <i class="fas fa-tag"></i> <a href="/tags/%E7%9F%A9%E9%98%B5%E8%AE%BA/" class="tag">矩阵论</a>
+      
+    </div>
+    <div class="post-nav">
+      
+      
+        <div class="post-nav-next post-nav-item">
+            <a href="/2024/04/02/%E3%80%90%E8%AE%B0%E5%BD%95%E3%80%912024-NJUPT-%E5%A4%8D%E8%AF%95%E6%B8%B8%E8%AE%B0/" >【记录】2024 NJUPT 复试游记<i class="fa fa-chevron-right"></i></a>
+        </div>
+      
+    </div>
+      
+
+
+
+  <div id="valine"></div>
+  <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  <script>
+        new Valine({
+          el: '#valine',
+          appId: "",
+          appKey: "",
+          avatar: "mm",
+          lang: "",
+          meta: 'nick,mail,link'.split(','),
+          requiredFields: 'nick,mail'.split(','),
+          placeholder: "评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒",
+          pageSize:'10',
+          recordIP: 'false',
+          serverURLs: "",
+          emojiCDN: "",
+          enableQQ: "true",
+        });
+  </script>
+  
+
+</article>
+
+    
+<a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    
+
+
+
+
+
+
+    
+<div id="bottom-outer">
+    <div id="bottom-inner">
+        © 2024-2025 <i class="fa fa-heart" id="heart"></i> Garden-Zen 
+        <br>
+        Powered by 
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo</a> | Theme is <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank/">blank</a>
+        
+          <div class="icp-info">
+            
+          <a href="" target="_blank"> </a>
+        </div>
+        
+    </div>  
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/layui-src@2.5.5/dist/layui.min.js"></script>
+
+
+
+  
+    <script src="/js/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+  
+
+ 
+
+
+
+  <script>
+    window.lazyLoadOptions = {
+      elements_selector: 'img',
+      threshold: 0
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>   
+  
+
+
+  <script>
+    var images = $('img').not('.nav-logo img').not('.card img').not($('a>img')).not('.reward-content img')
+    images.each(function (i, o) {
+      var lazyloadSrc = $(o).attr('data-src') ? $(o).attr('data-src') : $(o).attr('src')
+      $(o).wrap(`<a href="${lazyloadSrc}" data-fancybox="group" data-caption="${$(o).attr('alt')}" class="fancybox"></a>`)
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+  <script>
+        $().fancybox({
+      selector: '[data-fancybox]',
+      loop: true,
+      transitionEffect: 'slide',
+      protect: true,
+      buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
+    })
+  </script>   
+  
+
+
+  <script>
+  if (!window.MathJax) {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]],
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+              const display = !!node.type.match(/; *mode=display/)
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+              const text = document.createTextNode('')
+              node.parentNode.replaceChild(text, node)
+              math.start = {node: text, delim: '', n: 0}
+              math.end = {node: text, delim: '', n: 0}
+              doc.math.push(math)
+            }
+          }, '']
+        }
+      }
+    }
+    
+    var script = document.createElement('script')
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"
+    script.id = 'MathJax-script'
+    script.async = true
+    document.head.appendChild(script)
+  } else {
+    MathJax.startup.document.state(0)
+    MathJax.texReset()
+    MathJax.typeset()
+  }
+  </script>
+  
+
+
+  
+<script>
+if (document.getElementsByClassName('mermaid').length) {
+    if (window.mermaidJsLoad) mermaid.init()
+    else {
+      $.getScript("https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js", function () {
+        window.mermaidJsLoad = true
+        mermaid.initialize({
+          theme: "default",
+        })
+      })
+    }
+  }
+  </script>
+  
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script>
+  
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js"></script>
+<script>
+!function (e, t, a) {
+  var initCopyCode = function(){
+    var copyHtml = '';
+    copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+    copyHtml += '  <i class="fa fa-clipboard"></i><span>复制</span>';
+    copyHtml += '</button>';
+    $(".highlight .code pre").before(copyHtml);
+    new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+  }
+  initCopyCode();
+}(window, document);
+</script>  
+  
+
+<script>
+  var btntop = $('#gotop');
+  btntop.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
+  });
+
+  var $table = $('.content table').not($('figure.highlight > table'))
+$table.each(function () {
+  $(this).wrap('<div class="table-wrap"></div>')
+})
+</script>
+
+
+
+</html>
